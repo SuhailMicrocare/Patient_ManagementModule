@@ -45,3 +45,7 @@ body {
   height: 100%;
   overflow: hidden; /* Prevent scroll on the body */
 }
+
+html {
+  font-size: 62.5%; // 1rem = 10px 10px/16px =62.5%
+}
