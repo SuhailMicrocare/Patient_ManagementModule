@@ -1,0 +1,218 @@
+// TAB GRID STYLES
+
+.details-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Default to 2 columns
+  row-gap: 2rem;
+
+  &--three-columns {
+    // Modifier class for 3 columns
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--five-columns {
+    // Modifier class for 3 columns
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    column-gap: 1rem;
+    justify-content: center;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+
+    &__fullwidth {
+      grid-column: 1 / -1; // This will still span all columns
+    }
+  }
+
+  .label {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 16.37px;
+    text-align: left;
+    color: #626262;
+  }
+
+  .value {
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 21.82px;
+    text-align: left;
+    color: #000000;
+    margin-top: 0.5rem;
+  }
+}
+
+// TABLE DIV & HEADLINE STYLES
+
+.tab-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.warning-text {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 19.1px;
+  text-align: right;
+  color: #ff2323;
+}
+
+.table-deletecol {
+  color: #ff2323 !important;
+}
+.tab-tabledive {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+//CUSTOME TABLE STYLE
+
+.custom-table {
+  border-radius: 1rem; // Ensures rounded corners
+  margin-bottom: 0 !important;
+  overflow: hidden;
+
+  thead {
+    // background-color: #dbeaf3 !important; // Apply background color
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 16.37px;
+    text-align: left;
+
+    th {
+      border-left: none; // Remove left border from all th elements
+      border-bottom: none;
+      background-color: #dbeaf3 !important;
+      padding: 1rem 1rem 1rem 1.5rem;
+    }
+
+    th:nth-child(1) {
+      width: 30%;
+    } // Service Type
+    th:nth-child(2) {
+      width: 17.5%;
+    } // Co Insurance %
+    th:nth-child(3) {
+      width: 20%;
+    } // Max - Patient Share
+    th:nth-child(4) {
+      width: 30%;
+    } // Partially Uncovered Amount Type
+  }
+
+  tbody {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 16.37px;
+    text-align: left;
+
+    tr:last-child td {
+      border-bottom: none; // Remove bottom border from the last row
+    }
+  }
+
+  th,
+  td {
+    padding: 0.7rem 0.7rem 0.7rem 1.5rem;
+    background-color: #f4fbff; // White background for cells
+    border-left: 1px solid #ddd; // Vertical line
+    border-bottom: 1px dashed #ddd; // Dotted horizontal line
+  }
+
+  th:first-child,
+  td:first-child {
+    border-left: none; // Remove border from the first column
+  }
+}
+
+/* Specific table with 7 columns and different widths we use this for Appointments log tab */
+.custom-table-7-cols {
+  thead {
+    th:nth-child(1) {
+      width: 12%; // Adjusted percentage for column 1
+    }
+    th:nth-child(2) {
+      width: 12%; // Adjusted percentage for column 2
+    }
+    th:nth-child(3) {
+      width: 25%; // Adjusted percentage for column 3
+    }
+    th:nth-child(4) {
+      width: 18%; // Adjusted percentage for column 4
+    }
+    th:nth-child(5) {
+      width: 10%; // Adjusted percentage for column 5
+    }
+    th:nth-child(6) {
+      width: 12%; // Adjusted percentage for column 6
+    }
+    th:nth-child(7) {
+      width: 12%; // Adjusted percentage for column 7
+    }
+  }
+}
+
+.custom-table-5-cols__visittab {
+  thead {
+    th:nth-child(1) {
+      width: 13%; // Adjusted percentage for column 1
+    }
+    th:nth-child(2) {
+      width: 10%; // Adjusted percentage for column 2
+    }
+    th:nth-child(3) {
+      width: 28%; // Adjusted percentage for column 3
+    }
+    th:nth-child(4) {
+      width: 22%; // Adjusted percentage for column 4
+    }
+    th:nth-child(5) {
+      width: 27%; // Adjusted percentage for column 5
+    }
+  }
+}
+
+.custom-table-5-cols__locationtab {
+  thead {
+    th:nth-child(1) {
+      width: 15%; // Adjusted percentage for column 1
+    }
+    th:nth-child(2) {
+      width: 15%; // Adjusted percentage for column 2
+    }
+    th:nth-child(3) {
+      width: 13%; // Adjusted percentage for column 3
+    }
+    th:nth-child(4) {
+      width: 13%; // Adjusted percentage for column 4
+    }
+    th:nth-child(5) {
+      width: 25%; // Adjusted percentage for column 5
+    }
+  }
+  tbody {
+    tr {
+      td {
+        vertical-align: middle; // Align all td elements in the middle vertically
+      }
+    }
+  }
+}
+
+.custom-table-5-cols__visittab {
+  tbody {
+    tr {
+      td {
+        vertical-align: middle; // Align all td elements in the middle vertically
+      }
+    }
+  }
+}

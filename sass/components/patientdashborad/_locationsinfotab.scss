@@ -1,0 +1,219 @@
+.resg__addbtndiv {
+  .resg__addbutton {
+    @include interactive-button;
+    .attupbtn-name {
+      @extend .u-button-name;
+    }
+  }
+}
+
+.location__modalbodydiv {
+  .location__search-filter-maindiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    background-color: #eef8ff;
+    border-radius: 1.2rem;
+    padding: 1rem;
+    // SEARCH MAIN DIV
+    .location__searchmanidiv {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .search__label {
+        font-family: inherit;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 16.37px;
+        color: $color-black;
+        margin-bottom: 0.5rem;
+      }
+
+      .location__input-wrapper {
+        position: relative;
+        width: 100%;
+
+        .location__searchdiv__input {
+          font-size: 1.5rem;
+          font-family: inherit;
+          color: inherit;
+          padding: 0.8rem 1.5rem;
+          // padding-right: 3rem; // Add space for the icon
+          border-radius: 1.2rem;
+          border: 1px solid #cccccc;
+          background-color: $color-white;
+          width: 100%;
+          display: block;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::-webkit-input-placeholder {
+            font-family: inherit;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 16.37px;
+            text-align: left;
+            color: $color-black;
+          }
+        }
+
+        .bi-search {
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          font-size: 1.5rem;
+          color: $color-black;
+        }
+      }
+    }
+
+    // DATE PICKER DIV
+    .location__datemaindiv {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .date__label {
+        font-family: inherit;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 16.37px;
+        color: $color-black;
+        margin-bottom: 0.5rem;
+      }
+
+      .location__date-wrapper {
+        display: flex;
+        width: 100%;
+
+        .location__latitude-input,
+        .location__longitude-input {
+          font-size: 1.5rem;
+          font-family: inherit;
+          color: inherit;
+          padding: 0.8rem 1.2rem;
+          padding-right: 3rem; // Add space for the icon
+          border: 1px solid #cccccc;
+          background-color: $color-white;
+          width: 100%;
+          display: block;
+          position: relative;
+
+          &:focus {
+            outline: none;
+          }
+
+          /* Hide the default calendar icon but retain functionality */
+          &::-webkit-calendar-picker-indicator {
+            opacity: 0; /* Hide it visually */
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem; /* Match your custom icon size */
+            height: 1.5rem;
+            z-index: 2; /* Keep it on top for functionality */
+            cursor: pointer; /* Maintain pointer interaction */
+          }
+        }
+
+        /* Specific styling for the From Date input */
+        .location__latitude-input {
+          border-top-left-radius: 1.2rem;
+          border-bottom-left-radius: 1.2rem;
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+        }
+
+        /* Specific styling for the To Date input */
+        .location__longitude-input {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+          border-top-right-radius: 1.2rem;
+          border-bottom-right-radius: 1.2rem;
+        }
+
+        /* Placeholder styling */
+        .location__latitude-input::placeholder,
+        .location__longitude-input::placeholder {
+          font-family: inherit;
+          font-size: 1.2rem;
+          font-weight: 400;
+          line-height: 16.37px;
+          text-align: left;
+          color: $color-black;
+        }
+      }
+    }
+
+    // FILTER BUTTON DIV
+    .location__checkbox {
+      display: flex;
+      justify-content: flex-start;
+      align-self: flex-end;
+      height: 4rem;
+      padding: 0.8rem 1.5rem;
+
+      .location__checkpoint {
+        width: 2rem; // Set desired width
+        height: 2rem; // Set desired height
+        background-color: $color-white; // Background color
+        border: 1px solid #cccccc;
+        border-radius: 0.6rem; // Rounded corners
+      }
+      .cheakbox-name {
+        font-family: inherit;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 16.37px;
+        color: $color-black;
+      }
+    }
+  }
+
+  .map-container {
+    height: 400px; // Adjust height as necessary
+    width: 100%;
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+
+  .location__modalfooter {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+
+    .modal-savebtn,
+    .modal-cancelbtn {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: center;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      border: 1px solid $tabbuttoncolor;
+
+      &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      }
+    }
+
+    .modal-savebtn {
+      color: $color-white;
+      background-color: $tabbuttoncolor;
+    }
+
+    .modal-cancelbtn {
+      color: $tabbuttoncolor;
+      background-color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.head {
+  display: flex;
+  height: 7.3rem;
+  padding: 1.5rem 1.5rem;
+  align-items: center;
+  background-color: $white-background;
+
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__logodiv {
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
+
+    &-com-logo {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__language-dropdowndiv {
+    padding-left: 2.9rem;
+  }
+
+  &__all-navigationdiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__ticketing-dropdowndiv {
+    display: flex;
+    justify-content: right;
+  }
+
+  &__notification-dropdowndiv {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 4rem;
+    margin-right: 3rem;
+    margin-left: 5rem;
+  }
+
+  &__global-logo {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.7rem;
+  }
+
+  &__profile-headerdiv {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: right;
+  }
+
+  &__profile-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  &__profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__profile-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__profile-activity {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.lan-name {
+  color: inherit; /* Remove default link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.2rem;
+}
+
+.b-link {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #292d32;
+}
+
+// .dropdown:hover .dropdown-menu {
+//   display: block;
+// }

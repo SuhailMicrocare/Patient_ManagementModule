@@ -1,0 +1,209 @@
+// ALIGNMENT UTILITIES
+.u-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.u-vh-align-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// WIDTH
+.u-with-50 {
+  width: 50%;
+}
+
+// FLEX DIRECTION
+.u-flexdrow {
+  flex-direction: row;
+}
+
+.u-justifyspacebtw {
+  justify-content: space-between;
+}
+
+.u-alignselfitem {
+  display: flex;
+  justify-self: center;
+}
+
+// ICON SIZE
+.u-icon-m {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.u-icon-size-l {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.u-bootst-icon,
+.u-bootst-icon-blcolor {
+  font-size: 1.2rem;
+  color: $color-white;
+  cursor: pointer;
+}
+.u-bootst-icon-blcolor {
+  color: $tabbuttoncolor !important;
+}
+
+.u-bootst-icon-xl {
+  font-size: 1.5rem;
+  color: $color-white;
+  cursor: pointer;
+}
+
+// ICON COLOR
+.u-icon-white {
+  fill: $color-white;
+}
+
+// TEXT SIZE
+.u-text-size-m {
+  font-size: 1.4rem;
+  color: inherit;
+}
+
+.u-text-size-l {
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.u-text-size-xl {
+  font-size: 1.8rem;
+  color: inherit;
+  font-weight: 600;
+}
+
+.u-tab-button-name {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.u-tab-button-name-whitecolor {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 21px;
+  color: $tabbuttoncolor;
+}
+
+.U-tab-namesize {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 21.82px;
+}
+
+.u-labelsize {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.u-success-msg-text {
+  font-family: inherit;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 32.74px;
+  text-align: center;
+}
+// SMALL TEXT
+.u-s-text {
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+// PADDING
+.u-drop-icon-small {
+  display: inline-block;
+  padding: 0.8rem;
+}
+
+.u-padding1rem {
+  padding: 1rem;
+}
+.u-padsmall {
+  margin-left: 1rem;
+}
+
+.u-norightpadding {
+  padding-right: 0 !important;
+}
+
+.u-nor-lpadding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+// MARGIN LEFT
+.u-marginleft-s {
+  margin-left: 1.5rem;
+}
+
+// MARGIN RIGHT
+.u-marginright-s {
+  margin-right: 1rem;
+}
+
+.u-marginright-xs {
+  margin-right: 0.5rem;
+}
+
+// MARGIN BOTTOM
+.u-marginbottom-samll {
+  margin-bottom: 1rem;
+}
+.u-marginbottom-medium {
+  margin-bottom: 1.5rem;
+}
+
+.u-marginbottom-xl {
+  margin-bottom: 2rem;
+}
+
+.u-marginbottom-xxl {
+  margin-bottom: 4rem;
+}
+// BORDER
+.u-noborderbottom {
+  border-bottom: 0 !important;
+}
+
+.u-nopadding {
+  padding: 0 !important;
+}
+
+// BORDER RADIS
+.u-border-radius1-2rem {
+  border-radius: 1.2rem;
+}
+
+.u-nobordertop {
+  border-top: 0 !important;
+}
+
+// TAB STYLES
+.u-tabnamecolor {
+  color: $tabnamecolor !important;
+}
+
+// COLORS
+
+.u-secondary-background {
+  background-color: $color-secondary-light;
+}
+
+// MODAL
+
+.u-modalpaddinf3rem {
+  padding: 3rem;
+}

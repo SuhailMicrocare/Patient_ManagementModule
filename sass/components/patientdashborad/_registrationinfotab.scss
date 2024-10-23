@@ -1,0 +1,54 @@
+.location__addbtndiv {
+  .location__addbutton {
+    @include interactive-button;
+    .attupbtn-name {
+      @extend .u-button-name;
+    }
+  }
+}
+
+.Regis__attachment {
+  background-color: $color-white;
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  border: 1px solid #c1dae3;
+}
+
+.info-box {
+  width: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  padding: 15px;
+  color: #333;
+  // background-color: $color-secondary-light;
+  // border-bottom: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 16.37px;
+}
+
+.info-item:nth-child(odd) {
+  background-color: $color-secondary-light; /* Background for 1st, 3rd, 5th lines, etc. */
+}
+
+.info-item:nth-child(even) {
+  background-color: $color-secondary-lidark; /* Background for 2nd, 4th, 6th lines, etc. */
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+// Registration Acknowledgemen MODAL CODE
+.resg__modalbodydiv {
+  .resg__attachtab-div {
+    padding: 2rem;
+    background-color: $color-secondary-light;
+    border-radius: 1.2rem;
+  }
+}

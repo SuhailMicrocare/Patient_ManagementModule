@@ -1,0 +1,135 @@
+.attachment__uploadbtndiv {
+  .attachment__uploadbutton {
+    @include interactive-button;
+    .attupbtn-name {
+      @extend .u-button-name;
+    }
+  }
+}
+
+// ATTACHEMENT MODAL CODE
+.attachment__modaldiv {
+  padding: 5rem;
+}
+
+// MODAL MAIN BODY
+.attachment__modalbodydiv {
+  display: flex;
+  align-items: center;
+
+  // IMAGE UPLOAD DIV
+  .imguploaddiv {
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: 1px solid #c1dae3;
+    margin-right: 3rem;
+    position: relative;
+
+    .upload-imgsize {
+      width: 8rem;
+      height: 8rem;
+    }
+    .delete-icon {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: red;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .delete-svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  // INPUT DIV
+  .attachment__input-buttondiv {
+    display: flex;
+    justify-content: right;
+    margin-left: auto;
+    .attachment__inputmaindiv {
+      display: flex;
+      align-items: center;
+      .input__name {
+        font-family: inherit;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 16.37px;
+        text-align: left;
+        color: $color-black;
+        margin-bottom: 0.6rem;
+      }
+
+      .input__div {
+        margin-right: 2rem;
+        .attachment__input {
+          font-family: inherit;
+          font-size: 1.2rem;
+          font-weight: 400;
+          line-height: 16.37px;
+          color: $color-black;
+          padding: 1rem 1.2rem;
+          border-radius: 1rem;
+          border: 1px solid #cccccc;
+          width: 100%;
+          display: block;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $tabbuttoncolor;
+          }
+          &:hover {
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+          }
+          &::-webkit-input-placeholder {
+            color: $color-black;
+          }
+        }
+      }
+
+      .custom-file {
+        display: flex;
+        align-self: flex-end;
+        justify-content: right;
+        gap: 1rem;
+
+        .custom-file-input {
+          display: none;
+        }
+
+        .custom-file-label,
+        .modal-closebtn {
+          display: inline-block;
+          width: 100%;
+          padding: 0.8rem 1.2rem;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 21px;
+          text-align: center;
+          border-radius: 0.8rem;
+          cursor: pointer;
+          border: 1px solid $tabbuttoncolor;
+
+          &:hover {
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+          }
+        }
+
+        .custom-file-label {
+          color: $color-white;
+          background-color: $tabbuttoncolor;
+        }
+
+        .modal-closebtn {
+          color: $tabbuttoncolor;
+          background-color: $color-white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// Abstracts============================//
+@import "abstracts/variables";
+//Base============================//
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "base/mixins";
+//Componenets============================//
+
+//Componenets Home page ============================//
+@import "components/homepage/patient-add";
+@import "components/homepage/search";
+@import "components/homepage/search-sectionitem";
+
+//Componenets Patient Dashboard============================//
+@import "components/patientdashborad/patient-navbarsection";
+@import "components/patientdashborad/personalinfodiv";
+@import "components/patientdashborad/insuranceinfodiv";
+@import "components/patientdashborad/dependenciesinfotab";
+@import "components/patientdashborad/attachmentinfotab";
+@import "components/patientdashborad/audittrailinfodiv";
+@import "components/patientdashborad/appoinmentinfotab";
+@import "components/patientdashborad/visitsinfotab";
+@import "components/patientdashborad/questionireinfotab";
+@import "components/patientdashborad/registrationinfotab";
+@import "components/patientdashborad/locationsinfotab";
+
+// GENERAL COMPONENTS================//
+@import "components/tableandtabgrid";
+//Layout============================//
+@import "layout/header";
+@import "layout/maincontainer";
+@import "layout/tabs-maindivs";
+//Layout============================//
+@import "pages/infodashboard";

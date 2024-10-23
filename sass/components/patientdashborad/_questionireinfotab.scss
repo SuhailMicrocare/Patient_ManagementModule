@@ -1,0 +1,83 @@
+.ques__addbtndiv {
+  .ques__addbutton {
+    @include interactive-button;
+    .attupbtn-name {
+      @extend .u-button-name;
+    }
+  }
+}
+.ques__patient-detailsdiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5rem;
+}
+
+// ATTACHEMENT MODAL CODE
+.ques__modaldiv {
+  padding: 3rem;
+}
+
+// MODAL MAIN BODY
+.ques__modalbodydiv {
+  // display: flex;
+  // align-items: center;
+
+  // IMAGE UPLOAD DIV
+  .ques__actiontab-div {
+    padding: 2rem;
+    background-color: $color-secondary-light;
+    border-radius: 1.2rem;
+  }
+}
+
+.signature-container {
+  padding: 2rem;
+  width: 100%;
+}
+
+.signature-canvas {
+  border: 1px solid #000;
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 30rem;
+}
+
+.clear-btn {
+  margin-top: 10px;
+  @include interactive-button;
+}
+
+.ques__modalfooter {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 1rem;
+
+  .modal-uploadbtn,
+  .modal-closebtn {
+    display: inline-block;
+    // width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: 1px solid $tabbuttoncolor;
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    }
+  }
+
+  .modal-uploadbtn {
+    color: $color-white;
+    background-color: $tabbuttoncolor;
+  }
+
+  .modal-closebtn {
+    color: $tabbuttoncolor;
+    background-color: $color-white;
+  }
+}

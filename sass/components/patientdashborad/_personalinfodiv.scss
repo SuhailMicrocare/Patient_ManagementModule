@@ -1,0 +1,51 @@
+.main-info-fulldiv {
+  padding: 1.6rem 1.5rem;
+  border-radius: 1.2rem;
+  background-color: $color-white;
+  margin-bottom: 1rem;
+
+  &__tabname {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: $tabnamecolor;
+    line-height: 21.82px;
+  }
+
+  .main-details-div {
+    display: flex;
+    padding-top: 1.6rem;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    background-color: $color-white;
+  }
+}
+
+.personal-infomaindiv {
+  display: block;
+}
+
+.tab__section {
+  padding: 1.6rem 1.5rem;
+  border-radius: 1.2rem;
+  background-color: $color-white;
+  margin-bottom: 1rem;
+  &__tabname {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: $tabnamecolor;
+    line-height: 21.82px;
+  }
+  .tab__section-detaildiv {
+    display: flex;
+    padding-top: 1.6rem;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    background-color: $color-white;
+  }
+}

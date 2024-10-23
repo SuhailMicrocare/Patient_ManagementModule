@@ -1,0 +1,389 @@
+.newpatient {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  max-height: 16.5rem;
+  flex: 0 0 auto;
+
+  &__tour-button {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  .newpatient__add-button {
+    margin: 4rem 4rem 2rem 0;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+    .newpatient__btndiv {
+      @include interactive-button;
+      .attupbtn-name {
+        @extend .u-button-name;
+      }
+    }
+  }
+}
+
+.btntext {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: $color-white;
+  letter-spacing: 0.06rem;
+}
+
+.patient__modalwidth {
+  max-width: 100rem;
+}
+.social__detail-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.5rem;
+}
+
+// Step Indicator Container
+.step-indicator-container {
+  position: relative;
+  width: 100%;
+  // max-width: 800px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  // margin: 2rem auto;
+  padding: 0 20px;
+  @include flex-center;
+}
+
+// Step Labels
+.step-labels {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  margin-right: 2rem;
+  z-index: 2;
+
+  .step-label {
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 21.82px;
+    color: $tabnamecolor;
+    display: none; // Hide all labels by default
+    @include transition;
+
+    &.active {
+      display: block; // Show only active label
+      color: $tabnamecolor;
+      font-weight: 600;
+    }
+  }
+}
+
+// Step Indicator
+.step-indicator {
+  @include flex-center;
+  gap: 6rem;
+  // margin-left: 220px; // Space for labels
+  position: relative;
+  width: fit-content;
+  padding: 0 10px;
+
+  // Connecting line
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background-color: $light-gray;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .step {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid $border-gray;
+    border-radius: 0.4rem;
+    background-color: $color-white;
+    position: relative;
+    z-index: 1;
+    @include transition;
+    flex-shrink: 0;
+
+    // Active state
+    &.active {
+      border-color: $modal-primary-color;
+      background-color: $color-white;
+      @include flex-center;
+
+      &::after {
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: $modal-primary-color;
+        border-radius: 0.2rem;
+        z-index: 2;
+      }
+    }
+
+    // Completed state
+    &.completed {
+      border-color: $modal-primary-color;
+      background-color: $modal-primary-color;
+      @include flex-center;
+
+      &::after {
+        content: "\2714";
+        color: $color-white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        position: absolute;
+        z-index: 2;
+      }
+
+      // Update connecting line after completed step
+      & + .step::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        width: 60px;
+        height: 2px;
+        background-color: $modal-primary-color;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// Form Step Styles
+.form-step {
+  &.d-none {
+    display: none !important;
+  }
+}
+
+// Form Field Styles
+.form-control,
+.form-select {
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  border: 1px solid #c1dae3;
+  background-color: $color-white;
+  @include transition;
+
+  &:focus {
+    border-color: $modal-primary-color;
+    box-shadow: 0 0 0 0.2rem rgba($modal-primary-color, 0.25);
+  }
+
+  &.is-invalid {
+    border-color: #dc3545;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(#dc3545, 0.25);
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 16.37px;
+    color: $text-gray;
+  }
+}
+
+// Button Styles
+.btn {
+  @include transition;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+
+  &-primary {
+    background-color: $tabbuttoncolor;
+    border-color: $tabbuttoncolor;
+
+    &:hover {
+      background-color: darken($tabbuttoncolor, 10%);
+      border-color: darken($tabbuttoncolor, 10%);
+    }
+  }
+
+  &-outline-secondary {
+    color: $tabbuttoncolor;
+    border-color: $tabbuttoncolor;
+
+    &:hover {
+      background-color: $light-gray;
+      border-color: $tabbuttoncolor;
+      color: darken($tabbuttoncolor, 10%);
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .step-indicator-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .step-labels {
+    position: relative;
+    transform: none;
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+
+    .step-label {
+      text-align: center;
+    }
+  }
+
+  .step-indicator {
+    margin-left: 0;
+    gap: 3rem;
+  }
+}
+
+.selector__st-rightborder0 {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.selector__st-leftborder0 {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.selector__st-right-left0 {
+  border-radius: 0 !important;
+}
+
+.socialdetail__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3rem;
+  row-gap: 2.5rem;
+}
+
+.pi__dob__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3rem;
+  .en-dob-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dob__inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: right;
+    align-items: center;
+    width: 70%;
+  }
+}
+
+.Additionalinfo__section {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+
+.adddetail__addbtndiv {
+  .adddetail__addbutton {
+    @include interactive-white-button;
+    .attupbtn-name {
+      @extend .u-button-name;
+    }
+  }
+}
+
+#successModal {
+  .modal-content {
+    border-radius: 16px;
+    border: none;
+  }
+
+  .success-icon {
+    animation: scaleIn 0.3s ease-in-out;
+  }
+
+  .check-circle {
+    display: inline-block;
+  }
+
+  .modal-body {
+    padding: 2.5rem !important;
+  }
+
+  .btn-link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successimage-img {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-upload {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .upload-wrapper {
+    position: relative;
+    width: 100%;
+
+    input[type="file"] {
+      width: 100%;
+      padding-right: 30%;
+      z-index: 1;
+    }
+
+    .upload-preview {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      z-index: 2;
+
+      .upload-preview-img {
+        width: 3rem; // Adjust this width based on your design
+        height: 3rem;
+        border-radius: 20%;
+        display: none; // Initially hidden until an image is uploaded
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.appoinment__uploadbtndiv {
+  .appoinment__uploadbutton {
+    @include interactive-button;
+    .appupbtn-name {
+      @extend .u-button-name;
+    }
+    .print-icon {
+      color: $color-white;
+    }
+  }
+}
+
+.appoiment_categories {
+  display: flex;
+  // gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: space-between;
+
+  .appointment__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 8.3rem;
+    height: 8rem;
+    border-radius: 1.2rem;
+
+    .cat_count {
+      font-family: inherit;
+      font-size: 1.6rem;
+      // font-weight: 800;
+      line-height: 21.82px;
+      text-align: center;
+    }
+    .cat_name {
+      font-family: inherit;
+      font-size: 1.2rem;
+      // font-weight: 700;
+      line-height: 16.37px;
+      text-align: center;
+    }
+  }
+
+  .all {
+    background-color: $tabbuttoncolor;
+    color: $color-white;
+    font-weight: 800;
+  }
+  .other {
+    background-color: #d0ebff;
+    color: $color-black;
+    font-weight: 400;
+  }
+}

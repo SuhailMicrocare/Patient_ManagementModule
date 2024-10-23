@@ -1,0 +1,62 @@
+.Dependencies__selectiondiv {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .Dependencies__dropdown {
+    margin-right: 2rem;
+
+    .drop__name {
+      font-family: inherit;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 16.37px;
+      text-align: left;
+      color: $color-black;
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .Dependencies__buttons {
+    display: flex;
+    justify-self: right;
+    align-self: flex-end;
+    gap: 1rem;
+    margin-left: auto; // This ensures buttons are pushed to the right
+  }
+
+  .Dependencies__savebutton,
+  .Dependencies__resetbutton {
+    width: 9rem;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .Dependencies__savebutton {
+    background-color: #068eee;
+
+    .dsavebtn-name {
+      font-family: inherit;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 21px;
+      color: #ffffff;
+    }
+  }
+
+  .Dependencies__resetbutton {
+    background-color: $color-white;
+    border: 1px solid #068eee;
+
+    .dresetbtn-name {
+      font-family: inherit;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 21px;
+      color: #068eee;
+    }
+  }
+}

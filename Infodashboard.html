@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstarph -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+<!-- bootstarph ICON CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- FONT-STYLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ALL CSS FILE -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Patient Info dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav class="head">
+        <!-- sidenavbar -->
+        <div class="head__navbar">
+          <svg class="head__navbar__icon">
+            <use xlink:href="Assets/icomoon/symbol-defs.svg#icon-menu"></use>
+          </svg>
+        </div>
+        <!-- company logo -->
+        <div class="head__logodiv">
+          <a href="../Index.html">
+            <img
+              src="../Assets/Images/micro-logo.png"
+              alt="company logo"
+              class="head__logodiv-com-logo"
+            />
+          </a>
+        </div>
+        <!-- language dropdown -->
+        <div class="head__language-dropdowndiv">
+          <div class="dropdown u-align-center">
+            <img
+              src="../Assets/Images/language.png"
+              alt="language-logo"
+              class="head__global-logo"
+            />
+            <a
+              class="btn-lights lan-name u-align-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="u-s-text u-marginright-s">English</span>
+              <svg class="u-icon-m dropdown-toggle">
+                <use
+                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                ></use>
+              </svg>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Arabic</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- all rightside items div -->
+        <div class="head__all-navigationdiv">
+          <!-- Ticket dropdown -->
+          <div class="head__ticketing-dropdowndiv">
+            <div class="dropdown u-align-center">
+              <img
+                src="/Assets/Images/hazard.png"
+                alt="ticket-logo"
+                class="head__global-logo"
+              />
+              <a
+                class="btn-light lan-name u-align-center"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="u-s-text u-marginright-s">Ticket</span>
+
+                <svg class="u-icon-m dropdown-toggle">
+                  <use
+                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                  ></use>
+                </svg>
+              </a>
+
+              <ul
+                class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
+              >
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Arabic</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Notification  dropdown -->
+
+          <div class="head__notification-dropdowndiv">
+            <div class="b-link">
+              <a href="#">
+                <img
+                  src="/assets/images/chatlogo.png"
+                  alt="chatlogo"
+                  class="u-icon-m"
+                />
+              </a>
+            </div>
+
+            <div class="b-link position-relative">
+              <a href="#">
+                <img
+                  src="/assets/images/bellicon.png"
+                  alt="chatlogo"
+                  class="u-icon-m"
+                />
+                <!-- <span
+                    class="position-absolute top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-circle"
+                  >
+                    17
+                    <span class="visually-hidden">New alerts</span>
+                  </span> -->
+              </a>
+            </div>
+          </div>
+          <!-- User Profile dropdown -->
+          <div class="head__profile-headerdiv">
+            <img
+              src="/Assets/Images/arab.png"
+              alt="Profile Picture"
+              class="head__profile-image"
+            />
+            <div class="head__profile-info u-marginright-s">
+              <div class="head__profile-name">Muhammed Suhail</div>
+              <div class="head__profile-activity">Your activities</div>
+            </div>
+
+            <a
+              class="btn-light lan-name u-align-center"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <svg class="u-icon-m dropdown-toggle">
+                <use
+                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                ></use>
+              </svg>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a href="#" class="dropdown-item">Activity</a></li>
+              <li><a href="#" class="dropdown-item">Profile</a></li>
+              <li><a href="#" class="dropdown-item">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="maindashboard__container">
+      <!-- SEARCHBOX- SECTION -->
+      <div class="search__section">
+        <div class="searchbox__dropsearchdiv">
+          <div class="searchbox__dropsection">
+            <div class="searchbox__dropdown_section dropdown-center">
+              <button class="search__dropbutton" type="button">
+                <span class="u-text-size-m"> File number/Patient name </span>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-lg-end"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">File number/Patient name</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+
+              <svg
+                class="u-icon-size-l dropdown-toggle"
+                data-bs-toggle="dropdown"
+                data-bs-target="#dropdownMenu"
+                aria-expanded="false"
+              >
+                <use
+                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                ></use>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="searchbox__input_div">
+            <div>
+              <input
+                type="text"
+                class="search__input"
+                aria-label="Text input with dropdown button"
+                placeholder="Search patient....."
+                id="patientSearch"
+              />
+            </div>
+
+            <div class="search__icon">
+              <a href="../Infodashboard.html">
+                <svg class="u-icon-m u-icon-white">
+                  <use
+                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
+                  ></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="advancedoption">
+          <a href="#" class="u-text-size-m">Clear Result</a>
+          <a href="#" class="u-text-size-m">Advance search</a>
+        </div>
+        <div class="pagetourbutton">
+          <span class="u-text-size-xl">234 results</span>
+          <div class="tour-button">
+            <svg class="u-icon-m">
+              <use
+                xlink:href="/Assets/icomoon/symbol-defs.svg#icon-graduation-cap"
+              ></use>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-cardsdiv">
+          <!-- profile 1 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p1.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+          <!-- profile 2 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p2.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+
+          <!-- profile 3 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p3.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+          <!-- profile 4 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p4.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+
+          <!-- profile 5 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p5.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Dua Fatima bint Haseeb..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+          <!-- profile 6 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p1.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+
+          <!-- profile 7 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p2.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+          <!-- profile 8 -->
+          <div class="patient-card">
+            <div class="patient-card__imgandname">
+              <img
+                src="/Assets/Images/p3.jpg"
+                alt="patient Picture"
+                class="patient-card__profile-image"
+              />
+              <span class="patient-card__name">Mohamed jaleel mubashi..</span>
+            </div>
+
+            <div style="margin-bottom: 0.5rem">
+              <span class="patient-card__fname">File number :</span>
+              <span class="patient-card__fnumber">435353</span>
+            </div>
+            <div>
+              <span class="patient-card__filename">Identity number :</span>
+              <span class="patient-card__filenumber">435387</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PATIENT DETAILS- SECTION -->
+      <div class="patient__details">
+        <div class="patient__navbar">
+          <!-- PROFILE PICTURE SECTION -->
+          <div class="patient-profilediv">
+            <div class="patient-profile-picture">
+              <img
+                src="/Assets/Images/arabgirl.png"
+                alt="profite picture"
+                class="patient-profile-picture__image"
+              />
+              <div class="patient-profile-picture__progress-ring">
+                <div class="patient-profile-picture__progress-bar"></div>
+              </div>
+            </div>
+          </div>
+          <!-- EDIT BUTTON SECTION -->
+          <div class="patient-editbutton">
+            <span class="patient-editbutton__percentage">65%</span>
+            <span class="patient-editbutton__name">Profile Complete</span>
+            <button type="button" class="patient-editbutton__button">
+              <span class="patient-editbutton__button__edit"> Edit</span>
+            </button>
+          </div>
+          <!-- NAVIGATION LINKS SECTION -->
+          <div class="p-navigation">
+            <ul>
+              <li class="p-navigation__link">Personal Info</li>
+              <li>Insurance</li>
+              <li>Non-Insurance</li>
+              <li>Dependencies</li>
+              <li>Attachment</li>
+              <li>Audit trail</li>
+              <li>Appoinment Log</li>
+              <li>Visits</li>
+              <li>Questionire</li>
+              <li>Registration Form</li>
+              <li>Locations</li>
+            </ul>
+          </div>
+          <!-- EXTRA FEATURES ICONS -->
+          <div class="p-icons">
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon1.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon2.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon3.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon4.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon5.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+            <div class="p-icons__pic">
+              <img
+                src="/Assets/Images/icon6.png"
+                alt="icon"
+                class="p-icons__picture"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="patient__completeinfo">
+          <!-- PERSONAL INFORMATION TAB-->
+          <div class="personal-infomaindiv" id="personal-infomaindiv">
+            <!-- BASIC DETAIL TAB -->
+            <div class="tab__section">
+              <!-- BASIC DETAIL TAB -->
+              <div class="u-vh-align-center">
+                <span class="tab__section__tabname">Basic Details</span>
+                <div class="tab__section__openicon">
+                  <a
+                    class="toggle-collapse"
+                    data-bs-toggle="collapse"
+                    href="#basicdetails"
+                    role="button"
+                    aria-expanded="true"
+                    aria-controls="basicdetails"
+                  >
+                    <img
+                      src="/Assets/Images/plusicon.png"
+                      alt="open-icon"
+                      class="u-icon-m plus-icon"
+                      style="display: none"
+                    />
+
+                    <img
+                      src="/Assets/Images/minusicon.png"
+                      alt="close-icon"
+                      class="u-icon-m minus-icon"
+                      style="display: block"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- COMPLETE BASIC DETAIL TAB -->
+              <div class="collapse show" id="basicdetails">
+                <div class="main-details-div">
+                  <div class="details-grid">
+                    <div class="detail-item detail-item__fullwidth">
+                      <span class="label">Full Name</span>
+                      <span class="value">Dua Fatima bint Haseeb</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Gender</span>
+                      <span class="value">Female</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Patient ID</span>
+                      <span class="value">#4324345</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Date Of Birth-G</span>
+                      <span class="value">01/09/1998</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Date Of Birth-H</span>
+                      <span class="value">12/2/1389</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Age</span>
+                      <span class="value">72 Years 3 Month(s)</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Nationality</span>
+                      <span class="value">Saudi Arabia</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Occupation</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Nick Name</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Account Name</span>
+                      <span class="value">Shah Mohammed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Patient Other Details -->
+            <div class="tab__section">
+              <!-- Patient Other Details -->
+              <div class="u-vh-align-center">
+                <span class="tab__section__tabname"
+                  >Patient Other Details</span
+                >
+                <div class="tab__section__openicon">
+                  <a
+                    class="toggle-collapse"
+                    data-bs-toggle="collapse"
+                    href="#PatientOtherDetails"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <img
+                      src="/Assets/Images/plusicon.png"
+                      alt="open-icon"
+                      class="u-icon-m plus-icon"
+                      style="display: block"
+                    />
+
+                    <img
+                      src="/Assets/Images/minusicon.png"
+                      alt="close-icon"
+                      class="u-icon-m minus-icon"
+                      style="display: none"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- COMPLETE BASIC DETAIL TAB -->
+              <div class="collapse" id="PatientOtherDetails">
+                <div class="main-details-div">
+                  <div class="details-grid">
+                    <div class="detail-item">
+                      <span class="label">Address</span>
+                      <span class="value">Sample demo name</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res Country</span>
+                      <span class="value">Saudi Arabia</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res City</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Mobile</span>
+                      <span class="value">9846341879</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Home Tele</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Office Tele</span>
+                      <span class="value">9846341865</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Email</span>
+                      <span class="value">N/A</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Other Details -->
+            <div class="tab__section">
+              <!-- Other Details -->
+              <div class="u-vh-align-center">
+                <span class="tab__section__tabname">Other Details</span>
+                <div class="tab__section__openicon">
+                  <a
+                    class="toggle-collapse"
+                    data-bs-toggle="collapse"
+                    href="#OtherDetails"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="OtherDetails"
+                  >
+                    <img
+                      src="/Assets/Images/plusicon.png"
+                      alt="open-icon"
+                      class="u-icon-m plus-icon"
+                      style="display: block"
+                    />
+
+                    <img
+                      src="/Assets/Images/minusicon.png"
+                      alt="close-icon"
+                      class="u-icon-m minus-icon"
+                      style="display: none"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- COMPLETE BASIC DETAIL TAB -->
+              <div class="collapse" id="OtherDetails">
+                <div class="main-details-div">
+                  <div class="details-grid">
+                    <div class="detail-item">
+                      <span class="label">Address</span>
+                      <span class="value">Sample demo name</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res Country</span>
+                      <span class="value">Saudi Arabia</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res City</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Mobile</span>
+                      <span class="value">9846341879</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Home Tele</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Office Tele</span>
+                      <span class="value">9846341865</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Email</span>
+                      <span class="value">N/A</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Additional Information -->
+            <div class="tab__section">
+              <!-- Additional Information -->
+              <div class="u-vh-align-center">
+                <span class="tab__section__tabname"
+                  >Additional Information</span
+                >
+                <div class="tab__section__openicon">
+                  <a
+                    class="toggle-collapse"
+                    data-bs-toggle="collapse"
+                    href="#AdditionalInformation"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <img
+                      src="/Assets/Images/plusicon.png"
+                      alt="open-icon"
+                      class="u-icon-m plus-icon"
+                      style="display: block"
+                    />
+
+                    <img
+                      src="/Assets/Images/minusicon.png"
+                      alt="close-icon"
+                      class="u-icon-m minus-icon"
+                      style="display: none"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- COMPLETE BASIC DETAIL TAB -->
+              <div class="collapse" id="AdditionalInformation">
+                <div class="main-details-div">
+                  <div class="details-grid">
+                    <div class="detail-item">
+                      <span class="label">Address</span>
+                      <span class="value">Sample demo name</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res Country</span>
+                      <span class="value">Saudi Arabia</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Res City</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Mobile</span>
+                      <span class="value">9846341879</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Home Tele</span>
+                      <span class="value">N/A</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Office Tele</span>
+                      <span class="value">9846341865</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="label">Email</span>
+                      <span class="value">N/A</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Insurance INFORMATION TAB  -->
+          <div
+            class="Insurance-infodiv"
+            id="Insurance-infodiv"
+            style="display: none"
+          >
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor">Insurance details</span>
+                  <span class="warning-text"
+                    >Patient Insurance Dates not Valid</span
+                  >
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="label">Membership Number:</span>
+                <span class="value">002156559979101</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Third-Party Administrator (TPA) :</span>
+                <span class="value">N/A</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance Company:</span>
+                <span class="value">Tawuniya</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance Start Date:</span>
+                <span class="value">19/11/2019</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance End Date:</span>
+                <span class="value">19/11/2024</span>
+              </div>
+
+              <div class="detail-item">
+                <span class="label">Policyholder:</span>
+                <span class="value">AARAB CONSTRUCTING EST</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance Class:</span>
+                <span class="value">VIP</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance Card:</span>
+                <span class="value">N/A</span>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Approval Settings</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <span class="label">Period:</span>
+                <span class="value">14 Day (s)</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Visits:</span>
+                <span class="value">10 Visits</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Approval Limit Per Episode:</span>
+                <span class="value">1000.000</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Patient Max Share Per Episode:</span>
+                <span class="value">100.000</span>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor"
+                    >Co Insurance Settings</span
+                  >
+                  <div class="left-side-align">
+                    <span class="label u-marginright-s"
+                      >Service Type Classification :</span
+                    >
+                    <div class="dropdown service-dropdown">
+                      <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Select
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                      <svg
+                        class="u-icon-m"
+                        data-bs-toggle="dropdown"
+                        data-bs-target="#dropdownMenu"
+                        aria-expanded="false"
+                      >
+                        <use
+                          xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Max - Patient Share</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Infusion</td>
+                      <td>30%</td>
+                      <td>70%</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>Infusion</td>
+                      <td>35%</td>
+                      <td>65%</td>
+                      <td>@fat</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--Non-Insurance INFORMATION TAB  -->
+          <div
+            class="Noninsurance-infodiv"
+            id="Noninsurance-infodiv"
+            style="display: none"
+          >
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor"
+                    >Non-Insurance Details</span
+                  >
+                  <span class="warning-text">No Non-Insurance </span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="label">Membership Number:</span>
+                <span class="value">002156559979101</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Insurance Company:</span>
+                <span class="value">Sample</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Non-Insurance Start Date:</span>
+                <span class="value">19/11/2024</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Non-Insurance End Date:</span>
+                <span class="value">19/11/2019</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Non-Insurance Card:</span>
+                <span class="value">N/A</span>
+              </div>
+
+              <div class="detail-item">
+                <span class="label">Approval Letter:</span>
+                <span class="value">N/A</span>
+              </div>
+
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Episode Settings</span>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <span class="label">Period:</span>
+                <span class="value">14 Day (s)</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Visits:</span>
+                <span class="value">10 Visits</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Maximum Coverage:</span>
+                <span class="value">N/A</span>
+              </div>
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tariff Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Consultation</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                      <td>Home Care</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                      <td>Outpatient Dental Lab Services</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                      <td>Outpatient Dental Services</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                      <td>Outpatient Laboratory Services</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                      <td>Outpatient Prescriptions</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--Dependencies INFORMATION TAB  -->
+          <div
+            class="Dependencies-infodiv"
+            id="Dependencies-infodiv"
+            style="display: none"
+          >
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor"
+                    >Dependencies</span
+                  >
+                </div>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="Dependencies__selectiondiv">
+                  <div class="Dependencies__dropdown">
+                    <div class="drop__name">Name</div>
+                    <div class="dropdown service-dropdown">
+                      <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Select
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                      <svg
+                        class="u-icon-m"
+                        data-bs-toggle="dropdown"
+                        data-bs-target="#dropdownMenu"
+                        aria-expanded="false"
+                      >
+                        <use
+                          xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="Dependencies__dropdown">
+                    <div class="drop__name">Relaction</div>
+                    <div class="dropdown service-dropdown">
+                      <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Select
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                      <svg
+                        class="u-icon-m"
+                        data-bs-toggle="dropdown"
+                        data-bs-target="#dropdownMenu"
+                        aria-expanded="false"
+                      >
+                        <use
+                          xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                        ></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="Dependencies__buttons">
+                  <div class="Dependencies__savebutton">
+                    <span class="dsavebtn-name">Save</span>
+                  </div>
+                  <div class="Dependencies__resetbutton">
+                    <span class="dresetbtn-name">Reset</span>
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Dependent Name</th>
+                      <th scope="col">Dependent FileNo</th>
+                      <th colspan="2">Relation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Arwa Saad . Al Jabreen</td>
+                      <td>2312</td>
+                      <td>Brother</td>
+                      <td class="table-deletecol">Delete</td>
+                    </tr>
+                    <tr>
+                      <td>Nafeh Abdel Hamid . Tanki</td>
+                      <td>2312</td>
+                      <td>Brother</td>
+                      <td class="table-deletecol">Delete</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+
+             <!--Attachment INFORMATION TAB  -->
+          <div
+          class="Attachment-infodiv"
+          id="Attachment-infodiv"
+          style="display: none"
+        >
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor"
+                    >Patient Attachment Read Only</span
+                  >
+                  <div class="attachment__uploadbtndiv">
+                    <div class="attachment__uploadbutton u-marginbottom-xl">
+                      <i class="bi bi-plus-square u-bootst-icon u-marginright-xs" data-bs-toggle="modal" data-bs-target="#uploadmodaldiv"></i>
+                      <span class="attupbtn-name">Upload</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Attachment name</th>
+                      <th scope="col">Attachments</th>
+                      <th scope="col">Date</th>
+                      <th colspan="2">Uploaded By</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Scan photo copy</td>
+                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td>04/08/2024 [05:58 PM]</td>
+                      <td>Dr Hadeel akkad</td>
+                      <td class="table-deletecol">Delete</td>
+                    </tr>
+                    <tr>
+                      <td>MRI Scan copy</td>
+                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td>04/08/2024 [05:58 PM]</td>
+                      <td>Dr Noha</td>
+                      <td class="table-deletecol">Delete</td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="uploadmodaldiv" tabindex="-1" aria-labelledby="uploadmodaldiv" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg ">
+                <div class="modal-content attachment__modaldiv">
+                  <div class="modal-header u-noborderbottom u-marginbottom-medium">
+                    <h1 class="modal-title fs-5 u-tabnamecolor U-tab-namesize" id="exampleModalLabel">Attachment</h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="attachment__modalbodydiv">
+                    <div class="imguploaddiv">
+                      <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
+                    </div>
+                    <div class="imguploaddiv">
+                      <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                      <div class="delete-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="attachment__input-buttondiv">
+                     
+                     
+                      <div class="attachment__inputmaindiv">
+                        <div class="input__div">
+                          <div class="input__name">New Attachment</div>
+                          <input type="text" placeholder="Add name" class="attachment__input">
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" id="file" name="file" class="custom-file-input">
+                          <label for="file" class="custom-file-label">Upload</label>
+                          <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  </div>
+                </div>
+            </div>
+          </div>
+        <!--Audittrail INFORMATION TAB  -->
+        <div
+          class="Audittrail-infodiv"
+          id="Audittrail-infodiv"
+          style="display: none"
+        >
+
+        <div class="details-grid">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline">
+              <span class="value u-tabnamecolor"
+                >Audit Trail</span
+              >
+            </div>
+          </div>
+
+          <div class="detail-item detail-item__fullwidth">
+            <div class="audittrail__image-div">
+             <img src="/Assets/Images/audittrailimg.png" alt="audit-trailimage">
+             <span class="responce-text">No History Found</span>
+            </div>
+          </div>
+        </div>
+      
+      <!-- Audittrail div closing tag -->
+        </div>
+
+        <!--Appoinment INFORMATION TAB  -->
+        <div
+          class="Appoinment-infodiv"
+          id="Appoinment-infodiv"
+          style="display: none"
+        >
+
+        <div class="details-grid">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline">
+              <span class="value u-tabnamecolor"
+                >Appointments Log</span
+              >
+              <div class="appoinment__uploadbtndiv">
+                <div class="appoinment__uploadbutton">
+                  <ion-icon name="print-outline" class="u-icon-m print-icon u-marginright-xs"></ion-icon>
+                  <span class="appupbtn-name">Print</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-item detail-item__fullwidth">
+            <div class="">
+              <div class="appoiment_categories">
+              <div class="appointment__name all">
+                <div class="cat_count">345</div>
+                <div class="cat_name">All</div>
+              </div>
+
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Scheduled</div>
+              </div>
+
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Confirmed</div>
+              </div>
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Arrived</div>
+              </div>
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Early</div>
+              </div>
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Late</div>
+              </div>
+              <div class="appointment__name other">
+                <div class="cat_count">30</div>
+                <div class="cat_name">Complete</div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-tabledive">
+            <table class="table custom-table custom-table-7-cols table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Appointment Date</th>
+                  <th scope="col">Arrival Status</th>
+                  <th scope="col">Doctor</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Created by</th>
+                  <th scope="col">Created Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+                <tr>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                  <td>Scheduled</td>
+                  <td>Dr Hadeel Akkad...</td>
+                  <td>Hematology</td>
+                  <td></td>
+                  <td>Nouf Abdulaziz...</td>
+                  <td>02/07/2024
+                    11:20 AM</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      
+       </div>
+        <!--Visits INFORMATION TAB  -->
+        <div
+          class="Visits-infodiv"
+          id="Visits-infodiv"
+          style="display: none"
+        >
+        <div class="details-grid">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline">
+              <span class="value u-tabnamecolor"
+                >Visits</span
+              >
+              <div class="visit__addbtndiv">
+                <div class="visit__addbutton">
+                  <i class="bi bi-plus-square u-bootst-icon u-marginright-xs"></i>
+                  <span class="u-tab-button-name">Add visit note</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-item detail-item__fullwidth">
+            <div class="visit__search-filter-maindiv">
+              <!-- SEARCH DIV -->
+              <div class="visit__searchmanidiv">
+                <div class="search__label">Doctor</div>
+                <div class="visit__input-wrapper">
+                  <input type="text" class="visit__searchdiv__input" placeholder="Select Doctor">
+                  <i class="bi bi-search"></i>
+                </div>
+              </div>
+             <!-- DATE DIV -->
+              <div class="visit__datemaindiv">
+                <div class="date__label">Doctor</div>
+                <div class="visit__date-wrapper">
+                  <input type="date" class="visit__fromdate-input" placeholder="From Date">
+                  <input type="date" class="visit__enddate-input" placeholder="To Date">
+                </div>
+              </div>
+              <!-- FILTER DIV -->
+              <div class="visit__filterbutton">
+                <i class="bi bi-funnel filter-button"></i>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="tab-tabledive">
+          <table class="table custom-table custom-table-5-cols__visittab table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Visit Time</th>
+                <th scope="col">Notes</th>
+                <th colspan="2">Logged By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>Dr Hadeel Akkad...</td>
+                <td>02/07/2024 11:20 AM</td>
+                <td>Sample demo text nama</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <!--Questionire INFORMATION TAB  -->
+        <div
+          class="Questionire-infodiv"
+          id="Questionire-infodiv"
+          style="display: none"
+        >
+      
+        <div class="details-grid ">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline u-marginbottom-xl">
+              <span class="value u-tabnamecolor"
+                >Patient Questionnaire</span
+              >
+              <div class="ques__addbtndiv">
+                <div class="ques__addbutton ">
+                  <i class="bi bi-plus-square u-bootst-icon u-marginright-xs" data-bs-toggle="modal" data-bs-target="#addquesmodaldiv"></i>
+                  <span class="u-tab-button-name">Add Questionnaire</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-grid details-grid--three-columns u-secondary-background u-border-radius1-2rem u-padding1rem">
+          <div class="detail-item">
+            <span class="label">Patient name :</span>
+            <span class="value">Dua Fatima bint Haseeb</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">File Number :</span>
+            <span class="value">#4324345</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Mobile Number</span>
+            <span class="value">0558455555</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Age :</span>
+            <span class="value">23</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Gender :</span>
+            <span class="value">Female</span>
+          </div>
+        </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="addquesmodaldiv" tabindex="-1" aria-labelledby="uploadmodaldiv" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg ">
+          <div class="modal-content ques__modaldiv">
+            <div class="modal-header u-noborderbottom u-marginbottom-medium">
+              <h1 class="modal-title fs-5 u-tabnamecolor U-tab-namesize" id="exampleModalLabel">Add Questionnaire </h1>
+            </div>
+            <div class="ques__modalbodydiv">
+              <!-- PATIENT DETAILS DIV -->
+              <div class="details-grid details-grid--five-columns u-marginbottom-xl">
+                <div class="detail-item">
+                  <span class="label">Patient name :</span>
+                  <span class="value">Dua Fatima bint Haseeb</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">File Number :</span>
+                  <span class="value">#4324345</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Mobile Number</span>
+                  <span class="value">0558455555</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Age :</span>
+                  <span class="value">23</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Gender :</span>
+                  <span class="value">Female</span>
+                </div>
+              </div>
+
+              <!-- ACTION TABS -->
+               <div class="ques__actiontab-div u-marginbottom-xl">
+                  <!-- Questionnaire Form TAB -->
+                  <div class="tab__section">
+                    <div class="u-vh-align-center">
+                      <span class="tab__section__tabname">Questionnaire Form</span>
+                      <div class="tab__section__openicon">
+                        <a
+                          class="toggle-collapse"
+                          data-bs-toggle="collapse"
+                          href="#Questionnaireform"
+                          role="button"
+                          aria-expanded="true"
+                          aria-controls="Questionnaireform"
+                        >
+                          <img
+                            src="/Assets/Images/plusicon.png"
+                            alt="open-icon"
+                            class="u-icon-m plus-icon"
+                            style="display: none"
+                          />
+      
+                          <img
+                            src="/Assets/Images/minusicon.png"
+                            alt="close-icon"
+                            class="u-icon-m minus-icon"
+                            style="display: block"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <!-- COMPLETE Questionnaire Form DIV -->
+                    <div class="collapse show" id="Questionnaireform">
+                      <div class="main-details-div">
+                        <div class="details-grid">
+                          <div class="detail-item detail-item__fullwidth">
+                            <div class="tab-headline">
+                              <div class="left-side-align">
+                                <span class="label u-marginright-s"
+                                  >Questionnaire Form :</span
+                                >
+                                <div class="dropdown service-dropdown">
+                                  <button
+                                    class="btn"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                  >
+                                    Select
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li>
+                                      <a class="dropdown-item" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                      >
+                                    </li>
+                                  </ul>
+                                  <svg
+                                    class="u-icon-m"
+                                    data-bs-toggle="dropdown"
+                                    data-bs-target="#dropdownMenu"
+                                    aria-expanded="false"
+                                  >
+                                    <use
+                                      xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                                    ></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   <!-- ATTACHMENT TAB -->
+                  <div class="tab__section">
+                    <div class="u-vh-align-center">
+                      <span class="tab__section__tabname">Attachments</span>
+                      <div class="tab__section__openicon">
+                        <a
+                          class="toggle-collapse"
+                          data-bs-toggle="collapse"
+                          href="#Attachementtab"
+                          role="button"
+                          aria-expanded="true"
+                          aria-controls="Questionnaireform"
+                        >
+                          <img
+                            src="/Assets/Images/plusicon.png"
+                            alt="open-icon"
+                            class="u-icon-m plus-icon"
+                            style="display: none"
+                          />
+      
+                          <img
+                            src="/Assets/Images/minusicon.png"
+                            alt="close-icon"
+                            class="u-icon-m minus-icon"
+                            style="display: block"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <!-- COMPLETE ATTACHMENT DIV -->
+                    <div class="collapse show" id="Attachementtab">
+                      <div class="main-details-div">
+                        <div class="attachment__modalbodydiv">
+                          <div class="imguploaddiv">
+                            <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
+                          </div>
+                          <div class="imguploaddiv">
+                            <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                            <div class="delete-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="attachment__input-buttondiv">
+                           
+                           
+                            <div class="attachment__inputmaindiv">
+                              <div class="input__div">
+                                <div class="input__name">New Attachment</div>
+                                <input type="text" placeholder="Add name" class="attachment__input">
+                              </div>
+                              <div class="custom-file">
+                                <input type="file" id="file" name="file" class="custom-file-input">
+                                <label for="file" class="custom-file-label">Upload</label>
+                                <!-- <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Cancel</button> -->
+                              </div>
+      
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   <!-- OTP TAB -->
+                  <div class="tab__section">
+                    <div class="u-vh-align-center">
+                      <span class="tab__section__tabname">OTP</span>
+                      <div class="tab__section__openicon">
+                        <a
+                          class="toggle-collapse"
+                          data-bs-toggle="collapse"
+                          href="#Otptab"
+                          role="button"
+                          aria-expanded="true"
+                          aria-controls="Questionnaireform"
+                        >
+                          <img
+                            src="/Assets/Images/plusicon.png"
+                            alt="open-icon"
+                            class="u-icon-m plus-icon"
+                            style="display: none"
+                          />
+      
+                          <img
+                            src="/Assets/Images/minusicon.png"
+                            alt="close-icon"
+                            class="u-icon-m minus-icon"
+                            style="display: block"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <!-- COMPLETE OTP DIV -->
+                    <div class="collapse show" id="Otptab">
+                      <div class="main-details-div">
+                        <div class="details-grid">
+                          <div class="detail-item detail-item__fullwidth">
+                            <div class="tab-headline">
+                              <div class="left-side-align">
+                                <button type="button" class="btn btn-primary">Send OTP</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SIGNATURE TAB -->
+                  <div class="tab__section">
+                    <div class="u-vh-align-center">
+                      <span class="tab__section__tabname">Signature</span>
+                      <div class="tab__section__openicon">
+                        <a
+                          class="toggle-collapse"
+                          data-bs-toggle="collapse"
+                          href="#Signaturetab"
+                          role="button"
+                          aria-expanded="true"
+                          aria-controls="Questionnaireform"
+                        >
+                          <img
+                            src="/Assets/Images/plusicon.png"
+                            alt="open-icon"
+                            class="u-icon-m plus-icon"
+                            style="display: none"
+                          />
+
+                          <img
+                            src="/Assets/Images/minusicon.png"
+                            alt="close-icon"
+                            class="u-icon-m minus-icon"
+                            style="display: block"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <!-- COMPLETE OTP DIV -->
+                    <div class="collapse show" id="Signaturetab">
+                      <div class="main-details-div">
+                        <div class="signature-container">
+                          <canvas id="signatureCanvas" class="signature-canvas"></canvas>
+                          <button id="clearBtn" class="clear-btn">Clear</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               </div>
+             
+               <div class="ques__modalfooter">
+                <button type="button" class="modal-uploadbtn">Upload</button>
+                <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Cancel</button>
+              </div>
+
+            </div>
+            </div>
+          </div>
+      </div>
+
+
+      <!--Questionire closing tag  -->
+        </div>
+        <!--Registration INFORMATION TAB  -->
+        <div
+          class="Registration-infodiv"
+          id="Registration-infodiv"
+          style="display: none"
+        >
+      
+        <div class="details-grid ">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline u-marginbottom-xl">
+              <span class="value u-tabnamecolor"
+                >Registration From</span
+              >
+              <div class="resg__addbtndiv">
+                <div class="resg__addbutton ">
+                  <i class="bi bi-pencil-square u-bootst-icon u-marginright-xs" data-bs-toggle="modal" data-bs-target="#editregistrationmodal"></i>
+                  <span class="u-tab-button-name">Edit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PATIENT  INFORMATION TAB -->
+
+        <div class="details-grid details-grid--three-columns u-secondary-background u-border-radius1-2rem u-padding1rem u-marginbottom-samll">
+          <div class="detail-item">
+            <span class="label">Patient name :</span>
+            <span class="value">Dua Fatima bint Haseeb</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">File Number :</span>
+            <span class="value">#4324345</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Mobile Number</span>
+            <span class="value">0558455555</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Age :</span>
+            <span class="value">23</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Gender :</span>
+            <span class="value">Female</span>
+          </div>
+        </div>
+      
+        <div class="details-grid details-grid--three-columns u-secondary-background u-border-radius1-2rem u-padding1rem u-marginbottom-samll">
+          <div class="detail-item">
+            <span class="label">Acknowledge By :</span>
+            <span class="value">Form</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Acknowledge Status :</span>
+            <span class="value">Complete</span>
+          </div>
+          <div class="detail-item">
+            <span class="label"></span>
+            <span class="value"></span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Attachment :</span>
+            <div class="value Regis__attachment">
+              <img src="/Assets/Images/attachmentimg.png" alt="attchement-image sample" class="u-icon-size-l u-marginright-xs">
+              Image Name.Png</div>
+          </div>
+        </div>
+      <!-- REGIS POINTS -->
+        <div class="detail-item detail-item__fullwidth u-secondary-background u-border-radius1-2rem u-marginbottom-samll ">
+          <div class="info-box">
+            <div class="info-item">Maintaining treatment appointments is very important, and not attending on the appointed day will affect the course of treatment.</div>
+            <div class="info-item">In the event that I am unable to attend on time, the center must be informed at least one day in advance, due to the importance of this.</div>
+            <div class="info-item">All x-rays, information and the like are the property of the center.</div>
+            <div class="info-item">Whenever you have any inquiries or information regarding treatment, you can review the inquiries at the center.</div>
+            <div class="info-item">I have to follow all the directions and instructions of the attending physician, and failure to follow them is considered negligence on my part and I bear the consequences thereof. damages.</div>
+           </div>
+        </div>
+      
+        <!-- Modal -->
+      <div class="modal fade" id="editregistrationmodal" tabindex="-1" aria-labelledby="editregistrationmodal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg ">
+          <div class="modal-content ques__modaldiv">
+            <div class="tab-headline u-marginbottom-xl">
+              <span class=" U-tab-namesize u-tabnamecolor"
+                >Registration Acknowledgemen</span
+              >
+              <div class="resg__addbtndiv ">
+                <div class="resg__addbutton">
+                  <i class="bi bi-download u-bootst-icon u-marginright-xs"></i>
+                  <span class="u-tab-button-name">Download form</span>
+                </div>
+              </div>
+            </div>
+            <div class="resg__modalbodydiv">
+              <!-- PATIENT DETAILS DIV -->
+              <div class="details-grid details-grid--five-columns u-marginbottom-xl">
+                <div class="detail-item">
+                  <span class="label">Patient name :</span>
+                  <span class="value">Dua Fatima bint Haseeb</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">File Number :</span>
+                  <span class="value">#4324345</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Mobile Number</span>
+                  <span class="value">0558455555</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Age :</span>
+                  <span class="value">23</span>
+                </div>
+                <div class="detail-item u-alignselfitem">
+                  <span class="label">Gender :</span>
+                  <span class="value">Female</span>
+                </div>
+              </div>
+
+              <!-- ACTION TABS -->
+               <div class="resg__attachtab-div u-marginbottom-xl">
+                   <!-- ATTACHMENT TAB -->
+                   <div class="main-details-div">
+                    <div class="attachment__modalbodydiv">
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
+                      </div>
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                        <div class="delete-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+
+               <!-- REGIS POINTS -->
+              <div class="detail-item detail-item__fullwidth u-secondary-background u-border-radius1-2rem u-marginbottom-samll ">
+                <div class="info-box">
+                  <div class="info-item">Maintaining treatment appointments is very important, and not attending on the appointed day will affect the course of treatment.</div>
+                  <div class="info-item">In the event that I am unable to attend on time, the center must be informed at least one day in advance, due to the importance of this.</div>
+                  <div class="info-item">All x-rays, information and the like are the property of the center.</div>
+                  <div class="info-item">Whenever you have any inquiries or information regarding treatment, you can review the inquiries at the center.</div>
+                  <div class="info-item">I have to follow all the directions and instructions of the attending physician, and failure to follow them is considered negligence on my part and I bear the consequences thereof. damages.</div>
+                </div>
+              </div>
+
+               <div class="ques__modalfooter">
+                <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Clear</button>
+              </div>
+
+            </div>
+            </div>
+          </div>
+      </div>
+      
+      
+        </div>
+        <!--Locations INFORMATION TAB  -->
+        <div
+          class="Locations-infodiv"
+          id="Locations-infodiv"
+          style="display: none"
+        >
+        <div class="details-grid ">
+          <div class="detail-item detail-item__fullwidth">
+            <div class="tab-headline u-marginbottom-xl">
+              <span class="value u-tabnamecolor"
+                >Location</span
+              >
+              <div class="location__addbtndiv">
+                <div class="location__addbutton ">
+                  <i class="bi bi-plus-square u-bootst-icon u-marginright-xs" data-bs-toggle="modal" data-bs-target="#addlocationnmodal"></i>
+                  <span class="u-tab-button-name">Add Location</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- LOCATION TABLE -->
+        <div class="tab-tabledive">
+          <table class="table custom-table custom-table-5-cols__locationtab table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Is Default
+                  Location</th>
+                  <th scope="col">Is Current
+                    Location</th>
+                <th colspan="2">Created By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>31.999144200203315</td>
+                <td>35.87834279098511</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>31.999144200203315</td>
+                <td>35.87834279098511</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>31.999144200203315</td>
+                <td>35.87834279098511</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>31.999144200203315</td>
+                <td>35.87834279098511</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+              <tr>
+                <td>31.999144200203315</td>
+                <td>35.87834279098511</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Rafed Masree 14/08/2024 05:03 PM</td>
+                <td>
+                  <div class="visit__edbtn-wrapper">
+                    <a href="#" class="visit__editbtn">Edit</a>
+                    <a href="#" class="visit__deletebtn">Delete</a>
+                  </div>
+                </td>
+              </tr> 
+           
+            </tbody>
+          </table>
+        </div>
+
+           <!-- Modal -->
+      <div class="modal fade" id="addlocationnmodal" tabindex="-1" aria-labelledby="editregistrationmodal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg ">
+          <div class="modal-content ques__modaldiv">
+            <div class="tab-headline u-marginbottom-xl">
+              <span class=" U-tab-namesize u-tabnamecolor"
+                >Add Location</span
+              >
+            </div>
+            <div class="location__modalbodydiv">
+              
+              <div class="detail-item detail-item__fullwidth u-marginbottom-xl">
+                <div class="location__search-filter-maindiv">
+
+                  <!-- LOCATION DIV -->
+                  <div class="location__datemaindiv">
+                    <div class="date__label">Location</div>
+                    <div class="location__date-wrapper">
+                      <input type="text" class="location__latitude-input" placeholder="Latitude">
+                      <input type="text" class="location__longitude-input" placeholder="Longitude">
+                    </div>
+                  </div>
+                  <!-- SEARCH DIV -->
+                  <div class="location__searchmanidiv">
+                    <div class="search__label">Address</div>
+                    <div class="location__input-wrapper">
+                      <input type="text" class="location__searchdiv__input" placeholder="Address">
+                    </div>
+                  </div>
+                 
+                  <!-- FILTER DIV -->
+                  <div class="location__checkbox">
+                    <div class="u-align-center">
+                        <input type="checkbox" name="is Default" id="" class="location__checkpoint u-marginright-s">
+                        <div class="cheakbox-name">Is Default Location </div>
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+
+              <div class="map-container u-marginbottom-xl" id="map">
+                <!-- <iframe
+  id="inlineFrameExample"
+  title="Inline Frame Example"
+  width="300"
+  height="200"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+                </iframe> -->
+              </div>
+
+              
+
+               <div class="location__modalfooter">
+                <button type="button" class="modal-savebtn">Save</button>
+                <button type="button" class="btn modal-cancelbtn" data-bs-dismiss="modal">Cancel</button>
+              </div>
+
+            </div>
+            </div>
+          </div>
+      </div>
+      
+      
+        </div>
+        </div>
+        </div>
+      </div>
+    </main>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<!-- ionicons SCRIPT -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- BOOTSTRAPH SCRIPT -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JQUERY SCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- CUSTOME SEARCH SCRIPT -->
+    <script src="../javascript/search.js"></script>
+    <script src="../javascript/patientdashbord.js"></script>
+    <script src="../javascript/tabsfuntion.js"></script>
+    <script src="../javascript/calenderdate.js"></script>
+    <script src="../javascript/signature.js"></script>
+    <script src="../javascript/locationmaooing.js"></script>
+    
+    
+  </body>
+</html>

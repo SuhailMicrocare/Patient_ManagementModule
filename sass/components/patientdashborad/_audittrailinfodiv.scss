@@ -1,0 +1,16 @@
+.audittrail__image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: auto;
+  flex-direction: column;
+  .responce-text {
+    font-family: Nunito;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 35.46px;
+    color: $color-black;
+    margin-top: 2.3rem;
+  }
+}
