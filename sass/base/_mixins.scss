@@ -48,11 +48,39 @@
   transition: all 0.3s ease;
 }
 
+// MEDIA QUERY MANAGER
+/*
+0 - 400px:      Phone
+400 - 800:      mini-tab
+800 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1400 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- mini-tab
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
 // Responsive Mixin
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {
-      //600px (600 / 16 = 34.5)
+    @media only screen and (max-width: 25em) {
+      //400px (400 / 16 = 25)
+      @content;
+    }
+  }
+
+  @if $breakpoint == mini-tab {
+    @media only screen and (max-width: 50em) {
+      //800px (800 / 16 = 50)
       @content;
     }
   }
@@ -70,10 +98,10 @@
     }
   }
 
-  @if $breakpoint == big-desktop {
-    @media only screen and (max-width: 87.5em) {
-      //1400px
-      @content;
-    }
-  }
+  // @if $breakpoint == big-desktop {
+  //   @media only screen and (max-width: 87.5em) {
+  //     //1400px
+  //     @content;
+  //   }
+  // }
 }

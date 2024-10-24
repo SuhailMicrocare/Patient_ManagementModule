@@ -18,7 +18,29 @@ ul {
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
+
+  @include respond(tab-land) {
+    //1200px
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56%
+  }
+
+  @include respond(tab-port) {
+    //900px
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(mini-tab) {
+    //800px
+    font-size: 40%; // 1rem = 7px, 7/16 = 40%
+  }
+
+  @include respond(phone) {
+    //width < 400? (900px br point)
+    font-size: 23%; // 1rem = 3.8px, 3.8/16= 23%
+  }
+
+  height: 100%; // Ensure the html element fills the viewport
 }
 
 body {
@@ -32,20 +54,9 @@ body {
     #adf4ff 35.02%,
     #bac9fc 100%
   );
-  background-size: cover; /* Cover the viewport */
-  background-repeat: no-repeat; /* Prevent repetition */
-  max-height: 100vh; /* Ensure body is at least the height of the viewport */
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  // display: flex; /* Flexbox ensures it stretches to fill height */
-  // flex-direction: column; /* Flex column layout (if needed for content) */
-}
-
-html,
-body {
-  height: 100%;
-  overflow: hidden; /* Prevent scroll on the body */
-}
-
-html {
-  font-size: 62.5%; // 1rem = 10px 10px/16px =62.5%
+  max-height: 100vh; // Ensures the body stays within the viewport height
+  height: 100%; // Match html height
 }

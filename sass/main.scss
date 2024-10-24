@@ -1,18 +1,19 @@
 // Abstracts============================//
 @import "abstracts/variables";
 //Base============================//
-@import "base/base";
+@import "base/mixins";
 @import "base/typography";
 @import "base/utilities";
-@import "base/mixins";
+@import "base/base";
+
 //Componenets============================//
 
 //Componenets Home page ============================//
 @import "components/homepage/patient-add";
 @import "components/homepage/search";
-@import "components/homepage/search-sectionitem";
 
 //Componenets Patient Dashboard============================//
+@import "components/patientdashborad/search-sectionitem";
 @import "components/patientdashborad/patient-navbarsection";
 @import "components/patientdashborad/personalinfodiv";
 @import "components/patientdashborad/insuranceinfodiv";
