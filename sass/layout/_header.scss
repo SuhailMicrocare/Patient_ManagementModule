@@ -1,13 +1,10 @@
-.head {
+.head,
+.head__p-dashboard {
   display: flex;
   padding: 1.5rem 1.5rem;
   align-items: center;
   background-color: $color-white;
   width: 100%;
-
-  @include respond(phone) {
-    display: none;
-  }
 
   @include respond(phone) {
     min-height: 10rem;
@@ -151,6 +148,12 @@
 .dropdown-menu li a {
   text-decoration: none;
   color: #292d32;
+}
+
+.head__p-dashboard {
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 // Mobile header navbar

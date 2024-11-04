@@ -2384,7 +2384,8 @@ body {
   vertical-align: middle;
 }
 
-.head {
+.head,
+.head__p-dashboard {
   display: flex;
   padding: 1.5rem 1.5rem;
   align-items: center;
@@ -2392,56 +2393,62 @@ body {
   width: 100%;
 }
 @media only screen and (max-width: 27.5em) {
-  .head {
-    display: none;
-  }
-}
-@media only screen and (max-width: 27.5em) {
-  .head {
+  .head,
+  .head__p-dashboard {
     min-height: 10rem;
   }
 }
-.head__navbar {
+.head__navbar,
+.head__p-dashboard__navbar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.head__navbar__icon {
+.head__navbar__icon,
+.head__p-dashboard__navbar__icon {
   width: 2rem;
   height: 2rem;
 }
-.head__logodiv {
+.head__logodiv,
+.head__p-dashboard__logodiv {
   padding-right: 1.8rem;
   padding-left: 1.8rem;
 }
-.head__logodiv-com-logo {
+.head__logodiv-com-logo,
+.head__p-dashboard__logodiv-com-logo {
   width: 4rem;
   height: 4rem;
 }
-.head__language-dropdowndiv {
+.head__language-dropdowndiv,
+.head__p-dashboard__language-dropdowndiv {
   padding-left: 2.9rem;
 }
 @media only screen and (max-width: 27.5em) {
-  .head__language-dropdowndiv {
+  .head__language-dropdowndiv,
+  .head__p-dashboard__language-dropdowndiv {
     display: none;
   }
 }
-.head__all-navigationdiv {
+.head__all-navigationdiv,
+.head__p-dashboard__all-navigationdiv {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: flex-end;
 }
-.head__ticketing-dropdowndiv {
+.head__ticketing-dropdowndiv,
+.head__p-dashboard__ticketing-dropdowndiv {
   display: flex;
   justify-content: right;
 }
 @media only screen and (max-width: 27.5em) {
-  .head__ticketing-dropdowndiv {
+  .head__ticketing-dropdowndiv,
+  .head__p-dashboard__ticketing-dropdowndiv {
     display: none;
   }
 }
-.head__notification-dropdowndiv {
+.head__notification-dropdowndiv,
+.head__p-dashboard__notification-dropdowndiv {
   display: flex;
   align-items: center;
   justify-content: right;
@@ -2449,44 +2456,52 @@ body {
   margin-right: 3rem;
   margin-left: 5rem;
 }
-.head__global-logo {
+.head__global-logo,
+.head__p-dashboard__global-logo {
   width: 2rem;
   height: 2rem;
   margin-right: 0.7rem;
 }
-.head__profile-headerdiv {
+.head__profile-headerdiv,
+.head__p-dashboard__profile-headerdiv {
   display: flex;
   align-items: center;
   background-color: #fff;
   justify-content: right;
 }
 @media only screen and (max-width: 27.5em) {
-  .head__profile-headerdiv .profile-tagbtn {
+  .head__profile-headerdiv .profile-tagbtn,
+  .head__p-dashboard__profile-headerdiv .profile-tagbtn {
     display: none;
   }
 }
-.head__profile-image {
+.head__profile-image,
+.head__p-dashboard__profile-image {
   width: 4rem;
   height: 4rem;
   border-radius: 1.5rem;
   margin-right: 1rem;
 }
-.head__profile-info {
+.head__profile-info,
+.head__p-dashboard__profile-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 @media only screen and (max-width: 27.5em) {
-  .head__profile-info {
+  .head__profile-info,
+  .head__p-dashboard__profile-info {
     display: none;
   }
 }
-.head__profile-name {
+.head__profile-name,
+.head__p-dashboard__profile-name {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.1;
 }
-.head__profile-activity {
+.head__profile-activity,
+.head__p-dashboard__profile-activity {
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -2530,6 +2545,12 @@ body {
 .dropdown-menu li a {
   text-decoration: none;
   color: #292d32;
+}
+
+@media only screen and (max-width: 27.5em) {
+  .head__p-dashboard {
+    display: none;
+  }
 }
 
 .mobile__header {
