@@ -4,153 +4,218 @@
   align-items: center;
   justify-content: flex-start;
   margin-top: 7.3rem;
-
   width: 100%;
+  // flex-shrink: 0; // Prevents section from shrinking
+
+  @include respond(phone) {
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
 
   &__headingdiv {
     display: flex;
     margin-bottom: 2.7rem;
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
   }
 
-  &__searchbardiv {
-    display: flex;
-    width: 100%;
-    max-width: 67rem;
-    max-height: 6rem;
+  // NEW SEARCH LIST
+  .searchbar__seaction {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
     background-color: $color-white;
     border-radius: 3rem;
     padding: 1rem 1rem 1rem 2.5rem;
     align-items: center;
-    z-index: 1000;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-  }
+    width: 45%;
+    position: relative; // Add this to establish positioning context
 
-  &__icon {
-    background-color: $plp-button-b-color;
-    border-radius: 100%;
-    padding: 1.2rem;
-  }
-
-  &__drop-input {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  &__dropbutton {
-    font-size: 1.5rem;
-    font-family: inherit;
-    color: inherit;
-    background-color: rgba($color-white, 0.5);
-    border: none;
-
-    &:focus {
-      outline: none;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+      width: 100% !important;
+      border-radius: 1.2rem;
+      min-height: 11rem;
+      padding: 2rem;
     }
 
-    &:focus:invalid {
-      // border-bottom: 3px solid $color-secondary-dark;
+    @include respond(ipad-pro) {
+      width: 55%;
     }
 
-    &::-webkit-input-placeholder {
-      color: $color-grey-dark-2;
+    .search__categorydiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      @include respond(phone) {
+        margin-bottom: 1.8rem;
+        .p-btn-name {
+          font-size: 1.8rem;
+        }
+        .p-icon-size {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .dropdown {
+        position: unset;
+
+        .dropdown-menu {
+          position: absolute;
+          width: 100%;
+          top: calc(100% + 0.4rem) !important; // Position it below with 5px gap
+          left: 0;
+          right: 0;
+          transform: none !important;
+          margin-top: 0; // Remove default margin
+          // z-index: 1000; // Ensure it appears above other content
+        }
+        // Handle Bootstrap's dynamic positioning
+        .dropdown-menu[data-bs-popper] {
+          left: 0;
+          right: 0;
+          transform: none !important;
+          top: calc(100% + 0.4rem);
+          margin-top: 0;
+        }
+      }
+    }
+
+    .search__searchbar-icondiv {
+      display: grid;
+      grid-template-columns: 12fr 1fr;
+      align-items: center;
+
+      @include respond(phone) {
+        border-top: dashed 1px $color-grey-dark-2;
+      }
+
+      .search__input-div {
+        position: relative;
+        border-left: 0.1rem solid black;
+        @include respond(phone) {
+          margin-top: 2rem;
+        }
+
+        .search__input {
+          width: 100%; /* Adjust the width as needed, e.g., 100%, 50rem, etc. */
+          font-size: 1.5rem;
+          font-family: inherit;
+          color: inherit;
+          padding: 0.375rem 0.75rem;
+          background-color: rgba($color-white, 0.5);
+          border: none;
+          display: block;
+
+          &:focus {
+            outline: none;
+            border: none;
+          }
+
+          &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+
+            @include respond(phone) {
+              color: $color-black;
+            }
+          }
+        }
+      }
+    }
+
+    // Updated search results list styling
+    .search__result-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: absolute; // Changed to absolute
+      top: 100%; // Position relative to searchbar__seaction
+      left: 0; // Align with left edge of searchbar__seaction
+      right: 0; // Align with right edge of searchbar__seaction
+      background-color: #f6f7f7;
+      width: 100%; // Full width of parent
+      max-height: auto;
+      z-index: 100;
+      border-bottom-left-radius: 1rem !important;
+      border-bottom-right-radius: 1rem !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba($color-black, 0.1); // Optional: add shadow for better separation
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1.2rem;
+        background-color: $color-white;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+
+      li {
+        font-size: 1.6rem;
+        padding: 1.4rem 2.5rem; // Added horizontal padding to match parent container
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+        }
+
+        &:first-child {
+          margin-top: 1.4rem;
+        }
+
+        &:hover {
+          background-color: #f0f0f0;
+          cursor: pointer;
+        }
+
+        .ar {
+          direction: rtl;
+        }
+      }
+    }
+
+    .search__icon {
+      width: 3.6rem;
+      height: 3.6rem;
+      background-color: $plp-button-b-color;
+      border-radius: 50%;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond(phone) {
+        margin-top: 2rem;
+      }
     }
   }
-  &__dropdown_section {
-  }
-
-  &__input_div {
-    flex: 1 0 60%;
-    position: relative;
-    border-left: 0.1rem solid black;
-  }
-
-  &__input {
-    font-size: 1.5rem;
-    font-family: inherit;
-    color: inherit;
-    padding: 0.375rem 0.75rem;
-
-    background-color: rgba($color-white, 0.5);
-    border: none;
-
-    width: 100%;
-    display: block;
-    // transition: all 0.3s;
-
-    &:focus {
-      outline: none;
-      border: none;
-    }
-
-    &:focus:invalid {
-      // border-bottom: 3px solid $color-secondary-dark;
-    }
-
-    &::-webkit-input-placeholder {
-      color: $color-grey-dark-2;
-    }
-  }
-}
-
-.drop-icon {
-  display: inline-block;
-  padding: 0.8rem 0.8rem 0.8rem 3rem;
-}
-
-.search__result-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f6f7f7;
-  width: 100%;
-  max-height: auto;
-  z-index: 100;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 1rem !important;
-  border-bottom-right-radius: 1rem !important;
-  transform: translateY(-2px);
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1.2rem;
-    background-color: $color-white;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-  }
-}
-
-.search__result-list li {
-  font-size: 1.6rem;
-  padding: 1.4rem;
-}
-
-.search__result-list li:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
-
-.search__result-list li:first-child {
-  margin-top: 1.4rem; // Apply margin to the first li
-}
-
-.search__result-list li:hover {
-  background-color: #f0f0f0;
-}
-
-.search__result-list li .ar {
-  direction: rtl;
 }
 
 .image__doctorimg {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  // transform: translateY(-7.3rem);
+  align-items: flex-end;
+  margin-top: auto;
+  img {
+    object-fit: contain;
+    max-width: 100%; // Ensures the image scales with its container width
+    height: auto; // Maintains the aspect ratio of the image
+
+    @include respond(phone) {
+      max-height: 40vh; // Smaller height for mobile devices
+    }
+  }
 }

@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); // Default to 2 columns
   row-gap: 2rem;
+  column-gap: 2rem;
 
   &--three-columns {
     // Modifier class for 3 columns

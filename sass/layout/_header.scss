@@ -3,6 +3,15 @@
   padding: 1.5rem 1.5rem;
   align-items: center;
   background-color: $color-white;
+  width: 100%;
+
+  @include respond(phone) {
+    display: none;
+  }
+
+  @include respond(phone) {
+    min-height: 10rem;
+  }
 
   &__navbar {
     display: flex;
@@ -27,6 +36,9 @@
 
   &__language-dropdowndiv {
     padding-left: 2.9rem;
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__all-navigationdiv {
@@ -39,6 +51,9 @@
   &__ticketing-dropdowndiv {
     display: flex;
     justify-content: right;
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__notification-dropdowndiv {
@@ -61,6 +76,11 @@
     align-items: center;
     background-color: #fff;
     justify-content: right;
+    .profile-tagbtn {
+      @include respond(phone) {
+        display: none;
+      }
+    }
   }
 
   &__profile-image {
@@ -74,6 +94,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__profile-name {
@@ -127,6 +151,38 @@
 .dropdown-menu li a {
   text-decoration: none;
   color: #292d32;
+}
+
+// Mobile header navbar
+
+.mobile__header {
+  display: none;
+  @include respond(phone) {
+    display: block;
+    display: flex;
+    padding: 1.5rem 1.5rem;
+    background-color: $color-white;
+    width: 100%;
+    min-height: 10rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    .mobile__backbtnwrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .back-btn-icon {
+        font-size: 2.5rem;
+        color: $color-black;
+        cursor: pointer;
+      }
+    }
+
+    .mobile__adsearchwrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 // .dropdown:hover .dropdown-menu {

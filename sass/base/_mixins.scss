@@ -4,7 +4,7 @@
   justify-content: center;
   background-color: $tabbuttoncolor;
   border-radius: 0.8rem;
-  padding: 0.9rem 1rem;
+  padding: 0.8rem 0.8rem;
   text-align: center;
 
   // Button text style
@@ -23,7 +23,7 @@
   justify-content: center;
   background-color: $color-white;
   border-radius: 0.8rem;
-  padding: 0.9rem 1rem;
+  padding: 0.8rem 0.8rem;
   text-align: center;
   border: 1px solid #c1dae3;
 
@@ -72,8 +72,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 // Responsive Mixin
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media only screen and (max-width: 25em) {
-      //400px (400 / 16 = 25)
+    @media only screen and (max-width: 27.5em) {
+      //440px (440 / 16 = 27.5)
       @content;
     }
   }
@@ -91,17 +91,24 @@ ORDER: Base + typography > general layout + grid > page layout > components
       @content;
     }
   }
+
+  @if $breakpoint == ipad-pro {
+    @media only screen and (max-width: 64em) {
+      //1024px
+      @content;
+    }
+  }
   @if $breakpoint == tab-land {
     @media only screen and (max-width: 75em) {
       //1200px
       @content;
     }
   }
-
-  // @if $breakpoint == big-desktop {
-  //   @media only screen and (max-width: 87.5em) {
-  //     //1400px
-  //     @content;
-  //   }
-  // }
 }
+
+// @if $breakpoint == big-desktop {
+//   @media only screen and (max-width: 87.5em) {
+//     //1400px
+//     @content;
+//   }
+// }

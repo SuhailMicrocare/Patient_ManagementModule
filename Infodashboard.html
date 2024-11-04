@@ -168,62 +168,68 @@
           </div>
         </div>
       </nav>
+      <nav class="mobile__header">
+        <div class="mobile__backbtnwrapper">
+          <i class="bi bi-arrow-left-square back-btn-icon"></i>
+        </div>
+        <div class="mobile__adsearchwrapper">
+          <a href="#" class="u-text-size-m">Advance search</a>
+        </div>
+      </nav>
     </header>
     <main class="maindashboard__container">
       <!-- SEARCHBOX- SECTION -->
       <div class="search__section">
-        <div class="searchbox__dropsearchdiv">
-          <div class="searchbox__dropsection">
-            <div class="searchbox__dropdown_section dropdown-center">
-              <button class="search__dropbutton" type="button">
-                <span class="u-text-size-m"> File number/Patient name </span>
-              </button>
-              <ul
-                class="dropdown-menu dropdown-menu-lg-end"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">File number/Patient name</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-              </ul>
-
-              <svg
-                class="u-icon-size-l dropdown-toggle"
-                data-bs-toggle="dropdown"
-                data-bs-target="#dropdownMenu"
-                aria-expanded="false"
-              >
-                <use
-                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
-                ></use>
-              </svg>
+        <div class="search-box">
+          <div class="search-box__dropdown">
+            <div class="search-box__dropdown-wrapper">
+                <!-- Left side text with dropdown menu -->
+                <div class="dropdown">
+                  <span class="u-text-size-m">File number/Patient name</span>
+  
+                  <!-- Dropdown menu -->
+                  <ul class="dropdown-menu centered-dropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- SVG icon triggering the dropdown on the right -->
+                <svg
+                  class="u-icon-size-l dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <use
+                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                  ></use>
+                </svg>
+              
             </div>
           </div>
           
-          <div class="searchbox__input_div">
-            <div>
+          <div class="search-box__input-container">
+            <div class="search-box__input-wrapper">
               <input
-                type="text"
-                class="search__input"
-                aria-label="Text input with dropdown button"
-                placeholder="Search patient....."
-                id="patientSearch"
-              />
+              type="text"
+              class="search__input"
+              aria-label="Text input with dropdown button"
+              placeholder="Search patient....."
+              id="patientSearch"
+            />
+            <div class="search__result-list-PD" id="result-list"></div>
             </div>
 
-            <div class="search__icon">
-              <a href="../Infodashboard.html">
-                <svg class="u-icon-m u-icon-white">
-                  <use
-                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
-                  ></use>
-                </svg>
-              </a>
+            <div class="search-box__search-icon-wrapper">
+                <a href="../Infodashboard.html">
+                  <svg class="u-icon-m u-icon-white">
+                    <use
+                      xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
+                    ></use>
+                  </svg>
+                </a>
             </div>
           </div>
         </div>
@@ -849,44 +855,41 @@
               </div>
               <div class="detail-item detail-item__fullwidth">
                 <div class="tab-headline">
-                  <span class="value u-tabnamecolor"
-                    >Co Insurance Settings</span
+                  <span class="value u-tabnamecolor u-marginright-s">Co Insurance Settings</span
                   >
-                  <div class="left-side-align">
-                    <span class="label u-marginright-s"
-                      >Service Type Classification :</span
-                    >
-                    <div class="dropdown service-dropdown">
-                      <button
-                        class="btn"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Select
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li>
-                          <a class="dropdown-item" href="#">Another action</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Something else here</a
-                          >
-                        </li>
-                      </ul>
-                      <svg
-                        class="u-icon-m"
-                        data-bs-toggle="dropdown"
-                        data-bs-target="#dropdownMenu"
-                        aria-expanded="false"
-                      >
-                        <use
-                          xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
-                        ></use>
-                      </svg>
-                    </div>
+                  <div class="left-side-align inc__service-setting">
+                      <div class="label u-align-left">Service Type Classification:</div>
+                      <div class="dropdown service-dropdown">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Select
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                        <svg
+                          class="u-icon-m"
+                          data-bs-toggle="dropdown"
+                          data-bs-target="#dropdownMenu"
+                          aria-expanded="false"
+                        >
+                          <use
+                            xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                          ></use>
+                        </svg>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -1046,7 +1049,7 @@
                 <div class="Dependencies__selectiondiv">
                   <div class="Dependencies__dropdown">
                     <div class="drop__name">Name</div>
-                    <div class="dropdown service-dropdown">
+                    <div class="dropdown-center service-dropdown">
                       <button
                         class="btn"
                         type="button"
@@ -1080,7 +1083,7 @@
                   </div>
                   <div class="Dependencies__dropdown">
                     <div class="drop__name">Relaction</div>
-                    <div class="dropdown service-dropdown">
+                    <div class="dropdown-center service-dropdown">
                       <button
                         class="btn"
                         type="button"
@@ -1113,14 +1116,13 @@
                     </div>
                   </div>
                   <div class="Dependencies__buttons">
-                  <div class="Dependencies__savebutton">
-                    <span class="dsavebtn-name">Save</span>
+                    <div class="Dependencies__savebutton">
+                      <span class="dsavebtn-name">Save</span>
+                    </div>
+                    <div class="Dependencies__resetbutton">
+                      <span class="dresetbtn-name">Reset</span>
+                    </div>
                   </div>
-                  <div class="Dependencies__resetbutton">
-                    <span class="dresetbtn-name">Reset</span>
-                  </div>
-                  </div>
-
                 </div>
               </div>
 
@@ -1887,7 +1889,7 @@
                         <div class="details-grid">
                           <div class="detail-item detail-item__fullwidth">
                             <div class="tab-headline">
-                              <div class="left-side-align">
+                              <div class="">
                                 <button type="button" class="btn btn-primary">Send OTP</button>
                               </div>
                             </div>
@@ -2285,9 +2287,13 @@
       
         </div>
         </div>
-        </div>
+      </div>
       </div>
     </main>
+
+    <div class="patient__details">
+      
+    </div>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>

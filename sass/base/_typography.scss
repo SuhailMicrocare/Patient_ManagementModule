@@ -3,4 +3,13 @@
   font-weight: 700;
   line-height: 1.2;
   color: $plp-heading-color;
+  @include respond(phone) {
+    font-size: 3.2rem;
+    line-height: 32.74px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; // Stacks the parts vertically
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }

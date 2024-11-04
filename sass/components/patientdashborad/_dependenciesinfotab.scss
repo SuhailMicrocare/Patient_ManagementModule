@@ -1,12 +1,12 @@
 .Dependencies__selectiondiv {
-  display: flex;
-  flex-direction: row !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
 
   .Dependencies__dropdown {
-    margin-right: 2rem;
-
     .drop__name {
       font-family: inherit;
       font-size: 1.2rem;
@@ -16,7 +16,25 @@
       color: $color-black;
       margin-left: 1rem;
       margin-bottom: 0.5rem;
+
+      @include respond(phone) {
+        font-size: 1.4rem;
+        margin-left: 0.5rem;
+      }
     }
+
+    // .dropdown {
+    //   @include respond(mini-tab) {
+    //     width: 100%;
+    //   }
+
+    //   .btn {
+    //     @include respond(mini-tab) {
+    //       width: 100%;
+    //       text-align: left;
+    //     }
+    //   }
+    // }
   }
 
   .Dependencies__buttons {
@@ -25,13 +43,16 @@
     align-self: flex-end;
     gap: 1rem;
     margin-left: auto; // This ensures buttons are pushed to the right
+    @include respond(mini-tab) {
+      width: 100%;
+      justify-content: right;
+    }
   }
 
   .Dependencies__savebutton,
   .Dependencies__resetbutton {
-    width: 9rem;
     border-radius: 0.8rem;
-    padding: 1rem;
+    padding: 0.8rem 2.5rem 0.8rem 2.5rem;
     text-align: center;
   }
 
@@ -44,6 +65,10 @@
       font-weight: 400;
       line-height: 21px;
       color: #ffffff;
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -57,6 +82,10 @@
       font-weight: 400;
       line-height: 21px;
       color: #068eee;
+
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
     }
   }
 }

@@ -17,6 +17,11 @@
   margin-bottom: 1.5rem;
   justify-content: space-between;
 
+  @include respond(tab-land) {
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+
   .appointment__name {
     display: flex;
     flex-direction: column;

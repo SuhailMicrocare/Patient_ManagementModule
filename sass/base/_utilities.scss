@@ -9,6 +9,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.u-align-left {
+  display: flex;
+  justify-self: right;
+  align-items: center;
+  text-align: right !important;
+}
 // WIDTH
 .u-with-50 {
   width: 50%;
@@ -156,6 +163,10 @@
 
 .u-marginright-xs {
   margin-right: 0.5rem;
+}
+
+.u-marginright-xxxl {
+  margin-right: 3rem;
 }
 
 // MARGIN BOTTOM

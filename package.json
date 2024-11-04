@@ -4,13 +4,14 @@
   "description": "Patient Manangement Dashboard",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "sass --watch sass/main.scss css/style.css",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver compile:sass "
+    "start": "npm-run-all --parallel devserver compile:sass"
   },
   "author": "Muhammed suhail",
   "license": "ISC",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "node-sass": "^9.0.0"
   },
   "dependencies": {

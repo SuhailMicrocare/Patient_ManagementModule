@@ -3,6 +3,16 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
+}
 *,
 *::before,
 *::after {
@@ -37,10 +47,10 @@ html {
 
   @include respond(phone) {
     //width < 400? (900px br point)
-    font-size: 23%; // 1rem = 3.8px, 3.8/16= 23%
+    // font-size: 23%; // 1rem = 3.8px, 3.8/16= 23%
   }
 
-  height: 100%; // Ensure the html element fills the viewport
+  // height: auto; // Ensure the html element fills the viewport
 }
 
 body {
@@ -57,6 +67,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  max-height: 100vh; // Ensures the body stays within the viewport height
-  height: 100%; // Match html height
+  // height: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  // min-height: 100vh; /* Ensures full height but flexible for content */
+  // max-height: 100vh; // Ensures the body stays within the viewport height
+  // height: 100%; // Match html height
+  // overflow: hidden;
 }
