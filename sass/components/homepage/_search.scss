@@ -1,4 +1,4 @@
-.search {
+.search-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
     padding: 1rem 1rem 1rem 2.5rem;
     align-items: center;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-    width: 45%;
+    width: 60%;
     position: relative; // Add this to establish positioning context
 
     @include respond(phone) {
@@ -43,9 +43,13 @@
       padding: 2rem;
     }
 
-    @include respond(ipad-pro) {
-      width: 55%;
-    }
+    // @include respond(ipad-pro) {
+    //   width: 55%;
+    // }
+
+    // @include respond(tab-port) {
+    //   width: 55%;
+    // }
 
     .search__categorydiv {
       display: flex;
@@ -102,6 +106,7 @@
         border-left: 0.1rem solid black;
         @include respond(phone) {
           margin-top: 2rem;
+          border-left: none;
         }
 
         .search__input {
@@ -205,17 +210,17 @@
 
 .image__doctorimg {
   width: 100%;
+  max-height: 42.5rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   margin-top: auto;
+  @include respond(phone) {
+    max-height: 55rem;
+  }
   img {
     object-fit: contain;
     max-width: 100%; // Ensures the image scales with its container width
     height: auto; // Maintains the aspect ratio of the image
-
-    @include respond(phone) {
-      max-height: 40vh; // Smaller height for mobile devices
-    }
   }
 }

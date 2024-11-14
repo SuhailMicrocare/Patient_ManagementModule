@@ -1,10 +1,19 @@
 .patient__navbar {
-  // max-width: 20.5rem;
   background-color: $color-white;
   border-top-left-radius: 1.5rem !important;
   border-bottom-left-radius: 1.5rem !important;
   @include respond(phone) {
-    // height: 16rem;
+    border-radius: 1.5rem !important;
+    padding: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.patient-profile__wrapper {
+  @include respond(phone) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -14,6 +23,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @include respond(phone) {
+    padding: 0;
+    flex: 0 0 auto; // Prevents the div from growing or shrinking
+  }
 }
 
 .patient-profile-picture {
@@ -22,9 +35,13 @@
   width: 7rem;
   height: 7rem;
   margin-bottom: 1rem;
-  // border-radius: 50%;
-  // overflow: hidden;
   position: relative;
+  @include respond(phone) {
+    margin-bottom: 0;
+    width: 9rem;
+    height: 9rem;
+  }
+
   &__image {
     width: 100%;
     height: 100%;
@@ -52,34 +69,92 @@
   } /* Half circle clip */
 }
 
-.patient-editbutton {
+.patient-percentage-edit-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 1.2rem 2rem 1.5rem;
+  @include respond(phone) {
+    padding: 0;
+    margin-left: auto;
+  }
+}
+
+.patient-percentage-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.patient-editbutton {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include respond(phone) {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0;
+    margin-left: 5rem;
+    align-content: center;
+    justify-content: center;
+  }
 
   &__percentage {
     font-size: 1.2rem;
     font-weight: 900;
     color: #4dd385;
     line-height: 1.7;
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
   }
   &__name {
     font-size: 1.2rem;
     font-weight: 500;
     color: inherit;
     line-height: 1.7;
+    margin-left: 0.6rem;
+    @include respond(phone) {
+      font-size: 1.5rem;
+      margin-left: 0.8rem;
+    }
   }
   &__button {
-    width: 5rem;
-    height: 2.6rem;
+    min-width: 5rem; // Ensure consistent width
+    min-height: 2.6rem;
+
     border-radius: 0.8rem;
     border: 1px solid #068eee;
     background-color: $color-white;
+
+    @include respond(phone) {
+      width: 100%;
+      padding: 0.6rem 1rem;
+    }
     &__edit {
       font-size: 1.4rem;
       font-weight: 600;
       color: #068eee;
+      line-height: 1.7;
+    }
+  }
+
+  .patient-printable-btndiv {
+    display: none;
+    @include respond(phone) {
+      display: block;
+    }
+  }
+
+  .patient-printablebutton__button {
+    border-radius: 0.8rem;
+    border: 1px solid #9ba950;
+    background-color: #9ba950;
+    padding: 0.6rem 1rem;
+    &__printables {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-white;
       line-height: 1.7;
     }
   }
@@ -90,17 +165,76 @@
   padding: 0.5rem;
   border-radius: 0.8rem;
   background-color: #f4fbff;
+  position: relative;
 
-  ul {
+  @include respond(phone) {
+    margin: 0;
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+
+  // Mobile header styles
+  &__mobile-header {
+    display: none; // Hidden by default on desktop
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    background-color: #e2f4fe;
+    max-height: 4.4rem;
+
+    @include respond(phone) {
+      display: flex; // Show only on mobile
+    }
+  }
+
+  &__selected-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #068eee;
+    @include respond(phone) {
+      font-size: 1.4rem;
+      font-weight: 900;
+      font-family: Nunito;
+      line-height: 16.37px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+  }
+
+  // Toggle button styles
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+
+    &-icon {
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+  }
+
+  // Desktop list styles
+  &__desktop-list {
     list-style: none;
     width: 100%;
     padding-left: 0 !important;
+    margin: 0;
+
+    @include respond(phone) {
+      display: none; // Hide on mobile
+    }
 
     li {
       font-size: 1.2rem;
       font-family: inherit;
       font-weight: 500;
-      line-height: 1.7; // Fixed duplicate line-height
+      line-height: 1.7;
       padding: 1rem 1rem 1rem 2rem;
       color: #626262;
       cursor: pointer;
@@ -108,12 +242,10 @@
       position: relative;
 
       &:hover {
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
         border-radius: 0.8rem;
-        // transform: scale(1.01);
       }
 
-      // Apply styles to the selected list item
       &.selected {
         font-weight: 900;
         color: #068eee;
@@ -123,21 +255,173 @@
         position: relative;
       }
 
-      // Add ">" symbol after the selected list item
       &.selected::after {
         content: "";
         background-image: url("../Assets/Images/arrow.png");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 1rem; // Adjust size based on the SVG
-        height: 1rem; // Adjust size based on the SVG
+        width: 1rem;
+        height: 1rem;
         position: absolute;
-        right: 1rem; // Adjust the position if necessary
+        right: 1rem;
         top: 50%;
-        transform: translateY(-50%); // Vertically center the SVG
+        transform: translateY(-50%);
       }
     }
   }
+
+  // Modal styles
+  &__modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.show {
+      display: flex;
+      opacity: 1;
+    }
+  }
+
+  &__modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+  }
+
+  &__modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #068eee;
+      margin: 0;
+    }
+  }
+
+  &__modal-close {
+    width: 100%;
+    min-height: 5rem;
+    border-radius: 0.8rem;
+    border: 1px solid #068eee;
+    background-color: $color-white;
+
+    cursor: pointer;
+
+    position: relative;
+    // span {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 0.2rem;
+    //   background-color: #626262;
+    //   left: 0;
+    //   top: 50%;
+
+    //   &:first-child {
+    //     transform: rotate(45deg);
+    //   }
+
+    //   &:last-child {
+    //     transform: rotate(-45deg);
+    //   }
+    // }
+    &__close {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #068eee;
+      line-height: 1.7;
+    }
+
+    &:hover {
+      background-color: #068eee;
+    }
+  }
+
+  // Modal list styles
+  &__modal-list {
+    list-style: none;
+    width: 100%;
+    padding-left: 0 !important;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+
+    li {
+      font-size: 1.2rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.7;
+      padding: 1rem 1rem 1rem 2rem;
+      color: #626262;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      background-color: #e2f4fe;
+      justify-content: left;
+      margin-bottom: 1rem;
+      border-radius: 0.8rem;
+
+      &:last-child {
+        margin-bottom: 1.5rem;
+      }
+
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      }
+
+      &.selected {
+        font-weight: 900;
+        color: #068eee;
+        background-color: #e2f4fe;
+        box-shadow: 0.2rem 0.2rem 0.4rem 0px #00000026;
+        border-radius: 0.8rem;
+      }
+
+      &.selected::after {
+        content: "";
+        background-image: url("../Assets/Images/arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+// Prevent body scroll when modal is open
+body.modal-open {
+  overflow: hidden;
 }
 
 .p-icons {
@@ -146,6 +430,10 @@
   column-gap: 0.6rem;
   row-gap: 0.6rem;
   margin: 0.5rem;
+  @include respond(phone) {
+    display: none;
+  }
+
   &__pic {
     display: flex;
     justify-content: center;
@@ -158,5 +446,46 @@
   &__picture {
     width: 1.8rem;
     height: 1.8rem;
+  }
+}
+
+.printable__modal-content {
+  background-color: white;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  display: flex;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+}
+
+.printable-icons__modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 1.8rem;
+
+  .p-icons__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 12rem;
+    border-radius: 0.8rem;
+    background-color: #e5f9f2;
+  }
+  .p-icons__modalpicture {
+    width: 4rem;
+    height: 4rem;
+  }
+  .p-label {
+    font-family: Nunito;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 16.37px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: 1.2rem;
   }
 }

@@ -24,6 +24,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   font-weight: 700;
   line-height: 1.2;
   color: #364e6a;
+  margin-bottom: 2.7rem;
 }
 @media only screen and (max-width: 27.5em) {
   .heading-primary {
@@ -246,6 +247,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
   padding: 3rem;
 }
 
+@media only screen and (max-width: 27.5em) {
+  .mobile-v-ml {
+    margin-left: auto;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -296,6 +303,12 @@ html {
     font-size: 40%;
   }
 }
+@media only screen and (max-width: 27.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
@@ -373,11 +386,124 @@ body {
 .patient__modalwidth {
   max-width: 100rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .patient__modalwidth {
+    max-width: 100%;
+    margin: 0;
+  }
+  .patient__modalwidth .modal-content {
+    border-radius: 1.6rem;
+    padding: 2rem;
+    height: 95vh;
+    overflow-y: auto;
+  }
+}
 
-.social__detail-section {
+.pi__dob__section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 3.5rem;
+  align-items: center;
+  column-gap: 3rem;
+}
+.pi__dob__section .en-dob-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pi__dob__section .dob__inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-self: right;
+  align-items: center;
+  width: 70%;
+}
+@media only screen and (max-width: 27.5em) {
+  .pi__dob__section {
+    grid-template-columns: 1fr;
+  }
+  .pi__dob__section .en-dob-div {
+    gap: 2rem;
+  }
+  .pi__dob__section .en-dob-div label {
+    font-size: 1.4rem;
+    color: #333;
+  }
+  .pi__dob__section .en-dob-div .dob__inputs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+.pi__generalinfo__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3rem;
+}
+.pi__generalinfo__section .en-generalinfo-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 27.5em) {
+  .pi__generalinfo__section {
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+    row-gap: 2.5rem;
+  }
+  .pi__generalinfo__section label {
+    font-size: 1.4rem;
+    color: #333;
+  }
+}
+
+.socialdetail__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3rem;
+  row-gap: 2.5rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .socialdetail__section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .socialdetail__section .col-md-12 {
+    border-radius: 0.8rem;
+  }
+  .socialdetail__section .col-md-12.u-vh-align-center {
+    display: flex;
+    flex-direction: column;
+  }
+  .socialdetail__section .col-md-12.u-vh-align-center .col-md-6 {
+    width: 100%;
+  }
+}
+
+.Additionalinfo__section {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .Additionalinfo__section {
+    grid-template-columns: 1fr;
+    row-gap: 1.2rem;
+  }
+  .Additionalinfo__section textarea {
+    min-height: 10rem;
+  }
+  .Additionalinfo__section select,
+  .Additionalinfo__section textarea {
+    width: 100%;
+  }
 }
 
 .step-indicator-container {
@@ -390,6 +516,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 27.5em) {
+  .step-indicator-container {
+    margin: 1rem 0 2rem;
+    padding: 0;
+  }
+}
 
 .step-labels {
   position: absolute;
@@ -399,6 +531,22 @@ body {
   width: 200px;
   margin-right: 2rem;
   z-index: 2;
+}
+@media only screen and (max-width: 27.5em) {
+  .step-labels {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    text-align: center;
+  }
+  .step-labels .step-label {
+    font-size: 1.8rem;
+    color: #0088e9;
+  }
+  .step-labels .step-label.active {
+    display: block;
+  }
 }
 .step-labels .step-label {
   font-family: inherit;
@@ -487,9 +635,23 @@ body {
   transform: translateY(-50%);
   z-index: -1;
 }
+@media only screen and (max-width: 27.5em) {
+  .step-indicator .step.completed + .step::before {
+    width: 3rem;
+  }
+}
 
 .form-step.d-none {
   display: none !important;
+}
+@media only screen and (max-width: 27.5em) {
+  .form-step .row {
+    margin: 0;
+  }
+  .form-step .row [class*=col-] {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .form-control,
@@ -523,6 +685,16 @@ body {
   line-height: 16.37px;
   color: #6b7280;
 }
+@media only screen and (max-width: 27.5em) {
+  .form-control,
+  .form-select {
+    max-height: 4.8rem;
+  }
+  .form-control::placeholder,
+  .form-select::placeholder {
+    font-size: 1.4rem;
+  }
+}
 
 .btn {
   transition: all 0.3s ease;
@@ -549,26 +721,6 @@ body {
   color: #0570bc;
 }
 
-@media (max-width: 768px) {
-  .step-indicator-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .step-labels {
-    position: relative;
-    transform: none;
-    width: 100%;
-    margin-right: 0;
-    text-align: center;
-  }
-  .step-labels .step-label {
-    text-align: center;
-  }
-  .step-indicator {
-    margin-left: 0;
-    gap: 3rem;
-  }
-}
 .selector__st-rightborder0 {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
@@ -583,39 +735,22 @@ body {
   border-radius: 0 !important;
 }
 
-.socialdetail__section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  column-gap: 3rem;
-  row-gap: 2.5rem;
+@media only screen and (max-width: 27.5em) {
+  .selector__bottomborder0 {
+    border-top-left-radius: 0.8rem !important;
+    border-top-right-radius: 0.8rem !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
 }
 
-.pi__dob__section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  column-gap: 3rem;
-}
-.pi__dob__section .en-dob-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.pi__dob__section .dob__inputs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-self: right;
-  align-items: center;
-  width: 70%;
-}
-
-.Additionalinfo__section {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 1rem;
+@media only screen and (max-width: 27.5em) {
+  .selector__bordertop0 {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0.8rem !important;
+    border-bottom-right-radius: 0.8rem !important;
+  }
 }
 
 .adddetail__addbtndiv .adddetail__addbutton {
@@ -635,6 +770,30 @@ body {
   line-height: 21px;
   color: tabbuttoncolor !important;
 }
+@media only screen and (max-width: 27.5em) {
+  .adddetail__addbtndiv {
+    margin-bottom: 1.2rem;
+  }
+  .adddetail__addbtndiv .adddetail__addbutton {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: #f8f9fa;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .adddetail__addbtndiv .adddetail__addbutton i {
+    color: #0088e9;
+    font-size: 1.8rem;
+  }
+  .adddetail__addbtndiv .adddetail__addbutton span {
+    color: #333;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+  }
+}
+
 #successModal .modal-content {
   border-radius: 16px;
   border: none;
@@ -655,16 +814,6 @@ body {
   text-decoration: underline;
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 .successimage-img {
   width: 100%;
   height: 100%;
@@ -698,8 +847,57 @@ body {
   border-radius: 20%;
   display: none;
 }
+@media only screen and (max-width: 27.5em) {
+  .photo-upload {
+    margin-top: 1.5rem;
+  }
+  .photo-upload .upload-wrapper input[type=file] {
+    height: 4.8rem;
+    padding: 1rem;
+  }
+  .photo-upload .upload-wrapper .upload-preview {
+    right: 1.5rem;
+  }
+  .photo-upload .upload-wrapper .upload-preview .upload-preview-img {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+  }
+}
 
-.search {
+@media only screen and (max-width: 27.5em) {
+  .modal-footer {
+    padding: 1.5rem 0 0;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .modal-footer .btn {
+    flex: 1;
+    height: 4.8rem;
+    font-size: 1.6rem;
+    border-radius: 0.8rem;
+  }
+  .modal-footer .btn-primary {
+    background-color: #0088e9;
+    border-color: #0088e9;
+  }
+  .modal-footer .btn-outline-secondary {
+    border-color: #0088e9;
+    color: #0088e9;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.search-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -708,23 +906,23 @@ body {
   width: 100%;
 }
 @media only screen and (max-width: 27.5em) {
-  .search {
+  .search-section {
     padding: 2rem;
     justify-content: center;
     align-items: center;
     margin-top: 0;
   }
 }
-.search__headingdiv {
+.search-section__headingdiv {
   display: flex;
   margin-bottom: 2.7rem;
 }
 @media only screen and (max-width: 27.5em) {
-  .search__headingdiv {
+  .search-section__headingdiv {
     flex-wrap: wrap;
   }
 }
-.search .searchbar__seaction {
+.search-section .searchbar__seaction {
   display: grid;
   grid-template-columns: 2fr 4fr;
   background-color: #ffffff;
@@ -732,11 +930,11 @@ body {
   padding: 1rem 1rem 1rem 2.5rem;
   align-items: center;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  width: 45%;
+  width: 60%;
   position: relative;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction {
+  .search-section .searchbar__seaction {
     grid-template-columns: 1fr;
     flex-direction: column;
     width: 100% !important;
@@ -745,33 +943,28 @@ body {
     padding: 2rem;
   }
 }
-@media only screen and (max-width: 64em) {
-  .search .searchbar__seaction {
-    width: 55%;
-  }
-}
-.search .searchbar__seaction .search__categorydiv {
+.search-section .searchbar__seaction .search__categorydiv {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction .search__categorydiv {
+  .search-section .searchbar__seaction .search__categorydiv {
     margin-bottom: 1.8rem;
   }
-  .search .searchbar__seaction .search__categorydiv .p-btn-name {
+  .search-section .searchbar__seaction .search__categorydiv .p-btn-name {
     font-size: 1.8rem;
   }
-  .search .searchbar__seaction .search__categorydiv .p-icon-size {
+  .search-section .searchbar__seaction .search__categorydiv .p-icon-size {
     width: 3rem;
     height: 3rem;
   }
 }
-.search .searchbar__seaction .search__categorydiv .dropdown {
+.search-section .searchbar__seaction .search__categorydiv .dropdown {
   position: unset;
 }
-.search .searchbar__seaction .search__categorydiv .dropdown .dropdown-menu {
+.search-section .searchbar__seaction .search__categorydiv .dropdown .dropdown-menu {
   position: absolute;
   width: 100%;
   top: calc(100% + 0.4rem) !important;
@@ -780,33 +973,34 @@ body {
   transform: none !important;
   margin-top: 0;
 }
-.search .searchbar__seaction .search__categorydiv .dropdown .dropdown-menu[data-bs-popper] {
+.search-section .searchbar__seaction .search__categorydiv .dropdown .dropdown-menu[data-bs-popper] {
   left: 0;
   right: 0;
   transform: none !important;
   top: calc(100% + 0.4rem);
   margin-top: 0;
 }
-.search .searchbar__seaction .search__searchbar-icondiv {
+.search-section .searchbar__seaction .search__searchbar-icondiv {
   display: grid;
   grid-template-columns: 12fr 1fr;
   align-items: center;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction .search__searchbar-icondiv {
+  .search-section .searchbar__seaction .search__searchbar-icondiv {
     border-top: dashed 1px #999;
   }
 }
-.search .searchbar__seaction .search__searchbar-icondiv .search__input-div {
+.search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div {
   position: relative;
   border-left: 0.1rem solid black;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction .search__searchbar-icondiv .search__input-div {
+  .search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div {
     margin-top: 2rem;
+    border-left: none;
   }
 }
-.search .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input {
+.search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input {
   width: 100%; /* Adjust the width as needed, e.g., 100%, 50rem, etc. */
   font-size: 1.5rem;
   font-family: inherit;
@@ -816,19 +1010,19 @@ body {
   border: none;
   display: block;
 }
-.search .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input:focus {
+.search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input:focus {
   outline: none;
   border: none;
 }
-.search .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input::-webkit-input-placeholder {
+.search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input::-webkit-input-placeholder {
   color: #999;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input::-webkit-input-placeholder {
+  .search-section .searchbar__seaction .search__searchbar-icondiv .search__input-div .search__input::-webkit-input-placeholder {
     color: #000000;
   }
 }
-.search .searchbar__seaction .search__result-list {
+.search-section .searchbar__seaction .search__result-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -845,7 +1039,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.search .searchbar__seaction .search__result-list:before {
+.search-section .searchbar__seaction .search__result-list:before {
   content: "";
   position: absolute;
   top: 0;
@@ -856,27 +1050,27 @@ body {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
-.search .searchbar__seaction .search__result-list li {
+.search-section .searchbar__seaction .search__result-list li {
   font-size: 1.6rem;
   padding: 1.4rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.search .searchbar__seaction .search__result-list li:not(:last-child) {
+.search-section .searchbar__seaction .search__result-list li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
-.search .searchbar__seaction .search__result-list li:first-child {
+.search-section .searchbar__seaction .search__result-list li:first-child {
   margin-top: 1.4rem;
 }
-.search .searchbar__seaction .search__result-list li:hover {
+.search-section .searchbar__seaction .search__result-list li:hover {
   background-color: #f0f0f0;
   cursor: pointer;
 }
-.search .searchbar__seaction .search__result-list li .ar {
+.search-section .searchbar__seaction .search__result-list li .ar {
   direction: rtl;
 }
-.search .searchbar__seaction .search__icon {
+.search-section .searchbar__seaction .search__icon {
   width: 3.6rem;
   height: 3.6rem;
   background-color: #068eee;
@@ -887,27 +1081,28 @@ body {
   justify-content: center;
 }
 @media only screen and (max-width: 27.5em) {
-  .search .searchbar__seaction .search__icon {
+  .search-section .searchbar__seaction .search__icon {
     margin-top: 2rem;
   }
 }
 
 .image__doctorimg {
   width: 100%;
+  max-height: 42.5rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   margin-top: auto;
 }
+@media only screen and (max-width: 27.5em) {
+  .image__doctorimg {
+    max-height: 55rem;
+  }
+}
 .image__doctorimg img {
   object-fit: contain;
   max-width: 100%;
   height: auto;
-}
-@media only screen and (max-width: 27.5em) {
-  .image__doctorimg img {
-    max-height: 40vh;
-  }
 }
 
 .search-box {
@@ -949,6 +1144,7 @@ body {
   display: grid;
   grid-template-columns: 8fr 1fr;
   align-items: center;
+  justify-content: space-between;
   margin-top: 1rem;
 }
 .search-box__input-container .search-box__input-wrapper {
@@ -1016,7 +1212,7 @@ body {
   padding: 0.8rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-self: right;
 }
 
 .advancedoption {
@@ -1133,12 +1329,34 @@ body {
   border-top-left-radius: 1.5rem !important;
   border-bottom-left-radius: 1.5rem !important;
 }
+@media only screen and (max-width: 27.5em) {
+  .patient__navbar {
+    border-radius: 1.5rem !important;
+    padding: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 27.5em) {
+  .patient-profile__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
 .patient-profilediv {
   padding: 3rem 1.2rem 0rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-profilediv {
+    padding: 0;
+    flex: 0 0 auto;
+  }
 }
 
 .patient-profile-picture {
@@ -1149,6 +1367,13 @@ body {
   margin-bottom: 1rem;
   position: relative;
   /* Half circle clip */
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-profile-picture {
+    margin-bottom: 0;
+    width: 9rem;
+    height: 9rem;
+  }
 }
 .patient-profile-picture__image {
   width: 100%;
@@ -1176,11 +1401,39 @@ body {
   clip: rect(0, 57px, 81px, 0px);
 }
 
-.patient-editbutton {
+.patient-percentage-edit-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 1.2rem 2rem 1.5rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-percentage-edit-wrapper {
+    padding: 0;
+    margin-left: auto;
+  }
+}
+
+.patient-percentage-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-editbutton {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-editbutton {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0;
+    margin-left: 5rem;
+    align-content: center;
+    justify-content: center;
+  }
 }
 .patient-editbutton__percentage {
   font-size: 1.2rem;
@@ -1188,23 +1441,61 @@ body {
   color: #4dd385;
   line-height: 1.7;
 }
+@media only screen and (max-width: 27.5em) {
+  .patient-editbutton__percentage {
+    font-size: 1.5rem;
+  }
+}
 .patient-editbutton__name {
   font-size: 1.2rem;
   font-weight: 500;
   color: inherit;
   line-height: 1.7;
+  margin-left: 0.6rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-editbutton__name {
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+  }
 }
 .patient-editbutton__button {
-  width: 5rem;
-  height: 2.6rem;
+  min-width: 5rem;
+  min-height: 2.6rem;
   border-radius: 0.8rem;
   border: 1px solid #068eee;
   background-color: #ffffff;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-editbutton__button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
 }
 .patient-editbutton__button__edit {
   font-size: 1.4rem;
   font-weight: 600;
   color: #068eee;
+  line-height: 1.7;
+}
+.patient-editbutton .patient-printable-btndiv {
+  display: none;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient-editbutton .patient-printable-btndiv {
+    display: block;
+  }
+}
+.patient-editbutton .patient-printablebutton__button {
+  border-radius: 0.8rem;
+  border: 1px solid #9ba950;
+  background-color: #9ba950;
+  padding: 0.6rem 1rem;
+}
+.patient-editbutton .patient-printablebutton__button__printables {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
   line-height: 1.7;
 }
 
@@ -1213,13 +1504,70 @@ body {
   padding: 0.5rem;
   border-radius: 0.8rem;
   background-color: #f4fbff;
+  position: relative;
 }
-.p-navigation ul {
+@media only screen and (max-width: 27.5em) {
+  .p-navigation {
+    margin: 0;
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+}
+.p-navigation__mobile-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.8rem;
+  background-color: #e2f4fe;
+  max-height: 4.4rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .p-navigation__mobile-header {
+    display: flex;
+  }
+}
+.p-navigation__selected-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #068eee;
+}
+@media only screen and (max-width: 27.5em) {
+  .p-navigation__selected-text {
+    font-size: 1.4rem;
+    font-weight: 900;
+    font-family: Nunito;
+    line-height: 16.37px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+}
+.p-navigation__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+}
+.p-navigation__toggle-icon {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.p-navigation__desktop-list {
   list-style: none;
   width: 100%;
   padding-left: 0 !important;
+  margin: 0;
 }
-.p-navigation ul li {
+@media only screen and (max-width: 27.5em) {
+  .p-navigation__desktop-list {
+    display: none;
+  }
+}
+.p-navigation__desktop-list li {
   font-size: 1.2rem;
   font-family: inherit;
   font-weight: 500;
@@ -1230,11 +1578,11 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-.p-navigation ul li:hover {
+.p-navigation__desktop-list li:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.8rem;
 }
-.p-navigation ul li.selected {
+.p-navigation__desktop-list li.selected {
   font-weight: 900;
   color: #068eee;
   background-color: white;
@@ -1242,7 +1590,122 @@ body {
   border-radius: 0.8rem;
   position: relative;
 }
-.p-navigation ul li.selected::after {
+.p-navigation__desktop-list li.selected::after {
+  content: "";
+  background-image: url("../Assets/Images/arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.p-navigation__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.p-navigation__modal.show {
+  display: flex;
+  opacity: 1;
+}
+.p-navigation__modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+}
+.p-navigation__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.p-navigation__modal-header h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #068eee;
+  margin: 0;
+}
+.p-navigation__modal-close {
+  width: 100%;
+  min-height: 5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #068eee;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+.p-navigation__modal-close__close {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #068eee;
+  line-height: 1.7;
+}
+.p-navigation__modal-close:hover {
+  background-color: #068eee;
+}
+.p-navigation__modal-list {
+  list-style: none;
+  width: 100%;
+  padding-left: 0 !important;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.p-navigation__modal-list li {
+  font-size: 1.2rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.7;
+  padding: 1rem 1rem 1rem 2rem;
+  color: #626262;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #e2f4fe;
+  justify-content: left;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+}
+.p-navigation__modal-list li:last-child {
+  margin-bottom: 1.5rem;
+}
+.p-navigation__modal-list li:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.p-navigation__modal-list li.selected {
+  font-weight: 900;
+  color: #068eee;
+  background-color: #e2f4fe;
+  box-shadow: 0.2rem 0.2rem 0.4rem 0px rgba(0, 0, 0, 0.1490196078);
+  border-radius: 0.8rem;
+}
+.p-navigation__modal-list li.selected::after {
   content: "";
   background-image: url("../Assets/Images/arrow.png");
   background-repeat: no-repeat;
@@ -1255,12 +1718,21 @@ body {
   transform: translateY(-50%);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .p-icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 0.6rem;
   row-gap: 0.6rem;
   margin: 0.5rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .p-icons {
+    display: none;
+  }
 }
 .p-icons__pic {
   display: flex;
@@ -1274,6 +1746,46 @@ body {
 .p-icons__picture {
   width: 1.8rem;
   height: 1.8rem;
+}
+
+.printable__modal-content {
+  background-color: white;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  display: flex;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+}
+
+.printable-icons__modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+.printable-icons__modal .p-icons__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 12rem;
+  border-radius: 0.8rem;
+  background-color: #e5f9f2;
+}
+.printable-icons__modal .p-icons__modalpicture {
+  width: 4rem;
+  height: 4rem;
+}
+.printable-icons__modal .p-label {
+  font-family: Nunito;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 16.37px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-top: 1.2rem;
 }
 
 .main-info-fulldiv {
@@ -1333,6 +1845,14 @@ body {
   align-items: center;
   column-gap: 1rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .left-side-align {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 .service-dropdown {
   display: flex;
@@ -1360,6 +1880,13 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .Dependencies__selectiondiv {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .Dependencies__selectiondiv .Dependencies__dropdown .drop__name {
   font-family: inherit;
@@ -1390,11 +1917,25 @@ body {
     justify-content: right;
   }
 }
+@media only screen and (max-width: 27.5em) {
+  .Dependencies__selectiondiv .Dependencies__buttons {
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 2rem;
+  }
+}
 .Dependencies__selectiondiv .Dependencies__savebutton,
 .Dependencies__selectiondiv .Dependencies__resetbutton {
   border-radius: 0.8rem;
   padding: 0.8rem 2.5rem 0.8rem 2.5rem;
   text-align: center;
+}
+@media only screen and (max-width: 27.5em) {
+  .Dependencies__selectiondiv .Dependencies__savebutton,
+  .Dependencies__selectiondiv .Dependencies__resetbutton {
+    width: 100%;
+  }
 }
 .Dependencies__selectiondiv .Dependencies__savebutton {
   background-color: #068eee;
@@ -1444,13 +1985,36 @@ body {
   line-height: 21px;
   color: #ffffff;
 }
+@media only screen and (max-width: 27.5em) {
+  .attachment__uploadbtndiv,
+  .attachment__uploadbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .attachment__modaldiv {
   padding: 5rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modaldiv {
+    padding: 1.5rem;
+  }
 }
 
 .attachment__modalbodydiv {
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.attachment__modalbodydiv .mobilev-modal-wrapper {
+  display: flex;
 }
 .attachment__modalbodydiv .imguploaddiv {
   padding: 0.8rem;
@@ -1458,6 +2022,11 @@ body {
   border: 1px solid #c1dae3;
   margin-right: 3rem;
   position: relative;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .imguploaddiv {
+    margin-right: 2rem;
+  }
 }
 .attachment__modalbodydiv .imguploaddiv .upload-imgsize {
   width: 8rem;
@@ -1484,9 +2053,23 @@ body {
   justify-content: right;
   margin-left: auto;
 }
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .attachment__input-buttondiv {
+    margin-left: 0;
+    width: 100%;
+  }
+}
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv {
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
 }
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__name {
   font-family: inherit;
@@ -1500,6 +2083,13 @@ body {
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__div {
   margin-right: 2rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__div {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__div .attachment__input {
   font-family: inherit;
   font-size: 1.2rem;
@@ -1511,6 +2101,11 @@ body {
   border: 1px solid #cccccc;
   width: 100%;
   display: block;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__div .attachment__input {
+    width: 100%;
+  }
 }
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .input__div .attachment__input:focus {
   outline: none;
@@ -1527,6 +2122,13 @@ body {
   align-self: flex-end;
   justify-content: right;
   gap: 1rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .custom-file {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 .attachment__modalbodydiv .attachment__input-buttondiv .attachment__inputmaindiv .custom-file .custom-file-input {
   display: none;
@@ -1587,7 +2189,7 @@ body {
   padding: 0.8rem 0.8rem;
   text-align: center;
 }
-.appoinment__uploadbtndiv .appoinment__uploadbutton .u-button-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name {
+.appoinment__uploadbtndiv .appoinment__uploadbutton .u-button-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .attupbtn-name {
   font-family: inherit;
   font-size: 1.4rem;
   font-weight: 400;
@@ -1598,16 +2200,34 @@ body {
   color: #ffffff;
 }
 
+@media only screen and (max-width: 27.5em) {
+  .appoinment__uploadbtndiv,
+  .appoinment__uploadbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .appoiment_categories {
   display: flex;
+  gap: 1rem;
   align-items: center;
   margin-bottom: 1.5rem;
+  margin-top: 2rem;
   justify-content: space-between;
 }
 @media only screen and (max-width: 75em) {
   .appoiment_categories {
     justify-content: space-evenly;
     gap: 1rem;
+  }
+}
+@media only screen and (max-width: 27.5em) {
+  .appoiment_categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center;
   }
 }
 .appoiment_categories .appointment__name {
@@ -1618,6 +2238,13 @@ body {
   width: 8.3rem;
   height: 8rem;
   border-radius: 1.2rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .appoiment_categories .appointment__name {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
 }
 .appoiment_categories .appointment__name .cat_count {
   font-family: inherit;
@@ -1651,12 +2278,20 @@ body {
   padding: 0.8rem 0.8rem;
   text-align: center;
 }
-.visit__addbtndiv .visit__addbutton .u-button-name, .visit__addbtndiv .visit__addbutton .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .visit__addbtndiv .visit__addbutton .appupbtn-name {
+.visit__addbtndiv .visit__addbutton .u-button-name, .visit__addbtndiv .visit__addbutton .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .visit__addbtndiv .visit__addbutton .attupbtn-name, .visit__addbtndiv .visit__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .visit__addbtndiv .visit__addbutton .appupbtn-name {
   font-family: inherit;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 21px;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 27.5em) {
+  .visit__addbtndiv,
+  .visit__addbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
 }
 
 .visit__search-filter-maindiv {
@@ -1667,6 +2302,23 @@ body {
   background-color: #eef8ff;
   border-radius: 1.2rem;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .visit__search-filter-maindiv {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .visit__search-filter-maindiv .visit__searchmanidiv {
+    grid-column: 1/-1;
+  }
+  .visit__search-filter-maindiv .visit__datemaindiv {
+    grid-column: 1/6;
+  }
 }
 .visit__search-filter-maindiv .visit__searchmanidiv {
   display: flex;
@@ -1842,6 +2494,11 @@ body {
   align-items: center !important;
   height: 100%;
 }
+@media only screen and (max-width: 27.5em) {
+  .visit__edbtn-wrapper {
+    gap: 4rem;
+  }
+}
 .visit__edbtn-wrapper .visit__editbtn,
 .visit__edbtn-wrapper .visit__deletebtn {
   font-size: 1.3rem;
@@ -1871,6 +2528,14 @@ body {
   line-height: 21px;
   color: #ffffff;
 }
+@media only screen and (max-width: 27.5em) {
+  .ques__addbtndiv,
+  .ques__addbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .ques__patient-detailsdiv {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1880,11 +2545,22 @@ body {
 .ques__modaldiv {
   padding: 3rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .ques__modaldiv {
+    padding: 1.5rem;
+  }
+}
 
 .ques__modalbodydiv .ques__actiontab-div {
   padding: 2rem;
   background-color: #eef8ff;
   border-radius: 1.2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .ques__modalbodydiv .ques__actiontab-div {
+    margin-bottom: 0;
+  }
 }
 
 .signature-container {
@@ -1909,7 +2585,7 @@ body {
   padding: 0.8rem 0.8rem;
   text-align: center;
 }
-.clear-btn .u-button-name, .clear-btn .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .clear-btn .attupbtn-name, .clear-btn .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .clear-btn .attupbtn-name, .clear-btn .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .clear-btn .attupbtn-name, .clear-btn .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .clear-btn .attupbtn-name, .clear-btn .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .clear-btn .attupbtn-name, .clear-btn .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .clear-btn .appupbtn-name, .clear-btn .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .clear-btn .attupbtn-name {
+.clear-btn .u-button-name, .clear-btn .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .clear-btn .attupbtn-name, .clear-btn .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .clear-btn .attupbtn-name, .clear-btn .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .clear-btn .attupbtn-name, .clear-btn .adddetail__addbtndiv .adddetail__addbutton .attupbtn-name, .adddetail__addbtndiv .adddetail__addbutton .clear-btn .attupbtn-name, .clear-btn .attachment__uploadbtndiv .attachment__uploadbutton .attupbtn-name, .attachment__uploadbtndiv .attachment__uploadbutton .clear-btn .attupbtn-name, .clear-btn .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .clear-btn .appupbtn-name, .clear-btn .ques__addbtndiv .ques__addbutton .attupbtn-name, .ques__addbtndiv .ques__addbutton .clear-btn .attupbtn-name {
   font-family: inherit;
   font-size: 1.4rem;
   font-weight: 400;
@@ -1922,6 +2598,12 @@ body {
   justify-content: right;
   align-items: center;
   gap: 1rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .ques__modalfooter {
+    justify-content: space-between;
+    padding: 2rem;
+  }
 }
 .ques__modalfooter .modal-uploadbtn,
 .ques__modalfooter .modal-closebtn {
@@ -1939,6 +2621,12 @@ body {
 .ques__modalfooter .modal-closebtn:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
+@media only screen and (max-width: 27.5em) {
+  .ques__modalfooter .modal-uploadbtn,
+  .ques__modalfooter .modal-closebtn {
+    width: 100%;
+  }
+}
 .ques__modalfooter .modal-uploadbtn {
   color: #ffffff;
   background-color: #068eee;
@@ -1948,7 +2636,7 @@ body {
   background-color: #ffffff;
 }
 
-.location__addbtndiv .location__addbutton {
+.resg__addbtndiv .resg__addbutton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1957,13 +2645,21 @@ body {
   padding: 0.8rem 0.8rem;
   text-align: center;
 }
-.location__addbtndiv .location__addbutton .u-button-name, .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .location__addbtndiv .location__addbutton .appupbtn-name {
+.resg__addbtndiv .resg__addbutton .u-button-name, .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .resg__addbtndiv .resg__addbutton .appupbtn-name {
   font-family: inherit;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 21px;
   color: #ffffff;
 }
+@media only screen and (max-width: 27.5em) {
+  .resg__addbtndiv,
+  .resg__addbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .Regis__attachment {
   background-color: #ffffff;
   border-radius: 0.6rem;
@@ -2004,7 +2700,7 @@ body {
   border-radius: 1.2rem;
 }
 
-.resg__addbtndiv .resg__addbutton {
+.location__addbtndiv .location__addbutton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2013,13 +2709,21 @@ body {
   padding: 0.8rem 0.8rem;
   text-align: center;
 }
-.resg__addbtndiv .resg__addbutton .u-button-name, .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .resg__addbtndiv .resg__addbutton .attupbtn-name, .resg__addbtndiv .resg__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .resg__addbtndiv .resg__addbutton .appupbtn-name {
+.location__addbtndiv .location__addbutton .u-button-name, .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .newpatient .newpatient__add-button .newpatient__btndiv .attupbtn-name, .newpatient .newpatient__add-button .newpatient__btndiv .location__addbtndiv .location__addbutton .attupbtn-name, .location__addbtndiv .location__addbutton .appoinment__uploadbtndiv .appoinment__uploadbutton .appupbtn-name, .appoinment__uploadbtndiv .appoinment__uploadbutton .location__addbtndiv .location__addbutton .appupbtn-name {
   font-family: inherit;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 21px;
   color: #ffffff;
 }
+@media only screen and (max-width: 27.5em) {
+  .location__addbtndiv,
+  .location__addbutton {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .location__modalbodydiv .location__search-filter-maindiv {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -2028,6 +2732,14 @@ body {
   background-color: #eef8ff;
   border-radius: 1.2rem;
   padding: 1rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .location__modalbodydiv .location__search-filter-maindiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 .location__modalbodydiv .location__search-filter-maindiv .location__searchmanidiv {
   display: flex;
@@ -2155,6 +2867,11 @@ body {
   height: 4rem;
   padding: 0.8rem 1.5rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .location__modalbodydiv .location__search-filter-maindiv .location__checkbox {
+    align-self: flex-start;
+  }
+}
 .location__modalbodydiv .location__search-filter-maindiv .location__checkbox .location__checkpoint {
   width: 2rem;
   height: 2rem;
@@ -2212,20 +2929,62 @@ body {
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2rem;
   column-gap: 2rem;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.8rem;
+    margin-top: 0;
+  }
 }
 .details-grid--three-columns {
   grid-template-columns: repeat(3, 1fr);
+}
+@media only screen and (max-width: 27.5em) {
+  .details-grid--three-columns {
+    grid-template-columns: 1fr;
+  }
 }
 .details-grid--five-columns {
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   column-gap: 1rem;
   justify-content: center;
 }
+@media only screen and (max-width: 27.5em) {
+  .details-grid--five-columns {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+  }
+}
 .details-grid .detail-item {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 27.5em) {
+  .details-grid .detail-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .details-grid .detail-item__fullwidth {
+  grid-column: 1/-1;
+}
+.details-grid .appiont-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 27.5em) {
+  .details-grid .appiont-detail-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.details-grid .appiont-detail-item__fullwidth {
   grid-column: 1/-1;
 }
 .details-grid .label {
@@ -2236,6 +2995,11 @@ body {
   text-align: left;
   color: #626262;
 }
+@media only screen and (max-width: 27.5em) {
+  .details-grid .label {
+    font-size: 1.4rem;
+  }
+}
 .details-grid .value {
   font-family: inherit;
   font-size: 1.6rem;
@@ -2245,11 +3009,24 @@ body {
   color: #000000;
   margin-top: 0.5rem;
 }
+@media only screen and (max-width: 27.5em) {
+  .details-grid .value {
+    font-size: 1.8rem;
+  }
+}
 
 .tab-headline {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 27.5em) {
+  .tab-headline {
+    flex-direction: column;
+    row-gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+  }
 }
 
 .warning-text {
@@ -2274,6 +3051,7 @@ body {
   border-radius: 1rem;
   margin-bottom: 0 !important;
   overflow: hidden;
+  width: 100%;
 }
 .custom-table thead {
   font-family: inherit;
@@ -2320,6 +3098,65 @@ body {
 .custom-table th:first-child,
 .custom-table td:first-child {
   border-left: none;
+}
+@media only screen and (max-width: 27.5em) {
+  .custom-table thead {
+    display: none;
+  }
+  .custom-table tbody tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    background-color: #f4fbff;
+    border-radius: 1rem;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 1rem 1.5rem;
+  }
+  .custom-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+  .custom-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border: none;
+    font-size: 1.2rem;
+    color: #626262;
+    font-family: Nunito;
+    font-weight: 400;
+    line-height: 16.37px;
+  }
+  .custom-table tbody td:before {
+    content: attr(data-label);
+    color: #666;
+    font-weight: 400;
+  }
+  .custom-table tbody td > span {
+    font-family: Nunito;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 21.82px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .custom-table tbody td:not(:last-child) {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.3);
+  }
+  .custom-table tbody td.table-deletecol {
+    border-top: 1px dashed black;
+    border-bottom: none;
+    justify-content: center;
+    font-family: Nunito;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 16.37px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
 }
 
 /* Specific table with 7 columns and different widths we use this for Appointments log tab */
@@ -2567,6 +3404,11 @@ body {
     justify-content: space-between;
     align-items: flex-end;
   }
+  .mobile__header .mobile__left-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
   .mobile__header .mobile__backbtnwrapper {
     display: flex;
     justify-content: center;
@@ -2576,6 +3418,12 @@ body {
     font-size: 2.5rem;
     color: #000000;
     cursor: pointer;
+  }
+  .mobile__header .mobile__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 21.82px;
   }
   .mobile__header .mobile__adsearchwrapper {
     display: flex;
@@ -2588,18 +3436,44 @@ body {
   display: grid;
   min-height: 100vh;
   min-height: 100dvh;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   overflow-y: auto;
+}
+.maincontainer .newpatient-section {
+  grid-column: 1/-1;
+}
+.maincontainer .search-section {
+  grid-column: 1/-1;
+  flex-grow: 1;
+}
+.maincontainer .image__doctorimg {
+  grid-column: 1/-1;
 }
 @supports (-webkit-touch-callout: none) {
   .maincontainer {
     min-height: -webkit-fill-available;
   }
 }
+@media only screen and (max-width: 64em) {
+  .maincontainer {
+    grid-template-rows: 11rem 20rem 50rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .maincontainer {
+    grid-template-rows: 15rem 30rem 46rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .maincontainer {
+    grid-template-rows: 20rem 38rem 55rem;
+  }
+}
 @media only screen and (max-width: 27.5em) {
   .maincontainer {
     display: grid;
-    grid-template-rows: 20rem 40rem auto;
+    grid-template-rows: 20rem 40rem 55rem;
     min-height: -webkit-fill-available;
     height: 100%;
   }
@@ -2621,6 +3495,8 @@ body {
 @media only screen and (max-width: 27.5em) {
   .maindashboard__container {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0;
   }
 }
 
@@ -2630,6 +3506,13 @@ body {
   max-height: 100%;
   width: 100%;
   border-radius: 0.8rem;
+}
+@media only screen and (max-width: 27.5em) {
+  .search__section {
+    grid-row: 1/2;
+    background: none;
+    padding: 0;
+  }
 }
 
 .patient__details {
@@ -2643,15 +3526,19 @@ body {
 }
 @media only screen and (max-width: 27.5em) {
   .patient__details {
-    display: grid;
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
+    grid-row: 2/3;
+    display: none;
+    background: none;
   }
 }
 
 .patient__completeinfo {
   padding: 1rem 1rem 1rem 0;
+}
+@media only screen and (max-width: 27.5em) {
+  .patient__completeinfo {
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

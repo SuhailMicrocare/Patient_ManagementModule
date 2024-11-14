@@ -5,6 +5,11 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    width: 100%;
+  }
 
   .Dependencies__dropdown {
     .drop__name {
@@ -47,6 +52,12 @@
       width: 100%;
       justify-content: right;
     }
+    @include respond(phone) {
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 1rem;
+      margin-top: 2rem;
+    }
   }
 
   .Dependencies__savebutton,
@@ -54,6 +65,9 @@
     border-radius: 0.8rem;
     padding: 0.8rem 2.5rem 0.8rem 2.5rem;
     text-align: center;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 
   .Dependencies__savebutton {

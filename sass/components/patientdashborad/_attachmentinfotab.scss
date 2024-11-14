@@ -7,15 +7,36 @@
   }
 }
 
+.attachment__uploadbtndiv,
+.attachment__uploadbutton {
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 // ATTACHEMENT MODAL CODE
 .attachment__modaldiv {
   padding: 5rem;
+  @include respond(phone) {
+    padding: 1.5rem;
+  }
 }
 
 // MODAL MAIN BODY
 .attachment__modalbodydiv {
   display: flex;
   align-items: center;
+
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .mobilev-modal-wrapper {
+    display: flex;
+  }
 
   // IMAGE UPLOAD DIV
   .imguploaddiv {
@@ -24,6 +45,10 @@
     border: 1px solid #c1dae3;
     margin-right: 3rem;
     position: relative;
+
+    @include respond(phone) {
+      margin-right: 2rem;
+    }
 
     .upload-imgsize {
       width: 8rem;
@@ -52,9 +77,19 @@
     display: flex;
     justify-content: right;
     margin-left: auto;
+    @include respond(phone) {
+      margin-left: 0;
+      width: 100%;
+    }
     .attachment__inputmaindiv {
       display: flex;
       align-items: center;
+      @include respond(phone) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+      }
       .input__name {
         font-family: inherit;
         font-size: 1.2rem;
@@ -67,6 +102,11 @@
 
       .input__div {
         margin-right: 2rem;
+        @include respond(phone) {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 2rem;
+        }
         .attachment__input {
           font-family: inherit;
           font-size: 1.2rem;
@@ -78,6 +118,10 @@
           border: 1px solid #cccccc;
           width: 100%;
           display: block;
+
+          @include respond(phone) {
+            width: 100%;
+          }
 
           &:focus {
             outline: none;
@@ -97,6 +141,12 @@
         align-self: flex-end;
         justify-content: right;
         gap: 1rem;
+
+        @include respond(phone) {
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
 
         .custom-file-input {
           display: none;

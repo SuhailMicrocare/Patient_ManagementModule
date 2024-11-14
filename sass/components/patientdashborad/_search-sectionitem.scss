@@ -23,7 +23,6 @@
           right: 0;
           transform: none !important;
           margin-top: 0; // Remove default margin
-          // z-index: 1000; // Ensure it appears above other content
         }
         // Handle Bootstrap's dynamic positioning
         .dropdown-menu[data-bs-popper] {
@@ -38,11 +37,10 @@
   }
 
   &__input-container {
-    // display: flex;
-    // justify-content: space-between;
     display: grid;
     grid-template-columns: 8fr 1fr;
     align-items: center;
+    justify-content: space-between;
     margin-top: 1rem;
     .search-box__input-wrapper {
       position: relative;
@@ -117,7 +115,7 @@
       padding: 0.8rem;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-self: right;
     }
   }
 }
@@ -165,7 +163,6 @@
   width: 100%;
   min-width: 18rem;
   @include respond(phone) {
-    // max-width: 36.4rem;
     max-height: 10.3rem;
   }
 
@@ -193,7 +190,6 @@
     font-weight: 700;
     line-height: 1.2;
     color: inherit;
-    // white-space: nowrap;
     @include respond(phone) {
       font-size: 1.4rem;
       line-height: 19.1px;

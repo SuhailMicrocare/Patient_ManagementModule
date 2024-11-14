@@ -3,6 +3,7 @@
   font-weight: 700;
   line-height: 1.2;
   color: $plp-heading-color;
+  margin-bottom: 2.7rem;
   @include respond(phone) {
     font-size: 3.2rem;
     line-height: 32.74px;

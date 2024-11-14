@@ -32,6 +32,12 @@
   justify-content: right;
   align-items: center;
   column-gap: 1rem;
+  @include respond(phone) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .inc__service-setting {

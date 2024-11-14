@@ -6,6 +6,15 @@
     }
   }
 }
+
+.ques__addbtndiv,
+.ques__addbutton {
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
 .ques__patient-detailsdiv {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,18 +24,22 @@
 // ATTACHEMENT MODAL CODE
 .ques__modaldiv {
   padding: 3rem;
+  @include respond(phone) {
+    padding: 1.5rem;
+  }
 }
 
 // MODAL MAIN BODY
 .ques__modalbodydiv {
-  // display: flex;
-  // align-items: center;
-
   // IMAGE UPLOAD DIV
   .ques__actiontab-div {
     padding: 2rem;
     background-color: $color-secondary-light;
     border-radius: 1.2rem;
+    margin-bottom: 2rem;
+    @include respond(phone) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -53,6 +66,11 @@
   align-items: center;
   gap: 1rem;
 
+  @include respond(phone) {
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
   .modal-uploadbtn,
   .modal-closebtn {
     display: inline-block;
@@ -68,6 +86,10 @@
 
     &:hover {
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    }
+
+    @include respond(phone) {
+      width: 100%;
     }
   }
 

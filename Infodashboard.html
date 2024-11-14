@@ -169,17 +169,20 @@
         </div>
       </nav>
       <nav class="mobile__header">
-        <div class="mobile__backbtnwrapper">
-          <i class="bi bi-arrow-left-square back-btn-icon"></i>
+        <div class="mobile__left-section">
+          <div class="mobile__backbtnwrapper" id="mobile-back-btn">
+            <i class="bi bi-arrow-left-square back-btn-icon"></i>
+          </div>
+          <div class="mobile__title" id="mobile-header-title"></div>
         </div>
-        <div class="mobile__adsearchwrapper">
+        <div class="mobile__adsearchwrapper" id="mobile-adsearch">
           <a href="#" class="u-text-size-m">Advance search</a>
         </div>
       </nav>
     </header>
     <main class="maindashboard__container">
       <!-- SEARCHBOX- SECTION -->
-      <div class="search__section">
+      <div class="search__section" id="search-section">
         <div class="search-box">
           <div class="search-box__dropdown">
             <div class="search-box__dropdown-wrapper">
@@ -414,44 +417,169 @@
         </div>
       </div>
       <!-- PATIENT DETAILS- SECTION -->
-      <div class="patient__details">
+      <div class="patient__details" id="patient-details">
         <div class="patient__navbar">
+          <div class="patient-profile__wrapper">
           <!-- PROFILE PICTURE SECTION -->
-          <div class="patient-profilediv">
-            <div class="patient-profile-picture">
-              <img
-                src="/Assets/Images/arabgirl.png"
-                alt="profite picture"
-                class="patient-profile-picture__image"
-              />
-              <div class="patient-profile-picture__progress-ring">
-                <div class="patient-profile-picture__progress-bar"></div>
+            <div class="patient-profilediv">
+              <div class="patient-profile-picture">
+                <img
+                  src="/Assets/Images/arabgirl.png"
+                  alt="profite picture"
+                  class="patient-profile-picture__image"
+                />
+                <div class="patient-profile-picture__progress-ring">
+                  <div class="patient-profile-picture__progress-bar"></div>
+                </div>
+              </div>
+            </div>
+          <!-- EDIT BUTTON SECTION -->
+           <div class="patient-percentage-edit-wrapper">
+              <div class="patient-percentage-wrapper">
+                <div class="patient-editbutton__percentage">65%</div>
+                <div class="patient-editbutton__name">Profile Complete</div>
+              </div>
+              <div class="patient-editbutton">
+                
+                <button type="button" class="patient-editbutton__button">
+                  <span class="patient-editbutton__button__edit"> Edit</span>
+                </button>
+                <div class="patient-printable-btndiv">
+                  <button type="button" class="patient-printablebutton__button" data-bs-toggle="modal"
+                  data-bs-target="#printableModal">
+                    <span class="patient-printablebutton__button__printables" >Printables</span>
+                  </button>
+                </div>
+
+                <!-- Printable Modal only for Mobile view -->
+                <div class="modal fade" id="printableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content printable__modal-content">
+                      <!-- <div class="modal-body">
+                        ...
+                      </div> -->
+                      <div class="printable-icons__modal">
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientlabel.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Label</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientcard.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Card</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientfilelabel.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient File Label</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pdemegraphic.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Demographic</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pfilebarcode.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient file barcode</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pidbarcode.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient ID Barcode</span>
+                        </div>
+                      </div>
+                      <button class="p-navigation__modal-close" type="button" data-bs-dismiss="modal">
+                        <span class="p-navigation__modal-close__close"> Close</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- EDIT BUTTON SECTION -->
-          <div class="patient-editbutton">
-            <span class="patient-editbutton__percentage">65%</span>
-            <span class="patient-editbutton__name">Profile Complete</span>
-            <button type="button" class="patient-editbutton__button">
-              <span class="patient-editbutton__button__edit"> Edit</span>
-            </button>
-          </div>
-          <!-- NAVIGATION LINKS SECTION -->
           <div class="p-navigation">
-            <ul>
-              <li class="p-navigation__link">Personal Info</li>
-              <li>Insurance</li>
-              <li>Non-Insurance</li>
-              <li>Dependencies</li>
-              <li>Attachment</li>
-              <li>Audit trail</li>
-              <li>Appoinment Log</li>
-              <li>Visits</li>
-              <li>Questionire</li>
-              <li>Registration Form</li>
-              <li>Locations</li>
-            </ul>
+              <!-- Mobile header - only visible on mobile -->
+              <div class="p-navigation__mobile-header">
+                <span class="p-navigation__selected-text">Personal Info</span>
+                <!-- <button class="p-navigation__toggle">
+                  <span class="p-navigation__toggle-icon"></span>
+                 
+                </button> -->
+                <button class="p-navigation__toggle">
+
+                
+                <svg
+                class="u-icon-size-l dropdown-toggle p-navigation__toggle-icon"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <use
+                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                ></use>
+              </svg>
+            </button>
+              </div>
+            
+              <!-- Regular navigation list - visible on desktop -->
+              <ul class="p-navigation__desktop-list">
+                <li class="p-navigation__link">Personal Info</li>
+                <li>Insurance</li>
+                <li>Non-Insurance</li>
+                <li>Dependencies</li>
+                <li>Attachment</li>
+                <li>Audit trail</li>
+                <li>Appoinment Log</li>
+                <li>Visits</li>
+                <li>Questionire</li>
+                <li>Registration Form</li>
+                <li>Locations</li>
+              </ul>
+            
+              <!-- Modal for mobile view -->
+              <div class="p-navigation__modal">
+                <div class="p-navigation__modal-content">
+                  <div class="p-navigation__modal-header">
+                    <h3>Patient Details</h3>
+                  </div>
+                  <ul class="p-navigation__modal-list">
+                    <li class="p-navigation__link">Personal Info</li>
+                    <li>Insurance</li>
+                    <li>Non-Insurance</li>
+                    <li>Dependencies</li>
+                    <li>Attachment</li>
+                    <li>Audit trail</li>
+                    <li>Appoinment Log</li>
+                    <li>Visits</li>
+                    <li>Questionire</li>
+                    <li>Registration Form</li>
+                    <li>Locations</li>
+                  </ul>
+                 
+                  <button class="p-navigation__modal-close" type="button">
+                    <span class="p-navigation__modal-close__close"> Close</span>
+                  </button>
+                </div>
+              </div>
           </div>
           <!-- EXTRA FEATURES ICONS -->
           <div class="p-icons">
@@ -858,8 +986,8 @@
                   <span class="value u-tabnamecolor u-marginright-s">Co Insurance Settings</span
                   >
                   <div class="left-side-align inc__service-setting">
-                      <div class="label u-align-left">Service Type Classification:</div>
-                      <div class="dropdown service-dropdown">
+                      <div class="label">Service Type Classification:</div>
+                      <div class="dropdown service-dropdown mobile-v-ml">
                         <button
                           class="btn"
                           type="button"
@@ -905,16 +1033,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Infusion</td>
-                      <td>30%</td>
-                      <td>70%</td>
-                      <td>@mdo</td>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
                     </tr>
-                    <tr>
-                      <td>Infusion</td>
-                      <td>35%</td>
-                      <td>65%</td>
-                      <td>@fat</td>
+                     <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
                     </tr>
                     
                   </tbody>
@@ -992,39 +1120,37 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Consultation</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Consultation</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Home Care</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Home Care</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Outpatient Dental Lab Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Lab Services</span></td>
+                      <td data-label="Co Insurance %"><span>40%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Outpatient Dental Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Services</span></td>
+                      <td data-label="Co Insurance %"><span>60%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
-
                     <tr>
-                      <td>Outpatient Laboratory Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Laboratory Services</span></td>
+                      <td data-label="Co Insurance %"><span>80%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
-
                     <tr>
-                      <td>Outpatient Prescriptions</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Prescriptions</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1138,16 +1264,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Arwa Saad . Al Jabreen</td>
-                      <td>2312</td>
-                      <td>Brother</td>
-                      <td class="table-deletecol">Delete</td>
+                      <td data-label="Dependent Name"> <span>Arwa Saad . Al Jabreen</span></td>
+                      <td data-label="Dependent FileNo"><span>2312</span></td>
+                      <td data-label="Relation"><span>Brother</span></td>
+                      <td data-label="" class="table-deletecol">Delete</td>
                     </tr>
                     <tr>
-                      <td>Nafeh Abdel Hamid . Tanki</td>
-                      <td>2312</td>
-                      <td>Brother</td>
-                      <td class="table-deletecol">Delete</td>
+                      <td data-label="Dependent Name"><span>Nafeh Abdel Hamid . Tanki</span></td>
+                      <td data-label="Dependent FileNo"><span>2312</span></td>
+                      <td data-label="Relation"><span>Brother</span></td>
+                      <td data-label="" class="table-deletecol">Delete</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1187,17 +1313,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Scan photo copy</td>
-                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
-                      <td>04/08/2024 [05:58 PM]</td>
-                      <td>Dr Hadeel akkad</td>
+                      <td data-label="Attachment name"><span>Scan photo copy</span></td>
+                      <td data-label="Attachment"><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td data-label="Date"><span>04/08/2024 [05:58 PM]</span></td>
+                      <td data-label="Uploaded By"><span>Dr Hadeel akkad</span></td>
                       <td class="table-deletecol">Delete</td>
                     </tr>
                     <tr>
-                      <td>MRI Scan copy</td>
-                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
-                      <td>04/08/2024 [05:58 PM]</td>
-                      <td>Dr Noha</td>
+                      <td data-label="Attachment name"><span>MRI Scan copy</span></td>
+                      <td data-label="Attachment"><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td data-label="Date"><span>04/08/2024 [05:58 PM]</span></td>
+                      <td data-label="Uploaded By"><span>Dr Noha</span></td>
                       <td class="table-deletecol">Delete</td>
                     </tr>
                   
@@ -1213,17 +1339,19 @@
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                   </div>
                   <div class="attachment__modalbodydiv">
-                    <div class="imguploaddiv">
-                      <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
-                    </div>
-                    <div class="imguploaddiv">
-                      <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
-                      <div class="delete-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                        </svg>
+                    <div class="mobilev-modal-wrapper">
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                       </div>
-                    </div>
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                        <div class="delete-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                          </svg>
+                        </div>
+                      </div>
+                  </div>
                     <div class="attachment__input-buttondiv">
                      
                      
@@ -1295,43 +1423,42 @@
               </div>
             </div>
           </div>
-
-          <div class="detail-item detail-item__fullwidth">
-            <div class="">
-              <div class="appoiment_categories">
-              <div class="appointment__name all">
-                <div class="cat_count">345</div>
-                <div class="cat_name">All</div>
-              </div>
-
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Scheduled</div>
-              </div>
-
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Confirmed</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Arrived</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Early</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Late</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Complete</div>
-              </div>
+        </div>
+        <div class="appiont-detail-item  appiont-detail-item __fullwidth">
+          <!-- <div class=""> -->
+            <div class="appoiment_categories">
+            <div class="appointment__name all">
+              <div class="cat_count">345</div>
+              <div class="cat_name">All</div>
             </div>
+
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Scheduled</div>
+            </div>
+
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Confirmed</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Arrived</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Early</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Late</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Complete</div>
             </div>
           </div>
+          <!-- </div> -->
         </div>
         <div class="tab-tabledive">
             <table class="table custom-table custom-table-7-cols table-hover">
@@ -1348,114 +1475,94 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
               </tbody>
             </table>
@@ -1494,19 +1601,19 @@
                 </div>
               </div>
              <!-- DATE DIV -->
-              <div class="visit__datemaindiv">
-                <div class="date__label">Doctor</div>
-                <div class="visit__date-wrapper">
-                  <input type="date" class="visit__fromdate-input" placeholder="From Date">
-                  <input type="date" class="visit__enddate-input" placeholder="To Date">
+                <div class="visit__datemaindiv">
+                  <div class="date__label">Period</div>
+                  <div class="visit__date-wrapper">
+                    <input type="date" class="visit__fromdate-input" placeholder="From Date">
+                    <input type="date" class="visit__enddate-input" placeholder="To Date">
+                  </div>
                 </div>
-              </div>
               <!-- FILTER DIV -->
-              <div class="visit__filterbutton">
-                <i class="bi bi-funnel filter-button"></i>
-              </div>
+                <div class="visit__filterbutton">
+                  <i class="bi bi-funnel filter-button"></i>
+                </div>
             </div>
-           
+
           </div>
         </div>
         <div class="tab-tabledive">
@@ -1521,11 +1628,11 @@
             </thead>
             <tbody>
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1533,11 +1640,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1545,11 +1652,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1557,11 +1664,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1569,11 +1676,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1581,11 +1688,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1593,11 +1700,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1605,11 +1712,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1617,17 +1724,19 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
               </tr> 
+
+             
             </tbody>
           </table>
         </div>
@@ -1692,26 +1801,26 @@
                   <span class="label">Patient name :</span>
                   <span class="value">Dua Fatima bint Haseeb</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">File Number :</span>
                   <span class="value">#4324345</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Mobile Number</span>
                   <span class="value">0558455555</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Age :</span>
                   <span class="value">23</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Gender :</span>
                   <span class="value">Female</span>
                 </div>
               </div>
 
               <!-- ACTION TABS -->
-               <div class="ques__actiontab-div u-marginbottom-xl">
+               <div class="ques__actiontab-div">
                   <!-- Questionnaire Form TAB -->
                   <div class="tab__section">
                     <div class="u-vh-align-center">
@@ -1822,17 +1931,19 @@
                     <div class="collapse show" id="Attachementtab">
                       <div class="main-details-div">
                         <div class="attachment__modalbodydiv">
-                          <div class="imguploaddiv">
-                            <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
-                          </div>
-                          <div class="imguploaddiv">
-                            <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
-                            <div class="delete-icon">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                              </svg>
+                          <div class="mobilev-modal-wrapper">
+                            <div class="imguploaddiv">
+                              <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                             </div>
-                          </div>
+                            <div class="imguploaddiv">
+                              <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                              <div class="delete-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                </svg>
+                              </div>
+                            </div>
+                        </div>
                           <div class="attachment__input-buttondiv">
                            
                            
@@ -2055,19 +2166,19 @@
                   <span class="label">Patient name :</span>
                   <span class="value">Dua Fatima bint Haseeb</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">File Number :</span>
                   <span class="value">#4324345</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Mobile Number</span>
                   <span class="value">0558455555</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Age :</span>
                   <span class="value">23</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Gender :</span>
                   <span class="value">Female</span>
                 </div>
@@ -2077,7 +2188,9 @@
                <div class="resg__attachtab-div u-marginbottom-xl">
                    <!-- ATTACHMENT TAB -->
                    <div class="main-details-div">
+                    <h5 class="u-text-size-l">Attachments</h5>
                     <div class="attachment__modalbodydiv">
+                     <div class="mobilev-modal-wrapper">
                       <div class="imguploaddiv">
                         <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                       </div>
@@ -2089,6 +2202,7 @@
                           </svg>
                         </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                </div>
@@ -2112,8 +2226,6 @@
             </div>
           </div>
       </div>
-      
-      
         </div>
         <!--Locations INFORMATION TAB  -->
         <div
@@ -2143,79 +2255,79 @@
               <tr>
                 <th scope="col">Latitude</th>
                 <th scope="col">Longitude</th>
-                <th scope="col">Is Default
-                  Location</th>
-                  <th scope="col">Is Current
-                    Location</th>
+                <th scope="col">Is Default Location</th>
+                <th scope="col">Is Current Location</th>
                 <th colspan="2">Created By</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
+
+           
            
             </tbody>
           </table>
@@ -2291,11 +2403,6 @@
       </div>
     </main>
 
-    <div class="patient__details">
-      
-    </div>
-
-
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 <!-- ionicons SCRIPT -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -2316,6 +2423,7 @@
     <script src="../javascript/calenderdate.js"></script>
     <script src="../javascript/signature.js"></script>
     <script src="../javascript/locationmaooing.js"></script>
+    <script src="../javascript/mobileview.js"></script>
     
     
   </body>
