@@ -217,6 +217,7 @@
   @include respond(phone) {
     margin: 1rem 0 2rem;
     padding: 0;
+    flex-direction: column;
   }
 }
 
@@ -340,7 +341,7 @@
         transform: translateY(-50%);
         z-index: -1;
         @include respond(phone) {
-          width: 3rem;
+          width: 6rem;
         }
       }
     }

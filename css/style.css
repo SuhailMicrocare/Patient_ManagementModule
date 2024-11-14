@@ -520,6 +520,7 @@ body {
   .step-indicator-container {
     margin: 1rem 0 2rem;
     padding: 0;
+    flex-direction: column;
   }
 }
 
@@ -637,7 +638,7 @@ body {
 }
 @media only screen and (max-width: 27.5em) {
   .step-indicator .step.completed + .step::before {
-    width: 3rem;
+    width: 6rem;
   }
 }
 
@@ -2929,7 +2930,6 @@ body.modal-open {
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2rem;
   column-gap: 2rem;
-  margin-top: 2rem;
 }
 @media only screen and (max-width: 27.5em) {
   .details-grid {
