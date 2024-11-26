@@ -919,11 +919,19 @@
           >
             <div class="details-grid">
               <div class="detail-item detail-item__fullwidth">
-                <div class="tab-headline">
+                <div class="grid-headline">
                   <span class="value u-tabnamecolor">Insurance details</span>
-                  <span class="warning-text"
-                    >Patient Insurance Dates not Valid</span
-                  >
+                    <div class="warning-text u-justify-start inc-note-tag"
+                        >Patient Insurance Dates not Valid
+                    </div>
+                    <div class="inc-editorbtn-wrapper">
+                      <span>
+                        <i class="bi bi-pencil-square u-bootst-icon u-bootst-icon-blcolor inc-editbtn" id="inc-editbtn"></i>
+                      </span>
+                      <span>
+                        <i class="bi bi-trash3 u-bootst-icon u-bootst-icon-redcolor"></i>
+                      </span>
+                    </div>
                 </div>
               </div>
               <div class="detail-item">
@@ -946,7 +954,6 @@
                 <span class="label">Insurance End Date:</span>
                 <span class="value">19/11/2024</span>
               </div>
-
               <div class="detail-item">
                 <span class="label">Policyholder:</span>
                 <span class="value">AARAB CONSTRUCTING EST</span>
@@ -964,7 +971,6 @@
                   <span class="value u-tabnamecolor">Approval Settings</span>
                 </div>
               </div>
-
               <div class="detail-item">
                 <span class="label">Period:</span>
                 <span class="value">14 Day (s)</span>
@@ -1050,6 +1056,201 @@
               </div>
             </div>
           </div>
+
+          <!-- INSURANCE EDITOR DIV -->
+          <div class="Insurance-editor-div"
+          id="Insurance-editor-div"
+          style="display: none;">
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="editor-btn-wrapper">
+                  <span class="inc-bckbtn" id="inc-bckbtn">
+                    <i class="bi bi-arrow-left-square back-btn-icon"></i>
+                  </span>
+                  <span class="value u-tabnamecolor">Edit Insurance Details</span>
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Third-Party Administrator (TPA)</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="tpa-select" >
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Membership Number</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="membership-input">
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Insurance Company Name</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="company-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label ">Insurance Policyholder Name</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="policyholder-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Policy Number</span>
+                <div class="inc-editor-input-wrapper">
+                <input type="text" class="editor-input form-control" id="policy-input"placeholder="21123213" >
+                <i class="bi bi-search u-bootst-icon-blkcolor"></i>
+              </div>
+              </div>
+              <div class="grid-date-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Insurance Start Date</span>
+                  <input type="date" class="editor-input u-r-corner0" id="start-date"placeholder="21123213" >
+                </div>
+                <div class="detail-item">
+                  <span class="editor-label">Insurance End Date</span>
+                  <input type="date" class="editor-input u-l-corner0" id="end-date"placeholder="21123213">
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Insurance Class Title</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="class-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Insurance Card</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="insurance-card" name="file" class="custom-file-input">
+                  <label for="insurance-card" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Episode Settings</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Period</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="period-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Visits</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="visits-input">
+              </div>
+              <div class="grid-2grid-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Approval Limit Per Episode</span>
+                  <input type="text" class="editor-input" placeholder="21123213" id="approval-input">
+                </div>
+                <div class="detail-item-checkinput">
+                  <input type="checkbox"placeholder="21123213">
+                  <span class="checkbox-editor-label">Unlimited Episode </span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Patient Max Share Per Episode</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="patient-share-input">
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor u-marginright-s">Co Insurance Settings</span>
+                  <!-- <div class="left-side-align inc__service-setting">
+                      <div class="label">Service Type Classification:</div>
+                      <div class="dropdown service-dropdown mobile-v-ml">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Select
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                        <svg
+                          class="u-icon-m"
+                          data-bs-toggle="dropdown"
+                          data-bs-target="#dropdownMenu"
+                          aria-expanded="false"
+                        >
+                          <use
+                            xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                          ></use>
+                        </svg>
+                      </div>
+                  </div> -->
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Service Type Classification</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="service-type-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Max - Patient Share</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="inc-editor-footer">
+                <div class="inc-editor__savebutton">
+                  <span class="dsavebtn-name">Save</span>
+                </div>
+                <div class="inc-editor__canceltbutton">
+                  <span class="dresetbtn-name" id="inc-cancelbtn">Cancel</span>
+                </div>
+               
+            </div>
+          </div>
+
           <!--Non-Insurance INFORMATION TAB  -->
           <div
             class="Noninsurance-infodiv"
@@ -1058,11 +1259,17 @@
           >
             <div class="details-grid">
               <div class="detail-item detail-item__fullwidth">
-                <div class="tab-headline">
-                  <span class="value u-tabnamecolor"
-                    >Non-Insurance Details</span
-                  >
-                  <span class="warning-text">No Non-Insurance </span>
+                <div class="grid-headline">
+                  <span class="value u-tabnamecolor">Non-Insurance Details</span>
+                  <div class="warning-text u-justify-start inc-note-tag">No Non-Insurance </div>
+                  <div class="inc-editorbtn-wrapper">
+                        <span>
+                          <i class="bi bi-pencil-square u-bootst-icon u-bootst-icon-blcolor non-inc-editbtn" id="non-inc-editbtn"></i>
+                        </span>
+                        <span>
+                          <i class="bi bi-trash3 u-bootst-icon u-bootst-icon-redcolor"></i>
+                        </span>
+                  </div>
                 </div>
               </div>
               <div class="detail-item">
@@ -1157,6 +1364,153 @@
               </div>
             </div>
           </div>
+
+          <!-- NON INSURANCE EDITOR DIV -->
+          <div class="Noninsurance-editor-div"
+          id="Noninsurance-editor-div"
+          style="display: none;">
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="editor-btn-wrapper">
+                  <span class="noninc-bckbtn" id="noninc-bckbtn">
+                    <i class="bi bi-arrow-left-square back-btn-icon"></i>
+                  </span>
+                  <span class="value u-tabnamecolor">Edit Non-Insurance Details</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Membership Number</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-membership-input">
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Non-Insurance Company</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="noninc-company-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="grid-date-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Insurance Start Date</span>
+                  <input type="date" class="editor-input u-r-corner0" id="noninc-start-date"placeholder="21123213" >
+                </div>
+                <div class="detail-item">
+                  <span class="editor-label">Insurance End Date</span>
+                  <input type="date" class="editor-input u-l-corner0" id="noninc-end-date"placeholder="21123213">
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Insurance Class Title</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="noninc-class-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Non-Insurance Card</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="noninc-insurance-card" name="noninc-insurance-card" class="custom-file-input">
+                  <label for="noninc-insurance-card" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Approval Letter</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="noninc-approval-letter" name="noninc-approval-letter" class="custom-file-input">
+                  <label for="noninc-approval-letter" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Episode Settings</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Period</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-period-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Visits</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-visits-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Patient Max Share Per Episode</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-patient-share-input">
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor u-marginright-s">Co Non-Insurance Settings</span>
+                </div>
+              </div>
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tariff Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Consultation</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Home Care</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Lab Services</span></td>
+                      <td data-label="Co Insurance %"><span>40%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Services</span></td>
+                      <td data-label="Co Insurance %"><span>60%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Laboratory Services</span></td>
+                      <td data-label="Co Insurance %"><span>80%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Prescriptions</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="inc-editor-footer">
+                <div class="inc-editor__savebutton">
+                  <span class="dsavebtn-name">Save</span>
+                </div>
+                <div class="inc-editor__canceltbutton">
+                  <span class="dresetbtn-name" id="noninc-cancelbtn">Cancel</span>
+                </div>
+               
+            </div>
+          </div>
+
+
+
+
           <!--Dependencies INFORMATION TAB  -->
           <div
             class="Dependencies-infodiv"
@@ -1353,8 +1707,6 @@
                       </div>
                   </div>
                     <div class="attachment__input-buttondiv">
-                     
-                     
                       <div class="attachment__inputmaindiv">
                         <div class="input__div">
                           <div class="input__name">New Attachment</div>
@@ -1365,8 +1717,6 @@
                           <label for="file" class="custom-file-label">Upload</label>
                           <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Cancel</button>
                         </div>
-
-                        
                       </div>
                     </div>
                   </div>
@@ -2423,7 +2773,8 @@
     <script src="../javascript/calenderdate.js"></script>
     <script src="../javascript/signature.js"></script>
     <script src="../javascript/locationmaooing.js"></script>
-    <script src="../javascript/mobileview.js"></script>
+    <script src="../javascript/ins-non-insurance.js"></script>
+    <script src="../javascript/fileinput.js"></script>
     
     
   </body>

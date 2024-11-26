@@ -34,7 +34,7 @@
   // Phone (max-width: 430px)
   @include respond(phone) {
     display: grid;
-    grid-template-rows: 20rem 40rem 55rem;
+    grid-template-rows: 20rem 40rem 40rem;
     min-height: -webkit-fill-available;
     height: 100%;
   }

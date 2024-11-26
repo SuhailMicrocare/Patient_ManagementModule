@@ -35,9 +35,36 @@
     }
   }
 
+  .grid-date-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: inherit;
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0;
+    }
+  }
+
+  .grid-2grid-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: inherit;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 1.8rem;
+    }
+  }
+
   .detail-item {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 
     @include respond(phone) {
       flex-direction: row;
@@ -50,6 +77,17 @@
     }
   }
 
+  .detail-item-checkinput {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-end;
+    margin-bottom: 1.2rem;
+    @include respond(phone) {
+      gap: 1rem;
+      margin-bottom: 0;
+      align-items: center;
+    }
+  }
   .appiont-detail-item {
     display: flex;
     flex-direction: column;
@@ -91,6 +129,25 @@
   }
 }
 
+// HEADLIND GRID
+.grid-headline {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  align-items: center;
+  justify-content: left;
+
+  @include respond(phone) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    .inc-note-tag {
+      grid-column: 1/-1;
+      grid-row: 2 /3;
+    }
+  }
+}
+
 // TABLE DIV & HEADLINE STYLES
 .tab-headline {
   display: flex;
@@ -103,6 +160,7 @@
     width: 100%;
   }
 }
+
 .warning-text {
   font-family: inherit;
   font-size: 1.4rem;

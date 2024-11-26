@@ -367,42 +367,44 @@
 }
 
 // Form Field Styles
-.form-control,
-.form-select {
-  font-family: inherit;
-  font-size: 1.5rem;
-  padding: 0.8rem;
-  border-radius: 0.8rem;
-  border: 1px solid #c1dae3;
-  background-color: $color-white;
-  @include transition;
-
-  &:focus {
-    border-color: $modal-primary-color;
-    box-shadow: 0 0 0 0.2rem rgba($modal-primary-color, 0.25);
-  }
-
-  &.is-invalid {
-    border-color: #dc3545;
+#patientForm {
+  .form-control,
+  .form-select {
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid #c1dae3;
+    background-color: $color-white;
+    @include transition;
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem rgba(#dc3545, 0.25);
+      border-color: $modal-primary-color;
+      box-shadow: 0 0 0 0.2rem rgba($modal-primary-color, 0.25);
     }
-  }
 
-  &::-webkit-input-placeholder {
-    font-family: inherit;
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 16.37px;
-    color: $text-gray;
-  }
+    &.is-invalid {
+      border-color: #dc3545;
 
-  @include respond(phone) {
-    max-height: 4.8rem;
-    &::placeholder {
-      // color: #757575;
-      font-size: 1.4rem;
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(#dc3545, 0.25);
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 16.37px;
+      color: $text-gray;
+    }
+
+    @include respond(phone) {
+      max-height: 4.8rem;
+      &::placeholder {
+        // color: #757575;
+        font-size: 1.4rem;
+      }
     }
   }
 }
@@ -626,28 +628,3 @@
     opacity: 1;
   }
 }
-
-// Responsive Styles
-// @media (max-width: 768px) {
-//   .step-indicator-container {
-//     flex-direction: column;
-//     gap: 1rem;
-//   }
-
-//   .step-labels {
-//     position: relative;
-//     transform: none;
-//     width: 100%;
-//     margin-right: 0;
-//     text-align: center;
-
-//     .step-label {
-//       text-align: center;
-//     }
-//   }
-
-//   .step-indicator {
-//     margin-left: 0;
-//     gap: 3rem;
-//   }
-// }

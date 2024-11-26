@@ -30,7 +30,7 @@
     padding: 1rem 1rem 1rem 2.5rem;
     align-items: center;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-    width: 60%;
+    width: 50%;
     position: relative; // Add this to establish positioning context
 
     @include respond(phone) {
