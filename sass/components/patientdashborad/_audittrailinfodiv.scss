@@ -5,6 +5,10 @@
   height: 70vh;
   margin: auto;
   flex-direction: column;
+  img {
+    max-width: 100%; // Ensures the image scales with its container width
+    height: auto; // Maintains the aspect ratio of the image
+  }
   .responce-text {
     font-family: Nunito;
     font-size: 2.6rem;

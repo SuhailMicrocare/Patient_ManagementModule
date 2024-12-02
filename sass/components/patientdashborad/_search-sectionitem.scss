@@ -1,0 +1,216 @@
+.search-box {
+  padding: 2rem;
+  width: 100%;
+  background-color: $color-white;
+  border-radius: 1.5rem;
+
+  &__dropdown {
+    border-bottom: 0.2rem solid $color-grey-light-2;
+    .search-box__dropdown-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.4rem;
+      position: relative;
+      .dropdown {
+        position: unset;
+
+        .dropdown-menu {
+          position: absolute;
+          width: 100%;
+          top: calc(100% + 0.4rem) !important; // Position it below with 5px gap
+          left: 0;
+          right: 0;
+          transform: none !important;
+          margin-top: 0; // Remove default margin
+        }
+        // Handle Bootstrap's dynamic positioning
+        .dropdown-menu[data-bs-popper] {
+          left: 0;
+          right: 0;
+          transform: none !important;
+          top: calc(100% + 00.4rem);
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  &__input-container {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    .search-box__input-wrapper {
+      position: relative;
+      .search__input {
+        width: 100%; /* Adjust the width as needed, e.g., 100%, 50rem, etc. */
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 0.375rem 0.75rem;
+        background-color: rgba($color-white, 0.5);
+        border: none;
+        display: block;
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+
+        &::-webkit-input-placeholder {
+          color: $color-grey-dark-2;
+        }
+      }
+
+      .search__result-list-PD {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute; // Changed to absolute
+        top: 100%; // Position relative to searchbar__seaction
+        left: 0; // Align with left edge of searchbar__seaction
+        right: 0; // Align with right edge of searchbar__seaction
+        background-color: #f6f7f7;
+        width: 100%; // Full width of parent
+        max-height: auto;
+        z-index: 100;
+        border-bottom-left-radius: 1rem !important;
+        border-bottom-right-radius: 1rem !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba($color-black, 0.1); // Optional: add shadow for better separation
+
+        li {
+          font-size: 1.6rem;
+          padding: 1.4rem 2.5rem; // Added horizontal padding to match parent container
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+          }
+
+          &:first-child {
+            margin-top: 1.4rem;
+          }
+
+          &:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+          }
+
+          .ar {
+            direction: rtl;
+          }
+        }
+      }
+    }
+    .search-box__search-icon-wrapper {
+      width: 3.6rem;
+      height: 3.6rem;
+      background-color: $plp-button-b-color;
+      border-radius: 50%;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-self: right;
+    }
+  }
+}
+
+.advancedoption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 1.2rem 0 1.2rem;
+  margin-bottom: 1.5rem;
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.pagetourbutton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  @include respond(phone) {
+    margin-top: 2rem;
+  }
+}
+
+.profile-cardsdiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+  @include respond(ipad-pro) {
+    grid-template-columns: 1fr;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.patient-card {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+  background-color: $color-white;
+  width: 100%;
+  min-width: 18rem;
+  @include respond(phone) {
+    max-height: 10.3rem;
+  }
+
+  &:hover.patient-card {
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    transform: scale(1.01);
+  }
+
+  &__imgandname {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    @include respond(phone) {
+      margin-bottom: 0 !important;
+    }
+  }
+  &__profile-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    margin-right: 0.8rem;
+  }
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    @include respond(phone) {
+      font-size: 1.4rem;
+      line-height: 19.1px;
+    }
+  }
+
+  &__fname {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color-grey-light-3;
+    @include respond(phone) {
+      font-size: 1.2rem;
+      line-height: 16.37px;
+    }
+  }
+  &__fnumber {
+    font-size: 1rem;
+    font-weight: 500;
+    @include respond(phone) {
+      font-size: 1.2rem;
+      line-height: 16.37px;
+    }
+  }
+}

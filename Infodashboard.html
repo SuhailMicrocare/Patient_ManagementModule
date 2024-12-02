@@ -27,7 +27,7 @@
   </head>
   <body>
     <header>
-      <nav class="head">
+      <nav class="head__p-dashboard">
         <!-- sidenavbar -->
         <div class="head__navbar">
           <svg class="head__navbar__icon">
@@ -168,62 +168,71 @@
           </div>
         </div>
       </nav>
+      <nav class="mobile__header">
+        <div class="mobile__left-section">
+          <div class="mobile__backbtnwrapper" id="mobile-back-btn">
+            <i class="bi bi-arrow-left-square back-btn-icon"></i>
+          </div>
+          <div class="mobile__title" id="mobile-header-title"></div>
+        </div>
+        <div class="mobile__adsearchwrapper" id="mobile-adsearch">
+          <a href="#" class="u-text-size-m">Advance search</a>
+        </div>
+      </nav>
     </header>
     <main class="maindashboard__container">
       <!-- SEARCHBOX- SECTION -->
-      <div class="search__section">
-        <div class="searchbox__dropsearchdiv">
-          <div class="searchbox__dropsection">
-            <div class="searchbox__dropdown_section dropdown-center">
-              <button class="search__dropbutton" type="button">
-                <span class="u-text-size-m"> File number/Patient name </span>
-              </button>
-              <ul
-                class="dropdown-menu dropdown-menu-lg-end"
-              >
-                <li>
-                  <a class="dropdown-item" href="#">File number/Patient name</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-              </ul>
-
-              <svg
-                class="u-icon-size-l dropdown-toggle"
-                data-bs-toggle="dropdown"
-                data-bs-target="#dropdownMenu"
-                aria-expanded="false"
-              >
-                <use
-                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
-                ></use>
-              </svg>
+      <div class="search__section" id="search-section">
+        <div class="search-box">
+          <div class="search-box__dropdown">
+            <div class="search-box__dropdown-wrapper">
+                <!-- Left side text with dropdown menu -->
+                <div class="dropdown">
+                  <span class="u-text-size-m">File number/Patient name</span>
+  
+                  <!-- Dropdown menu -->
+                  <ul class="dropdown-menu centered-dropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- SVG icon triggering the dropdown on the right -->
+                <svg
+                  class="u-icon-size-l dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <use
+                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                  ></use>
+                </svg>
+              
             </div>
           </div>
           
-          <div class="searchbox__input_div">
-            <div>
+          <div class="search-box__input-container">
+            <div class="search-box__input-wrapper">
               <input
-                type="text"
-                class="search__input"
-                aria-label="Text input with dropdown button"
-                placeholder="Search patient....."
-                id="patientSearch"
-              />
+              type="text"
+              class="search__input"
+              aria-label="Text input with dropdown button"
+              placeholder="Search patient....."
+              id="patientSearch"
+            />
+            <div class="search__result-list-PD" id="result-list"></div>
             </div>
 
-            <div class="search__icon">
-              <a href="../Infodashboard.html">
-                <svg class="u-icon-m u-icon-white">
-                  <use
-                    xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
-                  ></use>
-                </svg>
-              </a>
+            <div class="search-box__search-icon-wrapper">
+                <a href="../Infodashboard.html">
+                  <svg class="u-icon-m u-icon-white">
+                    <use
+                      xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
+                    ></use>
+                  </svg>
+                </a>
             </div>
           </div>
         </div>
@@ -408,44 +417,169 @@
         </div>
       </div>
       <!-- PATIENT DETAILS- SECTION -->
-      <div class="patient__details">
+      <div class="patient__details" id="patient-details">
         <div class="patient__navbar">
+          <div class="patient-profile__wrapper">
           <!-- PROFILE PICTURE SECTION -->
-          <div class="patient-profilediv">
-            <div class="patient-profile-picture">
-              <img
-                src="/Assets/Images/arabgirl.png"
-                alt="profite picture"
-                class="patient-profile-picture__image"
-              />
-              <div class="patient-profile-picture__progress-ring">
-                <div class="patient-profile-picture__progress-bar"></div>
+            <div class="patient-profilediv">
+              <div class="patient-profile-picture">
+                <img
+                  src="/Assets/Images/arabgirl.png"
+                  alt="profite picture"
+                  class="patient-profile-picture__image"
+                />
+                <div class="patient-profile-picture__progress-ring">
+                  <div class="patient-profile-picture__progress-bar"></div>
+                </div>
+              </div>
+            </div>
+          <!-- EDIT BUTTON SECTION -->
+           <div class="patient-percentage-edit-wrapper">
+              <div class="patient-percentage-wrapper">
+                <div class="patient-editbutton__percentage">65%</div>
+                <div class="patient-editbutton__name">Profile Complete</div>
+              </div>
+              <div class="patient-editbutton">
+                
+                <button type="button" class="patient-editbutton__button">
+                  <span class="patient-editbutton__button__edit"> Edit</span>
+                </button>
+                <div class="patient-printable-btndiv">
+                  <button type="button" class="patient-printablebutton__button" data-bs-toggle="modal"
+                  data-bs-target="#printableModal">
+                    <span class="patient-printablebutton__button__printables" >Printables</span>
+                  </button>
+                </div>
+
+                <!-- Printable Modal only for Mobile view -->
+                <div class="modal fade" id="printableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content printable__modal-content">
+                      <!-- <div class="modal-body">
+                        ...
+                      </div> -->
+                      <div class="printable-icons__modal">
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientlabel.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Label</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientcard.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Card</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/patientfilelabel.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient File Label</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pdemegraphic.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient Demographic</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pfilebarcode.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient file barcode</span>
+                        </div>
+                        <div class="p-icons__wrapper">
+                          <img
+                            src="/Assets/Images/pidbarcode.png"
+                            alt="icon"
+                            class="p-icons__modalpicture"
+                          />
+                          <span class="p-label">Patient ID Barcode</span>
+                        </div>
+                      </div>
+                      <button class="p-navigation__modal-close" type="button" data-bs-dismiss="modal">
+                        <span class="p-navigation__modal-close__close"> Close</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- EDIT BUTTON SECTION -->
-          <div class="patient-editbutton">
-            <span class="patient-editbutton__percentage">65%</span>
-            <span class="patient-editbutton__name">Profile Complete</span>
-            <button type="button" class="patient-editbutton__button">
-              <span class="patient-editbutton__button__edit"> Edit</span>
-            </button>
-          </div>
-          <!-- NAVIGATION LINKS SECTION -->
           <div class="p-navigation">
-            <ul>
-              <li class="p-navigation__link">Personal Info</li>
-              <li>Insurance</li>
-              <li>Non-Insurance</li>
-              <li>Dependencies</li>
-              <li>Attachment</li>
-              <li>Audit trail</li>
-              <li>Appoinment Log</li>
-              <li>Visits</li>
-              <li>Questionire</li>
-              <li>Registration Form</li>
-              <li>Locations</li>
-            </ul>
+              <!-- Mobile header - only visible on mobile -->
+              <div class="p-navigation__mobile-header">
+                <span class="p-navigation__selected-text">Personal Info</span>
+                <!-- <button class="p-navigation__toggle">
+                  <span class="p-navigation__toggle-icon"></span>
+                 
+                </button> -->
+                <button class="p-navigation__toggle">
+
+                
+                <svg
+                class="u-icon-size-l dropdown-toggle p-navigation__toggle-icon"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <use
+                  xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                ></use>
+              </svg>
+            </button>
+              </div>
+            
+              <!-- Regular navigation list - visible on desktop -->
+              <ul class="p-navigation__desktop-list">
+                <li class="p-navigation__link">Personal Info</li>
+                <li>Insurance</li>
+                <li>Non-Insurance</li>
+                <li>Dependencies</li>
+                <li>Attachment</li>
+                <li>Audit trail</li>
+                <li>Appoinment Log</li>
+                <li>Visits</li>
+                <li>Questionire</li>
+                <li>Registration Form</li>
+                <li>Locations</li>
+              </ul>
+            
+              <!-- Modal for mobile view -->
+              <div class="p-navigation__modal">
+                <div class="p-navigation__modal-content">
+                  <div class="p-navigation__modal-header">
+                    <h3>Patient Details</h3>
+                  </div>
+                  <ul class="p-navigation__modal-list">
+                    <li class="p-navigation__link">Personal Info</li>
+                    <li>Insurance</li>
+                    <li>Non-Insurance</li>
+                    <li>Dependencies</li>
+                    <li>Attachment</li>
+                    <li>Audit trail</li>
+                    <li>Appoinment Log</li>
+                    <li>Visits</li>
+                    <li>Questionire</li>
+                    <li>Registration Form</li>
+                    <li>Locations</li>
+                  </ul>
+                 
+                  <button class="p-navigation__modal-close" type="button">
+                    <span class="p-navigation__modal-close__close"> Close</span>
+                  </button>
+                </div>
+              </div>
           </div>
           <!-- EXTRA FEATURES ICONS -->
           <div class="p-icons">
@@ -785,11 +919,19 @@
           >
             <div class="details-grid">
               <div class="detail-item detail-item__fullwidth">
-                <div class="tab-headline">
+                <div class="grid-headline">
                   <span class="value u-tabnamecolor">Insurance details</span>
-                  <span class="warning-text"
-                    >Patient Insurance Dates not Valid</span
-                  >
+                    <div class="warning-text u-justify-start inc-note-tag"
+                        >Patient Insurance Dates not Valid
+                    </div>
+                    <div class="inc-editorbtn-wrapper">
+                      <span>
+                        <i class="bi bi-pencil-square u-bootst-icon u-bootst-icon-blcolor inc-editbtn" id="inc-editbtn"></i>
+                      </span>
+                      <span>
+                        <i class="bi bi-trash3 u-bootst-icon u-bootst-icon-redcolor"></i>
+                      </span>
+                    </div>
                 </div>
               </div>
               <div class="detail-item">
@@ -812,7 +954,6 @@
                 <span class="label">Insurance End Date:</span>
                 <span class="value">19/11/2024</span>
               </div>
-
               <div class="detail-item">
                 <span class="label">Policyholder:</span>
                 <span class="value">AARAB CONSTRUCTING EST</span>
@@ -830,7 +971,6 @@
                   <span class="value u-tabnamecolor">Approval Settings</span>
                 </div>
               </div>
-
               <div class="detail-item">
                 <span class="label">Period:</span>
                 <span class="value">14 Day (s)</span>
@@ -849,44 +989,41 @@
               </div>
               <div class="detail-item detail-item__fullwidth">
                 <div class="tab-headline">
-                  <span class="value u-tabnamecolor"
-                    >Co Insurance Settings</span
+                  <span class="value u-tabnamecolor u-marginright-s">Co Insurance Settings</span
                   >
-                  <div class="left-side-align">
-                    <span class="label u-marginright-s"
-                      >Service Type Classification :</span
-                    >
-                    <div class="dropdown service-dropdown">
-                      <button
-                        class="btn"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Select
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li>
-                          <a class="dropdown-item" href="#">Another action</a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#"
-                            >Something else here</a
-                          >
-                        </li>
-                      </ul>
-                      <svg
-                        class="u-icon-m"
-                        data-bs-toggle="dropdown"
-                        data-bs-target="#dropdownMenu"
-                        aria-expanded="false"
-                      >
-                        <use
-                          xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
-                        ></use>
-                      </svg>
-                    </div>
+                  <div class="left-side-align inc__service-setting">
+                      <div class="label">Service Type Classification:</div>
+                      <div class="dropdown service-dropdown mobile-v-ml">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Select
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                        <svg
+                          class="u-icon-m"
+                          data-bs-toggle="dropdown"
+                          data-bs-target="#dropdownMenu"
+                          aria-expanded="false"
+                        >
+                          <use
+                            xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                          ></use>
+                        </svg>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -902,16 +1039,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Infusion</td>
-                      <td>30%</td>
-                      <td>70%</td>
-                      <td>@mdo</td>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
                     </tr>
-                    <tr>
-                      <td>Infusion</td>
-                      <td>35%</td>
-                      <td>65%</td>
-                      <td>@fat</td>
+                     <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
                     </tr>
                     
                   </tbody>
@@ -919,6 +1056,201 @@
               </div>
             </div>
           </div>
+
+          <!-- INSURANCE EDITOR DIV -->
+          <div class="Insurance-editor-div"
+          id="Insurance-editor-div"
+          style="display: none;">
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="editor-btn-wrapper">
+                  <span class="inc-bckbtn" id="inc-bckbtn">
+                    <i class="bi bi-arrow-left-square back-btn-icon"></i>
+                  </span>
+                  <span class="value u-tabnamecolor">Edit Insurance Details</span>
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Third-Party Administrator (TPA)</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="tpa-select" >
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Membership Number</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="membership-input">
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Insurance Company Name</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="company-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label ">Insurance Policyholder Name</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="policyholder-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Policy Number</span>
+                <div class="inc-editor-input-wrapper">
+                <input type="text" class="editor-input form-control" id="policy-input"placeholder="21123213" >
+                <i class="bi bi-search u-bootst-icon-blkcolor"></i>
+              </div>
+              </div>
+              <div class="grid-date-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Insurance Start Date</span>
+                  <input type="date" class="editor-input u-r-corner0" id="start-date"placeholder="21123213" >
+                </div>
+                <div class="detail-item">
+                  <span class="editor-label">Insurance End Date</span>
+                  <input type="date" class="editor-input u-l-corner0" id="end-date"placeholder="21123213">
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Insurance Class Title</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="class-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Insurance Card</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="insurance-card" name="file" class="custom-file-input">
+                  <label for="insurance-card" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Episode Settings</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Period</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="period-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Visits</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="visits-input">
+              </div>
+              <div class="grid-2grid-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Approval Limit Per Episode</span>
+                  <input type="text" class="editor-input" placeholder="21123213" id="approval-input">
+                </div>
+                <div class="detail-item-checkinput">
+                  <input type="checkbox"placeholder="21123213">
+                  <span class="checkbox-editor-label">Unlimited Episode </span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Patient Max Share Per Episode</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="patient-share-input">
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor u-marginright-s">Co Insurance Settings</span>
+                  <!-- <div class="left-side-align inc__service-setting">
+                      <div class="label">Service Type Classification:</div>
+                      <div class="dropdown service-dropdown mobile-v-ml">
+                        <button
+                          class="btn"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Select
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                        <svg
+                          class="u-icon-m"
+                          data-bs-toggle="dropdown"
+                          data-bs-target="#dropdownMenu"
+                          aria-expanded="false"
+                        >
+                          <use
+                            xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+                          ></use>
+                        </svg>
+                      </div>
+                  </div> -->
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Service Type Classification</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="service-type-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Max - Patient Share</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Service Type"><span>Infusion</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Max Patient Share"> <span>70%</span></td>
+                      <td data-label="Partially uncovered amount type"> <span>@mdo</span></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="inc-editor-footer">
+                <div class="inc-editor__savebutton">
+                  <span class="dsavebtn-name">Save</span>
+                </div>
+                <div class="inc-editor__canceltbutton">
+                  <span class="dresetbtn-name" id="inc-cancelbtn">Cancel</span>
+                </div>
+               
+            </div>
+          </div>
+
           <!--Non-Insurance INFORMATION TAB  -->
           <div
             class="Noninsurance-infodiv"
@@ -927,11 +1259,17 @@
           >
             <div class="details-grid">
               <div class="detail-item detail-item__fullwidth">
-                <div class="tab-headline">
-                  <span class="value u-tabnamecolor"
-                    >Non-Insurance Details</span
-                  >
-                  <span class="warning-text">No Non-Insurance </span>
+                <div class="grid-headline">
+                  <span class="value u-tabnamecolor">Non-Insurance Details</span>
+                  <div class="warning-text u-justify-start inc-note-tag">No Non-Insurance </div>
+                  <div class="inc-editorbtn-wrapper">
+                        <span>
+                          <i class="bi bi-pencil-square u-bootst-icon u-bootst-icon-blcolor non-inc-editbtn" id="non-inc-editbtn"></i>
+                        </span>
+                        <span>
+                          <i class="bi bi-trash3 u-bootst-icon u-bootst-icon-redcolor"></i>
+                        </span>
+                  </div>
                 </div>
               </div>
               <div class="detail-item">
@@ -989,45 +1327,190 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Consultation</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Consultation</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Home Care</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Home Care</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Outpatient Dental Lab Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Lab Services</span></td>
+                      <td data-label="Co Insurance %"><span>40%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
 
                     <tr>
-                      <td>Outpatient Dental Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Services</span></td>
+                      <td data-label="Co Insurance %"><span>60%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
-
                     <tr>
-                      <td>Outpatient Laboratory Services</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Laboratory Services</span></td>
+                      <td data-label="Co Insurance %"><span>80%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
-
                     <tr>
-                      <td>Outpatient Prescriptions</td>
-                      <td></td>
-                      <td></td>
+                      <td data-label="Tariff Type"><span>Outpatient Prescriptions</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
+
+          <!-- NON INSURANCE EDITOR DIV -->
+          <div class="Noninsurance-editor-div"
+          id="Noninsurance-editor-div"
+          style="display: none;">
+            <div class="details-grid">
+              <div class="detail-item detail-item__fullwidth">
+                <div class="editor-btn-wrapper">
+                  <span class="noninc-bckbtn" id="noninc-bckbtn">
+                    <i class="bi bi-arrow-left-square back-btn-icon"></i>
+                  </span>
+                  <span class="value u-tabnamecolor">Edit Non-Insurance Details</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Membership Number</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-membership-input">
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Non-Insurance Company</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="noninc-company-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="grid-date-wrapper">
+                <div class="detail-item">
+                  <span class="editor-label">Insurance Start Date</span>
+                  <input type="date" class="editor-input u-r-corner0" id="noninc-start-date"placeholder="21123213" >
+                </div>
+                <div class="detail-item">
+                  <span class="editor-label">Insurance End Date</span>
+                  <input type="date" class="editor-input u-l-corner0" id="noninc-end-date"placeholder="21123213">
+                </div>
+              </div>
+              <div class="detail-item inc-selector">
+                <span class="editor-label">Insurance Class Title</span>
+                <select class="form-select inc-seletor-dropdown" aria-label="Default select example" id="noninc-class-select">
+                  <option selected>21123213</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Non-Insurance Card</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="noninc-insurance-card" name="noninc-insurance-card" class="custom-file-input">
+                  <label for="noninc-insurance-card" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item inc-selector inc-selector--insurance-name">
+                <span class="editor-label-inscom inc-selector__insurance-name">Approval Letter</span>
+                <div class="choose-file-wrapper">
+                  <input type="file" id="noninc-approval-letter" name="noninc-approval-letter" class="custom-file-input">
+                  <label for="noninc-approval-letter" class="custom-file-label-inc">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <div class="file-preview"></div>
+                </div>
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tabheadline">
+                  <span class="value u-tabnamecolor">Episode Settings</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Period</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-period-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Visits</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-visits-input">
+              </div>
+              <div class="detail-item">
+                <span class="editor-label">Patient Max Share Per Episode</span>
+                <input type="text" class="editor-input" placeholder="21123213" id="noninc-patient-share-input">
+              </div>
+              <div class="detail-item detail-item__fullwidth">
+                <div class="tab-headline">
+                  <span class="value u-tabnamecolor u-marginright-s">Co Non-Insurance Settings</span>
+                </div>
+              </div>
+              <div class="tab-tabledive">
+                <table class="table custom-table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tariff Type</th>
+                      <th scope="col">Co Insurance %</th>
+                      <th scope="col">Partially Uncovered Amount Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Consultation</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Home Care</span></td>
+                      <td data-label="Co Insurance %"><span>56%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Lab Services</span></td>
+                      <td data-label="Co Insurance %"><span>40%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Dental Services</span></td>
+                      <td data-label="Co Insurance %"><span>60%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Laboratory Services</span></td>
+                      <td data-label="Co Insurance %"><span>80%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Tariff Type"><span>Outpatient Prescriptions</span></td>
+                      <td data-label="Co Insurance %"><span>50%</span></td>
+                      <td data-label="Partially Uncovered Amount Type"><span>sample</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="inc-editor-footer">
+                <div class="inc-editor__savebutton">
+                  <span class="dsavebtn-name">Save</span>
+                </div>
+                <div class="inc-editor__canceltbutton">
+                  <span class="dresetbtn-name" id="noninc-cancelbtn">Cancel</span>
+                </div>
+               
+            </div>
+          </div>
+
+
+
+
           <!--Dependencies INFORMATION TAB  -->
           <div
             class="Dependencies-infodiv"
@@ -1046,7 +1529,7 @@
                 <div class="Dependencies__selectiondiv">
                   <div class="Dependencies__dropdown">
                     <div class="drop__name">Name</div>
-                    <div class="dropdown service-dropdown">
+                    <div class="dropdown-center service-dropdown">
                       <button
                         class="btn"
                         type="button"
@@ -1080,7 +1563,7 @@
                   </div>
                   <div class="Dependencies__dropdown">
                     <div class="drop__name">Relaction</div>
-                    <div class="dropdown service-dropdown">
+                    <div class="dropdown-center service-dropdown">
                       <button
                         class="btn"
                         type="button"
@@ -1113,14 +1596,13 @@
                     </div>
                   </div>
                   <div class="Dependencies__buttons">
-                  <div class="Dependencies__savebutton">
-                    <span class="dsavebtn-name">Save</span>
+                    <div class="Dependencies__savebutton">
+                      <span class="dsavebtn-name">Save</span>
+                    </div>
+                    <div class="Dependencies__resetbutton">
+                      <span class="dresetbtn-name">Reset</span>
+                    </div>
                   </div>
-                  <div class="Dependencies__resetbutton">
-                    <span class="dresetbtn-name">Reset</span>
-                  </div>
-                  </div>
-
                 </div>
               </div>
 
@@ -1136,16 +1618,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Arwa Saad . Al Jabreen</td>
-                      <td>2312</td>
-                      <td>Brother</td>
-                      <td class="table-deletecol">Delete</td>
+                      <td data-label="Dependent Name"> <span>Arwa Saad . Al Jabreen</span></td>
+                      <td data-label="Dependent FileNo"><span>2312</span></td>
+                      <td data-label="Relation"><span>Brother</span></td>
+                      <td data-label="" class="table-deletecol">Delete</td>
                     </tr>
                     <tr>
-                      <td>Nafeh Abdel Hamid . Tanki</td>
-                      <td>2312</td>
-                      <td>Brother</td>
-                      <td class="table-deletecol">Delete</td>
+                      <td data-label="Dependent Name"><span>Nafeh Abdel Hamid . Tanki</span></td>
+                      <td data-label="Dependent FileNo"><span>2312</span></td>
+                      <td data-label="Relation"><span>Brother</span></td>
+                      <td data-label="" class="table-deletecol">Delete</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1158,14 +1640,14 @@
           id="Attachment-infodiv"
           style="display: none"
         >
-            <div class="details-grid">
+            <div class="details-grid u-marginbottom-xl">
               <div class="detail-item detail-item__fullwidth">
                 <div class="tab-headline">
                   <span class="value u-tabnamecolor"
                     >Patient Attachment Read Only</span
                   >
                   <div class="attachment__uploadbtndiv">
-                    <div class="attachment__uploadbutton u-marginbottom-xl">
+                    <div class="attachment__uploadbutton ">
                       <i class="bi bi-plus-square u-bootst-icon u-marginright-xs" data-bs-toggle="modal" data-bs-target="#uploadmodaldiv"></i>
                       <span class="attupbtn-name">Upload</span>
                     </div>
@@ -1185,17 +1667,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Scan photo copy</td>
-                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
-                      <td>04/08/2024 [05:58 PM]</td>
-                      <td>Dr Hadeel akkad</td>
+                      <td data-label="Attachment name"><span>Scan photo copy</span></td>
+                      <td data-label="Attachment"><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td data-label="Date"><span>04/08/2024 [05:58 PM]</span></td>
+                      <td data-label="Uploaded By"><span>Dr Hadeel akkad</span></td>
                       <td class="table-deletecol">Delete</td>
                     </tr>
                     <tr>
-                      <td>MRI Scan copy</td>
-                      <td><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
-                      <td>04/08/2024 [05:58 PM]</td>
-                      <td>Dr Noha</td>
+                      <td data-label="Attachment name"><span>MRI Scan copy</span></td>
+                      <td data-label="Attachment"><img src="/Assets/Images/attachmentimg.png" alt="Attachment image"></td>
+                      <td data-label="Date"><span>04/08/2024 [05:58 PM]</span></td>
+                      <td data-label="Uploaded By"><span>Dr Noha</span></td>
                       <td class="table-deletecol">Delete</td>
                     </tr>
                   
@@ -1211,20 +1693,20 @@
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                   </div>
                   <div class="attachment__modalbodydiv">
-                    <div class="imguploaddiv">
-                      <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
-                    </div>
-                    <div class="imguploaddiv">
-                      <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
-                      <div class="delete-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                        </svg>
+                    <div class="mobilev-modal-wrapper">
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                       </div>
-                    </div>
+                      <div class="imguploaddiv">
+                        <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                        <div class="delete-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                          </svg>
+                        </div>
+                      </div>
+                  </div>
                     <div class="attachment__input-buttondiv">
-                     
-                     
                       <div class="attachment__inputmaindiv">
                         <div class="input__div">
                           <div class="input__name">New Attachment</div>
@@ -1235,8 +1717,6 @@
                           <label for="file" class="custom-file-label">Upload</label>
                           <button type="button" class="btn modal-closebtn" data-bs-dismiss="modal">Cancel</button>
                         </div>
-
-                        
                       </div>
                     </div>
                   </div>
@@ -1293,43 +1773,42 @@
               </div>
             </div>
           </div>
-
-          <div class="detail-item detail-item__fullwidth">
-            <div class="">
-              <div class="appoiment_categories">
-              <div class="appointment__name all">
-                <div class="cat_count">345</div>
-                <div class="cat_name">All</div>
-              </div>
-
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Scheduled</div>
-              </div>
-
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Confirmed</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Arrived</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Early</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Late</div>
-              </div>
-              <div class="appointment__name other">
-                <div class="cat_count">30</div>
-                <div class="cat_name">Complete</div>
-              </div>
+        </div>
+        <div class="appiont-detail-item  appiont-detail-item __fullwidth">
+          <!-- <div class=""> -->
+            <div class="appoiment_categories">
+            <div class="appointment__name all">
+              <div class="cat_count">345</div>
+              <div class="cat_name">All</div>
             </div>
+
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Scheduled</div>
+            </div>
+
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Confirmed</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Arrived</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Early</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Late</div>
+            </div>
+            <div class="appointment__name other">
+              <div class="cat_count">30</div>
+              <div class="cat_name">Complete</div>
             </div>
           </div>
+          <!-- </div> -->
         </div>
         <div class="tab-tabledive">
             <table class="table custom-table custom-table-7-cols table-hover">
@@ -1346,114 +1825,94 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
                 <tr>
-                  <td>02/07/2024
-                    11:20 AM</td>
-                  <td>Scheduled</td>
-                  <td>Dr Hadeel Akkad...</td>
-                  <td>Hematology</td>
-                  <td></td>
-                  <td>Nouf Abdulaziz...</td>
-                  <td>02/07/2024
-                    11:20 AM</td>
+                  <td data-label="Appointment Date"><span>02/07/2024 11:20 AM</span></td>
+                  <td data-label="Arrival Status"><span>Scheduled</span></td>
+                  <td data-label="Doctor"><span>Dr Hadeel Akkad...</span></td>
+                  <td data-label="Department"><span>Hematology</span></td>
+                  <td data-label="Source"><span>Hematology</span></td>
+                  <td data-label="Created by"><span>Nouf Abdulaziz...</span></td>
+                  <td data-label="Created Date"><span>02/07/2024 11:20 AM</span></td>
                 </tr>
               </tbody>
             </table>
@@ -1492,19 +1951,19 @@
                 </div>
               </div>
              <!-- DATE DIV -->
-              <div class="visit__datemaindiv">
-                <div class="date__label">Doctor</div>
-                <div class="visit__date-wrapper">
-                  <input type="date" class="visit__fromdate-input" placeholder="From Date">
-                  <input type="date" class="visit__enddate-input" placeholder="To Date">
+                <div class="visit__datemaindiv">
+                  <div class="date__label">Period</div>
+                  <div class="visit__date-wrapper">
+                    <input type="date" class="visit__fromdate-input" placeholder="From Date">
+                    <input type="date" class="visit__enddate-input" placeholder="To Date">
+                  </div>
                 </div>
-              </div>
               <!-- FILTER DIV -->
-              <div class="visit__filterbutton">
-                <i class="bi bi-funnel filter-button"></i>
-              </div>
+                <div class="visit__filterbutton">
+                  <i class="bi bi-funnel filter-button"></i>
+                </div>
             </div>
-           
+
           </div>
         </div>
         <div class="tab-tabledive">
@@ -1519,11 +1978,11 @@
             </thead>
             <tbody>
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1531,11 +1990,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1543,11 +2002,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1555,11 +2014,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1567,11 +2026,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1579,11 +2038,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1591,11 +2050,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1603,11 +2062,11 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
@@ -1615,17 +2074,19 @@
                 </td>
               </tr> 
               <tr>
-                <td>Dr Hadeel Akkad...</td>
-                <td>02/07/2024 11:20 AM</td>
-                <td>Sample demo text nama</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Doctor Name">Dr Hadeel Akkad...</td>
+                <td data-label="Visit Time">02/07/2024 11:20 AM</td>
+                <td data-label="Notes">Sample demo text nama</td>
+                <td data-label="Logged By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
               </tr> 
+
+             
             </tbody>
           </table>
         </div>
@@ -1690,26 +2151,26 @@
                   <span class="label">Patient name :</span>
                   <span class="value">Dua Fatima bint Haseeb</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">File Number :</span>
                   <span class="value">#4324345</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Mobile Number</span>
                   <span class="value">0558455555</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Age :</span>
                   <span class="value">23</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Gender :</span>
                   <span class="value">Female</span>
                 </div>
               </div>
 
               <!-- ACTION TABS -->
-               <div class="ques__actiontab-div u-marginbottom-xl">
+               <div class="ques__actiontab-div">
                   <!-- Questionnaire Form TAB -->
                   <div class="tab__section">
                     <div class="u-vh-align-center">
@@ -1820,17 +2281,19 @@
                     <div class="collapse show" id="Attachementtab">
                       <div class="main-details-div">
                         <div class="attachment__modalbodydiv">
-                          <div class="imguploaddiv">
-                            <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
-                          </div>
-                          <div class="imguploaddiv">
-                            <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
-                            <div class="delete-icon">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                              </svg>
+                          <div class="mobilev-modal-wrapper">
+                            <div class="imguploaddiv">
+                              <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                             </div>
-                          </div>
+                            <div class="imguploaddiv">
+                              <img src="/Assets/Images/uploadsample2.png" alt="sample upload image" class="upload-imgsize">
+                              <div class="delete-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="delete-svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                </svg>
+                              </div>
+                            </div>
+                        </div>
                           <div class="attachment__input-buttondiv">
                            
                            
@@ -1887,7 +2350,7 @@
                         <div class="details-grid">
                           <div class="detail-item detail-item__fullwidth">
                             <div class="tab-headline">
-                              <div class="left-side-align">
+                              <div class="">
                                 <button type="button" class="btn btn-primary">Send OTP</button>
                               </div>
                             </div>
@@ -2053,19 +2516,19 @@
                   <span class="label">Patient name :</span>
                   <span class="value">Dua Fatima bint Haseeb</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">File Number :</span>
                   <span class="value">#4324345</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Mobile Number</span>
                   <span class="value">0558455555</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Age :</span>
                   <span class="value">23</span>
                 </div>
-                <div class="detail-item u-alignselfitem">
+                <div class="detail-item">
                   <span class="label">Gender :</span>
                   <span class="value">Female</span>
                 </div>
@@ -2075,7 +2538,9 @@
                <div class="resg__attachtab-div u-marginbottom-xl">
                    <!-- ATTACHMENT TAB -->
                    <div class="main-details-div">
+                    <h5 class="u-text-size-l">Attachments</h5>
                     <div class="attachment__modalbodydiv">
+                     <div class="mobilev-modal-wrapper">
                       <div class="imguploaddiv">
                         <img src="/Assets/Images/uploadsample1.png" alt="sample upload image" class="upload-imgsize">
                       </div>
@@ -2087,6 +2552,7 @@
                           </svg>
                         </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                </div>
@@ -2110,8 +2576,6 @@
             </div>
           </div>
       </div>
-      
-      
         </div>
         <!--Locations INFORMATION TAB  -->
         <div
@@ -2141,79 +2605,79 @@
               <tr>
                 <th scope="col">Latitude</th>
                 <th scope="col">Longitude</th>
-                <th scope="col">Is Default
-                  Location</th>
-                  <th scope="col">Is Current
-                    Location</th>
+                <th scope="col">Is Default Location</th>
+                <th scope="col">Is Current Location</th>
                 <th colspan="2">Created By</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
               <tr>
-                <td>31.999144200203315</td>
-                <td>35.87834279098511</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Rafed Masree 14/08/2024 05:03 PM</td>
-                <td>
+                <td data-label="Latitude">31.999144200203315</td>
+                <td data-label="Longitude">35.87834279098511</td>
+                <td data-label="Is Default Location">No</td>
+                <td data-label="Is Current Location">No</td>
+                <td data-label="Created By">Rafed Masree 14/08/2024 05:03 PM</td>
+                <td class="table-deletecol">
                   <div class="visit__edbtn-wrapper">
                     <a href="#" class="visit__editbtn">Edit</a>
                     <a href="#" class="visit__deletebtn">Delete</a>
                   </div>
                 </td>
-              </tr> 
+              </tr>
+
+           
            
             </tbody>
           </table>
@@ -2285,10 +2749,9 @@
       
         </div>
         </div>
-        </div>
+      </div>
       </div>
     </main>
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 <!-- ionicons SCRIPT -->
@@ -2310,6 +2773,8 @@
     <script src="../javascript/calenderdate.js"></script>
     <script src="../javascript/signature.js"></script>
     <script src="../javascript/locationmaooing.js"></script>
+    <script src="../javascript/ins-non-insurance.js"></script>
+    <script src="../javascript/fileinput.js"></script>
     
     
   </body>

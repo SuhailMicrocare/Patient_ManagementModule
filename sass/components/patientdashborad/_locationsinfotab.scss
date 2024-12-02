@@ -1,9 +1,17 @@
-.resg__addbtndiv {
-  .resg__addbutton {
+.location__addbtndiv {
+  .location__addbutton {
     @include interactive-button;
     .attupbtn-name {
       @extend .u-button-name;
     }
+  }
+}
+
+.location__addbtndiv,
+.location__addbutton {
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0.3rem;
   }
 }
 
@@ -16,6 +24,13 @@
     background-color: #eef8ff;
     border-radius: 1.2rem;
     padding: 1rem;
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
     // SEARCH MAIN DIV
     .location__searchmanidiv {
       display: flex;
@@ -158,6 +173,10 @@
       align-self: flex-end;
       height: 4rem;
       padding: 0.8rem 1.5rem;
+
+      @include respond(phone) {
+        align-self: flex-start;
+      }
 
       .location__checkpoint {
         width: 2rem; // Set desired width

@@ -1,0 +1,337 @@
+.inc-editorbtn-wrapper {
+  justify-self: self-end;
+  .inc-editbtn,
+  .non-inc-editbtn {
+    margin-right: 1.6rem;
+  }
+}
+
+/* Optional: Add these styles to your SCSS if not already present */
+// Editor Components
+.Insurance-editor-div,
+.Noninsurance-editor-div {
+  background-color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.6rem 1.5rem 0.5rem 1.5rem;
+  height: 100%;
+  .inc-bckbtn,
+  .noninc-bckbtn {
+    .back-btn-icon {
+      font-size: 2.5rem;
+      color: $color-black;
+      cursor: pointer;
+    }
+  }
+}
+
+.editor-btn-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.editor-input {
+  margin-top: 0.6rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  border: 1px solid #c0ccdc;
+  background-color: $color-white;
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0;
+    min-height: 4rem;
+  }
+
+  &:focus {
+    border-color: $plp-heading-color;
+    box-shadow: 0 0 0 0.2rem rgba($plp-heading-color, 0.25);
+  }
+
+  &::-webkit-input-placeholder {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 16.37px;
+    color: $text-gray;
+  }
+}
+
+.inc-seletor-dropdown {
+  margin-top: 0.6rem;
+  @include respond(phone) {
+    margin-top: 0;
+  }
+}
+
+.detail-item .inc-editor-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.detail-item .inc-editor-input-wrapper input {
+  width: 100%;
+  padding-right: 3rem; /* Add space for the icon */
+}
+
+.detail-item .inc-editor-input-wrapper .bi-search {
+  position: absolute;
+  top: 38%;
+  right: 1.6rem; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.inc-editor-footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  column-gap: 2rem;
+  position: relative;
+}
+
+.inc-editor__savebutton,
+.inc-editor__canceltbutton {
+  border-radius: 0.8rem;
+  padding: 0.8rem 2.5rem 0.8rem 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  @include respond(phone) {
+    width: 85%;
+  }
+}
+
+.inc-editor__savebutton {
+  @include respond(phone) {
+    position: fixed;
+    bottom: 2vh; /* Keeps the bottom of the div 10% above the viewport's bottom */
+    left: 3.5rem; /* Align it to the left side */
+    right: 0; /* Stretch it across the viewport horizontally */
+    height: auto;
+    z-index: 1;
+  }
+}
+
+.inc-editor__canceltbutton {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.inc-editor__savebutton {
+  background-color: #068eee;
+
+  .dsavebtn-name {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 21px;
+    color: #ffffff;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.inc-editor__canceltbutton {
+  background-color: $color-white;
+  border: 1px solid #068eee;
+
+  .dresetbtn-name {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 21px;
+    color: #068eee;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.editor-label {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 16.37px;
+  text-align: left;
+  color: #626262;
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.checkbox-editor-label {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 16.37px;
+  text-align: left;
+  color: #626262;
+}
+
+// working cod
+.inc-selector {
+  .editor-label-inscom {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #626262;
+  }
+
+  .form-select {
+    font-family: inherit;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    // padding: 1.2rem 1.6rem;
+    border-radius: 0.8rem;
+    border: 1px solid #c0ccdc;
+    background-color: $color-white;
+    @include respond(phone) {
+      width: 100%;
+      min-height: 4rem;
+    }
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    &:focus {
+      border-color: $plp-heading-color;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba($plp-heading-color, 0.25);
+    }
+
+    &.is-invalid {
+      border-color: #dc3545;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(#dc3545, 0.25);
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: $text-gray;
+    }
+  }
+
+  @include respond(phone) {
+    .editor-label-inscom:not(.inc-selector__insurance-name) {
+      display: none;
+    }
+
+    &.inc-selector--insurance-name {
+      position: relative;
+      margin-top: 0.5rem;
+
+      .inc-selector__insurance-name {
+        position: absolute;
+        left: 1rem;
+        top: -1rem;
+        background-color: #dff3fa;
+
+        border-radius: 0.9rem;
+        padding: 0 0.4rem;
+        z-index: 1;
+      }
+
+      .form-select {
+        padding-top: 1.2rem;
+        // padding: 1.2rem 1.6rem;
+
+        &:focus,
+        &:not(:placeholder-shown) {
+          padding-top: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.choose-file-wrapper {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  margin-top: 0.6rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border-radius: 0.8rem;
+  border: 1px solid #c0ccdc;
+  background-color: $color-white;
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.detail-item.inc-selector.inc-selector--insurance-name .file-input .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.custom-file-input {
+  display: none;
+}
+
+.custom-file-label-inc {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background-color: #f4fbff;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #068eee;
+
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+  }
+}
+
+.custom-file-label {
+  color: $color-white;
+  background-color: $tabbuttoncolor;
+}
+
+.modal-closebtn {
+  color: $tabbuttoncolor;
+  background-color: $color-white;
+}
+
+.file-preview img {
+  width: 2rem; // Adjust this width based on your design
+  height: 2rem;
+  border-radius: 20%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.file-preview video {
+  width: 2rem; // Adjust this width based on your design
+  height: 2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.file-preview iframe {
+  width: 2rem; // Adjust this width based on your design
+  height: 2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}

@@ -1,9 +1,17 @@
-.location__addbtndiv {
-  .location__addbutton {
+.resg__addbtndiv {
+  .resg__addbutton {
     @include interactive-button;
     .attupbtn-name {
       @extend .u-button-name;
     }
+  }
+}
+
+.resg__addbtndiv,
+.resg__addbutton {
+  @include respond(phone) {
+    width: 100%;
+    margin-top: 0.3rem;
   }
 }
 
@@ -24,8 +32,6 @@
 .info-item {
   padding: 15px;
   color: #333;
-  // background-color: $color-secondary-light;
-  // border-bottom: 1px solid #ddd;
   font-family: inherit;
   font-size: 1.2rem;
   font-weight: 500;

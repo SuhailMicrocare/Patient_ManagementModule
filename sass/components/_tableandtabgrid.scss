@@ -1,14 +1,24 @@
 // TAB GRID STYLES
-
 .details-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr); // Default to 2 columns
   row-gap: 2rem;
+  column-gap: 2rem;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 1.8rem;
+    margin-top: 0;
+  }
 
   &--three-columns {
     // Modifier class for 3 columns
     grid-template-columns: repeat(3, 1fr);
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &--five-columns {
@@ -16,11 +26,77 @@
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     column-gap: 1rem;
     justify-content: center;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  .grid-date-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: inherit;
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0;
+    }
+  }
+
+  .grid-2grid-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: inherit;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 1.8rem;
+    }
   }
 
   .detail-item {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+
+    @include respond(phone) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__fullwidth {
+      grid-column: 1 / -1; // This will still span all columns
+    }
+  }
+
+  .detail-item-checkinput {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-end;
+    margin-bottom: 1.2rem;
+    @include respond(phone) {
+      gap: 1rem;
+      margin-bottom: 0;
+      align-items: center;
+    }
+  }
+  .appiont-detail-item {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(phone) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     &__fullwidth {
       grid-column: 1 / -1; // This will still span all columns
@@ -34,6 +110,9 @@
     line-height: 16.37px;
     text-align: left;
     color: #626262;
+    @include respond(phone) {
+      font-size: 1.4rem;
+    }
   }
 
   .value {
@@ -44,16 +123,44 @@
     text-align: left;
     color: #000000;
     margin-top: 0.5rem;
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// HEADLIND GRID
+.grid-headline {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  align-items: center;
+  justify-content: left;
+
+  @include respond(phone) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    .inc-note-tag {
+      grid-column: 1/-1;
+      grid-row: 2 /3;
+    }
   }
 }
 
 // TABLE DIV & HEADLINE STYLES
-
 .tab-headline {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include respond(phone) {
+    flex-direction: column;
+    row-gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+  }
 }
+
 .warning-text {
   font-family: inherit;
   font-size: 1.4rem;
@@ -72,11 +179,11 @@
 }
 
 //CUSTOME TABLE STYLE
-
 .custom-table {
   border-radius: 1rem; // Ensures rounded corners
   margin-bottom: 0 !important;
   overflow: hidden;
+  width: 100%;
 
   thead {
     // background-color: #dbeaf3 !important; // Apply background color
@@ -130,6 +237,77 @@
   th:first-child,
   td:first-child {
     border-left: none; // Remove border from the first column
+  }
+
+  // Mobile transformation new updated code
+  @include respond(phone) {
+    thead {
+      display: none; // Hide the header completely
+    }
+
+    tbody {
+      tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        background-color: #f4fbff;
+        border-radius: 1rem;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        padding: 1rem 1.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border: none;
+        font-size: 1.2rem;
+
+        color: #626262;
+        font-family: Nunito;
+        font-weight: 400;
+        line-height: 16.37px;
+
+        &:before {
+          content: attr(data-label);
+          color: #666;
+          font-weight: 400;
+        }
+
+        // Right column styling
+        & > span {
+          font-family: Nunito;
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 21.82px;
+          text-align: right;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(221, 221, 221, 0.3);
+        }
+        &.table-deletecol {
+          border-top: 1px dashed black;
+          border-bottom: none;
+          justify-content: center;
+          font-family: Nunito;
+          font-size: 1.4rem;
+          font-weight: 600;
+          line-height: 16.37px;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+        }
+      }
+    }
   }
 }
 

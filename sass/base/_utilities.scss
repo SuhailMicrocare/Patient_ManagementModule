@@ -9,6 +9,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.u-align-left {
+  display: flex;
+  justify-self: right;
+  align-items: center;
+  text-align: right !important;
+}
 // WIDTH
 .u-with-50 {
   width: 50%;
@@ -27,6 +34,9 @@
   display: flex;
   justify-self: center;
 }
+.u-justify-start {
+  justify-self: flex-start;
+}
 
 // ICON SIZE
 .u-icon-m {
@@ -43,12 +53,24 @@
 
 .u-bootst-icon,
 .u-bootst-icon-blcolor {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: $color-white;
   cursor: pointer;
 }
 .u-bootst-icon-blcolor {
   color: $tabbuttoncolor !important;
+}
+
+.u-bootst-icon-redcolor {
+  color: #ff2323;
+}
+
+.u-bootst-icon-blkcolor {
+  font-size: 1rem;
+  color: $color-black !important;
+  @include respond(phone) {
+    font-size: 1.3rem;
+  }
 }
 
 .u-bootst-icon-xl {
@@ -158,6 +180,10 @@
   margin-right: 0.5rem;
 }
 
+.u-marginright-xxxl {
+  margin-right: 3rem;
+}
+
 // MARGIN BOTTOM
 .u-marginbottom-samll {
   margin-bottom: 1rem;
@@ -206,4 +232,24 @@
 
 .u-modalpaddinf3rem {
   padding: 3rem;
+}
+
+.mobile-v-ml {
+  @include respond(phone) {
+    margin-left: auto;
+  }
+}
+
+.u-r-corner0 {
+  @include respond(phone) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+.u-l-corner0 {
+  @include respond(phone) {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
 }

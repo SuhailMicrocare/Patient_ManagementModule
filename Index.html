@@ -144,7 +144,7 @@
             </div>
 
             <a
-              class="btn-light lan-name u-align-center"
+              class="btn-light lan-name u-align-center profile-tagbtn"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
@@ -167,7 +167,7 @@
     </header>
     <main class="maincontainer">
       <!-- NEW PATIENT ADD BUTTON SECTION -->
-      <section>
+      <section class="newpatient-section">
         <div class="newpatient">
           <div class="newpatient__tour-button">
             <svg class="u-icon-m">
@@ -183,7 +183,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#patientModal"
               ></i>
-              <span class="u-tab-button-name">Add appoiment</span>
+              <span class="u-tab-button-name p-btn-name">Add appoiment</span>
             </div>
           </div>
         </div>
@@ -321,9 +321,9 @@
                       </div>
                     </div>
 
-                    <div class="pi__dob__section">
+                    <div class="pi__generalinfo__section">
                       <div class="col-md-12">
-                        <div class="en-dob-div">
+                        <div class="en-generalinfo-div">
                           <div class="col">
                             <select
                               class="form-select selector__st-rightborder0"
@@ -344,7 +344,7 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <div class="en-dob-div">
+                        <div class="en-generalinfo-div">
                           <div class="col">
                             <select
                               class="form-select selector__st-rightborder0"
@@ -373,7 +373,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <select
-                              class="form-select selector__st-rightborder0"
+                              class="form-select selector__st-rightborder0 selector__bottomborder0"
                               name="maritalStatus"
                             >
                               <option value="">Marital Status</option>
@@ -383,7 +383,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <select
-                              class="form-select selector__st-leftborder0"
+                              class="form-select selector__st-leftborder0 selector__bordertop0"
                               name="residence"
                             >
                               <option value="">Citizen / Residence</option>
@@ -398,7 +398,7 @@
                           <div class="form-group">
                             <input
                               type="text"
-                              class="form-control selector__st-rightborder0"
+                              class="form-control selector__st-rightborder0 selector__bottomborder0"
                               name="identityNumber"
                               placeholder="Identity Number"
                               required
@@ -408,7 +408,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <select
-                              class="form-select selector__st-leftborder0"
+                              class="form-select selector__st-leftborder0 selector__bordertop0"
                               name="nationality"
                             >
                               <option value="">Nationality</option>
@@ -422,7 +422,7 @@
                           <div class="form-group">
                             <input
                               type="text"
-                              class="form-control selector__st-rightborder0"
+                              class="form-control selector__st-rightborder0 selector__bottomborder0"
                               name="fatherPersonalId"
                               placeholder="Father Personal ID"
                             />
@@ -432,7 +432,7 @@
                           <div class="form-group">
                             <input
                               type="text"
-                              class="form-control selector__st-leftborder0"
+                              class="form-control selector__st-leftborder0 selector__bordertop0"
                               name="motherPersonalId"
                               placeholder="Mother Personal ID"
                             />
@@ -578,60 +578,58 @@
       </section>
 
       <!-- SEARCH BAR SECTION-->
-      <section>
-        <div class="search">
-          <div class="search__headingdiv">
-            <h1 class="heading-primary">Welcome to patient management</h1>
+      <section class="search-section">
+        <div class="search__headingdiv">
+          <h1 class="heading-primary">
+            <span class="heading-primary--part1">Welcome to</span>
+            <span class="heading-primary--part2">patient management</span>
+          </h1>
+        </div>
+        <!-- NEW SEARCHBAR SECTION -->
+        <div class="searchbar__seaction">
+          <div class="search__categorydiv">
+            <!-- Left side text with dropdown menu -->
+            <div class="dropdown search-category-dropdown">
+              <span class="u-text-size-m p-btn-name"
+                >File number/Patient name</span
+              >
+
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu centered-dropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+            <!-- SVG icon triggering the dropdown on the right -->
+            <svg
+              class="u-icon-m dropdown-toggle p-icon-size"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <use
+                xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
+              ></use>
+            </svg>
           </div>
-          <div class="search__searchbardiv">
-            <div class="search__drop-input input-group">
-              <div class="dropdown-center search__dropdown_section">
-                <button
-                  class="search__dropbutton"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <span class="u-text-size-m"> File number/Patient name </span>
-                  <div class="drop-icon">
-                    <svg class="u-icon-m dropdown-toggle">
-                      <use
-                        xlink:href="/Assets/icomoon/symbol-defs.svg#icon-chevron-small-down"
-                      ></use>
-                    </svg>
-                  </div>
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >File number/Patient name</a
-                    >
-                  </li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-              </div>
-              <div class="search__input_div">
-                <input
-                  type="text"
-                  class="search__input"
-                  aria-label="Text input with dropdown button"
-                  placeholder="Search patient....."
-                  id="patientSearch"
-                />
-              </div>
+
+          <div class="search__searchbar-icondiv">
+            <div class="search__input-div">
+              <input
+                type="text"
+                class="search__input"
+                aria-label="Text input with dropdown button"
+                placeholder="Search patient....."
+                id="patientSearch"
+              />
               <div class="search__result-list" id="result-list"></div>
             </div>
 
             <div class="search__icon">
               <a href="../Infodashboard.html">
-                <svg class="u-icon-m u-icon-white">
+                <svg class="u-icon-m u-icon-white" id="patientsearch-icon">
                   <use
                     xlink:href="/Assets/icomoon/symbol-defs.svg#icon-magnifying-glass"
                   ></use>
@@ -642,13 +640,11 @@
         </div>
       </section>
       <!--  IMAGE SECTION-->
-      <section>
-        <div class="image__doctorimg">
-          <img
-            src="/Assets/Images/people-sitting-hospital-corridor-waiting-doctor-patient-clinic-visit-flat-vector-illustration-medicine-healthcare 1.png"
-            alt="people-sitting-hospital"
-          />
-        </div>
+      <section class="image__doctorimg">
+        <img
+          src="/Assets/Images/people-sitting-hospital-corridor-waiting-doctor-patient-clinic-visit-flat-vector-illustration-medicine-healthcare 1.png"
+          alt="people-sitting-hospital"
+        />
       </section>
     </main>
     <!-- BOOTSTRAP ICONS -->
